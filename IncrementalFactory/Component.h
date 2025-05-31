@@ -8,21 +8,13 @@ class GameObject;
 #include <gtc/matrix_transform.hpp>
 
 class Component {
+private:
+	GameObject* _owner = nullptr;
 public:
-	GameObject* owner = nullptr;
 	virtual ~Component() = default;
-	virtual void update(float delta_time){}
-	virtual void render(){}
-};
+	void update(float deltaTime);
+	void render();
 
-class Transform : public Component {
-public:
-	glm::vec3 position = { 0, 0, 0 };
-	glm::quat rotation = { 0, 0, 1, 0 };
-	glm::vec3 scale = { 1, 1, 1 };
-};
-
-class Renderer : public Component {
-public:
-	virtual void render() override = 0;
+	void setOwner(GameObject* owner);
+	GameObject* getOwner();
 };

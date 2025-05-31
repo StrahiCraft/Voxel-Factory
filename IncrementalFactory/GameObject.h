@@ -1,5 +1,5 @@
 #pragma once
-#include "Component.h"
+#include "Transform.h"
 #include "Renderer.h"
 #include "string"
 #include "memory"
@@ -8,17 +8,16 @@
 
 class GameObject
 {
+private:
+	std::string _name;
+	bool _active = true;
+
+    std::vector<std::unique_ptr<Component>> _components;
 public:
-	std::string name;
-	bool is_active = true;
 
-    std::vector<std::unique_ptr<Component>> components;
+    GameObject(const std::string& name = "GameObject");
 
-    GameObject(const std::string& n = "GameObject") : name(n) {
-        add_component<Transform>();
-    }
-
-    void update(float delta_time);
+    void update(float deltaTime);
     void render();
 
     /**
@@ -33,14 +32,9 @@ public:
     * @param args Arguments forwarded to the component constructor.
     * @return A raw pointer to the newly created component.
     */
+
     template<typename T, typename... Args>
-    T* add_component(Args&&... args) {
-        auto component = std::make_unique<T>(std::forward<Args>(args)...);
-        component->owner = this;
-        T* ptr = component.get();
-        components.push_back(std::move(component));
-        return ptr;
-    }
+    T* addComponent(Args&&... args);
 
     /**
      * Retrieves the first component of type T attached to this GameObject.
@@ -53,10 +47,10 @@ public:
      * @return Pointer to the component if found, nullptr otherwise.
      */
     template<typename T>
-    T* get_component() {
-        for (auto& c : components)
-            if (auto t = dynamic_cast<T*>(c.get())) return t;
-        return nullptr;
-    }
-};
+    T* getComponent();
 
+    void setActive(bool value);
+    bool isActive();
+
+    std::string getName();
+};
