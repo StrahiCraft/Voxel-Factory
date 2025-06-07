@@ -8,14 +8,15 @@ class GameObject;
 #include <gtc/matrix_transform.hpp>
 #include <glut.h>
 #include "Time.h"
+#include <iostream>
 
 class Component {
 private:
 	GameObject* _owner = nullptr;
 public:
 	virtual ~Component() = default;
-	void update();
-	void render();
+	virtual void update();
+	virtual void render();
 
 	void setOwner(GameObject* owner);
 	GameObject* getOwner();

@@ -1,5 +1,6 @@
 #include "GameObject.h"
 #include "MeshRenderer.h"
+#include "SphereRenderer.h"
 
 PFNGLACTIVETEXTUREARBPROC Material::glActiveTextureARB = nullptr;
 PFNGLMULTITEXCOORD2FARBPROC Material::glMultiTexCoord2fARB = nullptr;
@@ -50,6 +51,8 @@ void gameLoop() {
 
 	update();
 	render();
+
+	glutPostRedisplay();
 }
 
 void initGlut(int argv, char** argc) {
@@ -63,6 +66,7 @@ void initGlut(int argv, char** argc) {
 void initVariables() {
 	std::unique_ptr<GameObject> mesh = std::make_unique<GameObject>("Mesh");
 	mesh->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
+	//mesh->addComponent<SphereRenderer>();
 
 	_objects.push_back(std::move(mesh));
 }
