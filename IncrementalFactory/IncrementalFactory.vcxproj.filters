@@ -37,6 +37,12 @@
     <Filter Include="Source Files\Graphics">
       <UniqueIdentifier>{5ea387ae-deef-47ad-9018-1025d105e6f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utility">
+      <UniqueIdentifier>{ac7036b0-fc64-4369-a058-416f080e1670}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility">
+      <UniqueIdentifier>{02eb6b53-e9f2-46a3-bd3a-a127b57ada32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -72,6 +78,9 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -103,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="MeshRenderer.h">
       <Filter>Header Files\Componets\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files\Utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,10 +4,10 @@ GameObject::GameObject(const std::string& name) : _name(name) {
 	addComponent<Transform>();
 }
 
-void GameObject::update(float deltaTime)
+void GameObject::update()
 {
 	for (auto& component : _components) {
-		component->update(deltaTime);
+		component->update();
 	}
 }
 

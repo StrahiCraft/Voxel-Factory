@@ -7,13 +7,14 @@ class GameObject;
 #include <gtc/quaternion.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <glut.h>
+#include "Time.h"
 
 class Component {
 private:
 	GameObject* _owner = nullptr;
 public:
 	virtual ~Component() = default;
-	void update(float deltaTime);
+	void update();
 	void render();
 
 	void setOwner(GameObject* owner);

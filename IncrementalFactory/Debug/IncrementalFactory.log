@@ -1,27 +1,37 @@
-﻿  GameObject.cpp
-  Main.cpp
+﻿  Main.cpp
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  (compiling source file 'Main.cpp')
+  
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(60,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,45): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,45): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,45): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,45): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,45): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,31): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,31): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,31): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,31): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(71,31): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,57): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,57): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,57): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,57): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,57): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,45): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,45): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,45): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,45): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,45): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,31): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,31): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,31): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,31): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(58,31): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,57): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,57): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,57): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,57): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,57): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,39): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,39): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,39): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,39): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(59,39): warning C4244:         ]
+  MeshRenderer.cpp
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  (compiling source file 'MeshRenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  Transform.cpp
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  (compiling source file 'Transform.cpp')
+  
   Generating Code...
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 soil2.lib(SOIL2.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(SOIL2.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info

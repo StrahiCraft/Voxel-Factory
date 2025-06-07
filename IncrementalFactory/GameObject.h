@@ -16,7 +16,7 @@ public:
 
     GameObject(const std::string& name = "GameObject");
 
-    void update(float deltaTime);
+    void update();
     void render();
 
     /**

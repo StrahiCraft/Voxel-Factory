@@ -14,17 +14,6 @@ glm::vec4 windowColor = { 0.2f, 0.4f, 0.65f, 1.0f };
 
 const char* windowTitle = "Incremental Factory";
 
-// ==================================================================
-//				TIME STUFF, CHANGE TO TIME CLASS
-// ==================================================================
-
-float _deltaTime = 0;
-float _previousTime = 0;
-
-int _frameTime = 16; // in milliseconds
-
-// ==================================================================
-
 glm::vec3 _cameraPos = { -3.0f, 1.0f, -3.0f };
 glm::vec3 _cameraTarget = { 0.0f, 0.0f, 0.0f };
 glm::vec3 _cameraUp = { 0.0f, 1.0f, 0.0f };
@@ -32,9 +21,9 @@ glm::vec3 _cameraUp = { 0.0f, 1.0f, 0.0f };
 
 std::vector<std::unique_ptr<GameObject>> _objects;
 
-void update(float deltaTime) {
+void update() {
 	for (auto& object : _objects)
-		object->update(deltaTime);
+		object->update();
 }
 
 void render() {
@@ -57,11 +46,9 @@ void render() {
 }
 
 void gameLoop() {
-	float currentTime = glutGet(GLUT_ELAPSED_TIME);
-	_deltaTime = (float)((currentTime - _previousTime) / 1000);
-	_previousTime = currentTime;
+	Time::updateTime();
 
-	update(_deltaTime);
+	update();
 	render();
 }
 
@@ -105,11 +92,6 @@ void initGame() {
 	initVariables();
 }
 
-void timer(int val) {
-	glutPostRedisplay();
-	glutTimerFunc(_frameTime, timer, 0);
-}
-
 int main(int argv, char** argc) {
 
 	initGlut(argv, argc);
@@ -117,7 +99,6 @@ int main(int argv, char** argc) {
 	initGame();
 
 	glutDisplayFunc(gameLoop);
-	glutTimerFunc(_frameTime, timer, 0);
 
 	glutMainLoop();
 

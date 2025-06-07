@@ -1,6 +1,6 @@
 #include "Component.h"
 
-void Component::update(float deltaTime) {}
+void Component::update() {}
 void Component::render() {}
 
 void Component::setOwner(GameObject* owner) {
