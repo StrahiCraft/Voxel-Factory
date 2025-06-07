@@ -95,9 +95,6 @@
     <ClInclude Include="CubeRenderer.h">
       <Filter>Header Files\Componets\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Header Files\Componets\Rendering</Filter>
-    </ClInclude>
     <ClInclude Include="SphereRenderer.h">
       <Filter>Header Files\Componets\Rendering</Filter>
     </ClInclude>

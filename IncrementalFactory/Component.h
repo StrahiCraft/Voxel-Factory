@@ -6,6 +6,7 @@ class GameObject;
 #include <gtc/type_ptr.hpp>
 #include <gtc/quaternion.hpp>
 #include <gtc/matrix_transform.hpp>
+#include <glut.h>
 
 class Component {
 private:

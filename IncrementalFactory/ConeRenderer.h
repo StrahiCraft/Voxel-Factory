@@ -1,7 +1,7 @@
 #pragma once
-#include "Renderer.h"
+#include "Component.h"
 
-class ConeRenderer : public Renderer {
+class ConeRenderer : public Component {
 private:
     float _base;
     float _height;

@@ -1,7 +1,8 @@
 #pragma once
-#include "Renderer.h"
+#include "Component.h"
+#include "Mesh.h"
 
-class MeshRenderer : public Renderer {
+class MeshRenderer : public Component {
 private:
     std::vector<Mesh> _meshes;
 public:

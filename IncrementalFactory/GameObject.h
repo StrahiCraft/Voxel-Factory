@@ -1,6 +1,5 @@
 #pragma once
 #include "Transform.h"
-#include "Renderer.h"
 #include "string"
 #include "memory"
 #include "vector"
@@ -34,7 +33,15 @@ public:
     */
 
     template<typename T, typename... Args>
-    T* addComponent(Args&&... args);
+    T* addComponent(Args && ...args) {
+        auto component = std::make_unique<T>(std::forward<Args>(args)...);
+        component->setOwner(this);
+
+        T* addedComponentPointer = component.get();
+        _components.push_back(std::move(component));
+
+        return addedComponentPointer;
+    }
 
     /**
      * Retrieves the first component of type T attached to this GameObject.
@@ -47,7 +54,14 @@ public:
      * @return Pointer to the component if found, nullptr otherwise.
      */
     template<typename T>
-    T* getComponent();
+    T* getComponent() {
+        for (auto& component : _components) {
+            if (auto type = dynamic_cast<T*>(component.get())) {
+                return type;
+            }
+        }
+        return nullptr;
+    }
 
     void setActive(bool value);
     bool isActive();

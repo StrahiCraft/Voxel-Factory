@@ -75,8 +75,7 @@ void initGlut(int argv, char** argc) {
 
 void initVariables() {
 	std::unique_ptr<GameObject> mesh = std::make_unique<GameObject>("Mesh");
-	//mesh->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
-	mesh->addComponent<Renderer>();
+	mesh->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
 
 	_objects.push_back(std::move(mesh));
 }

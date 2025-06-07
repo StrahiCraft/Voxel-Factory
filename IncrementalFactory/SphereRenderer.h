@@ -1,7 +1,7 @@
 #pragma once
-#include "Renderer.h"
+#include "Component.h"
 
-class SphereRenderer : public Renderer {
+class SphereRenderer : public Component {
 private:
     float _radius;
 

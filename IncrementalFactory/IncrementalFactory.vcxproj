@@ -157,7 +157,6 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="MeshRenderer.h" />
-    <ClInclude Include="Renderer.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Mesh.h" />

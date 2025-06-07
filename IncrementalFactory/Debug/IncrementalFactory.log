@@ -1,9 +1,4 @@
-﻿  ConeRenderer.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-  CubeRenderer.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-  GameObject.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+﻿  GameObject.cpp
   Main.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(60,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
@@ -27,11 +22,10 @@ E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): w
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244:         [
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244:             T=float
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(72,39): warning C4244:         ]
-  MeshRenderer.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-  SphereRenderer.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
   Generating Code...
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-Main.obj : error LNK2019: unresolved external symbol "public: class Renderer * __thiscall GameObject::addComponent<class Renderer>(void)" (??$addComponent@VRenderer@@$$V@GameObject@@QAEPAVRenderer@@XZ) referenced in function "void __cdecl initVariables(void)" (?initVariables@@YAXXZ)
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe : fatal error LNK1120: 1 unresolved externals
+soil2.lib(SOIL2.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(SOIL2.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+soil2.lib(image_DXT.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_DXT.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+soil2.lib(image_helper.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_helper.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+soil2.lib(wfETC.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(wfETC.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+  IncrementalFactory.vcxproj -> E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe
