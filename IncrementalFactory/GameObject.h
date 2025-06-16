@@ -4,6 +4,7 @@
 #include "memory"
 #include "vector"
 #include "glut.h"
+#include <algorithm>
 
 class GameObject
 {
@@ -12,9 +13,12 @@ private:
 	bool _active = true;
 
     std::vector<std::unique_ptr<Component>> _components;
+
+    GameObject* _parent;
+    std::vector<GameObject*> _children;
 public:
 
-    GameObject(const std::string& name = "GameObject");
+    GameObject(const std::string& name = "GameObject", std::vector<GameObject*> children = {});
 
     void update();
     void render();
@@ -65,6 +69,14 @@ public:
 
     void setActive(bool value);
     bool isActive();
+
+    GameObject* getChild(int index);
+    void addChild(GameObject* child);
+    void removeChild(int index);
+    void removeChild(GameObject* child);
+
+    void setParent(GameObject* parent);
+    GameObject* getParent();
 
     std::string getName();
 };

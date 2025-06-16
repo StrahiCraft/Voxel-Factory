@@ -65,8 +65,12 @@ void initGlut(int argv, char** argc) {
 
 void initVariables() {
 	std::unique_ptr<GameObject> mesh = std::make_unique<GameObject>("Mesh");
+	mesh->addChild(new GameObject("Child"));
+
 	mesh->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
-	//mesh->addComponent<SphereRenderer>();
+	mesh->getChild(0)->getComponent<Transform>()->position = glm::vec3(-1.5f, 0, 0);
+	mesh->getChild(0)->getComponent<Transform>()->scale = glm::vec3(0.5f);
+	mesh->getChild(0)->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
 
 	_objects.push_back(std::move(mesh));
 }
