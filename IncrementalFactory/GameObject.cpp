@@ -16,6 +16,10 @@ void GameObject::update() {
 	for (auto& component : _components) {
 		component->update();
 	}
+
+	for (auto& child : _children) {
+		child->update();
+	}
 }
 
 void GameObject::render() {
