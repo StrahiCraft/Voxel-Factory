@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -13,18 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,79 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Time.cpp",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.cpp",
+              "RelativeDocumentMoniker": "IncrementalFactory\\Time.cpp",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.cpp",
+              "RelativeToolTip": "IncrementalFactory\\Time.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-18T06:48:35.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Time.h",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.h",
+              "RelativeDocumentMoniker": "IncrementalFactory\\Time.h",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.h",
+              "RelativeToolTip": "IncrementalFactory\\Time.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-18T06:48:00.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GameObject.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\GameObject.cpp",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp",
               "RelativeToolTip": "IncrementalFactory\\GameObject.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T04:57:49.724Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "GameObject.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\GameObject.h",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.h",
               "RelativeToolTip": "IncrementalFactory\\GameObject.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-09T04:48:29.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Transform.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\Transform.cpp",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.cpp",
               "RelativeToolTip": "IncrementalFactory\\Transform.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-07T11:54:40.538Z"
+              "WhenOpened": "2025-06-07T11:54:40.538Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Transform.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\Transform.h",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.h",
               "RelativeToolTip": "IncrementalFactory\\Transform.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-07T11:52:51.996Z"
+              "WhenOpened": "2025-06-07T11:52:51.996Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Camera.h",
-              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Camera.h",
-              "RelativeDocumentMoniker": "IncrementalFactory\\Camera.h",
-              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Camera.h",
-              "RelativeToolTip": "IncrementalFactory\\Camera.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-07T11:51:11.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Main.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\Main.cpp",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp",
               "RelativeToolTip": "IncrementalFactory\\Main.cpp",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAAAEUAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAEIAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-31T15:44:13.578Z",
               "EditorCaption": ""

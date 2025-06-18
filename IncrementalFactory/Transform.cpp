@@ -1,29 +1,43 @@
 #include "Transform.h"
 
-inline glm::vec3 Transform::getForward() {
+// TODO Fix setting directions
+
+glm::vec3 Transform::getForward() {
 	return glm::vec3(-cos(rotation.x) * sin(rotation.y), -sin(rotation.x), cos(rotation.x) * cos(rotation.y));
 }
 
 void Transform::setForward(const glm::vec3& forward) {
-	
+	rotation.x = acos(glm::dot(forward, glm::vec3(0, 1, 0)) / 
+		sqrt(forward.x * forward.x + forward.y * forward.y + forward.z * forward.z)) * RAD2ANGLE;
+
+	rotation.y = acos(glm::dot(forward, glm::vec3(1, 0, 0)) /
+		sqrt(forward.x * forward.x + forward.y * forward.y + forward.z * forward.z)) * RAD2ANGLE;
 }
 
-inline glm::vec3 Transform::getRight() {
+glm::vec3 Transform::getRight() {
 	return glm::vec3(cos(rotation.y), 0, -sin(rotation.y));
 }
 
 void Transform::setRight(const glm::vec3& right) {
+	rotation.y = acos(glm::dot(right, glm::vec3(0, 1, 0)) /
+		sqrt(right.x * right.x + right.y * right.y + right.z * right.z)) * RAD2ANGLE;
 
+	rotation.x = acos(glm::dot(right, glm::vec3(1, 0, 0)) /
+		sqrt(right.x * right.x + right.y * right.y + right.z * right.z)) * RAD2ANGLE;
 }
 
-inline glm::vec3 Transform::getUp() {
+glm::vec3 Transform::getUp() {
 	return glm::cross(getForward(), getRight());
 }
 
 void Transform::setUp(const glm::vec3& up) {
+	rotation.z = acos(glm::dot(up, glm::vec3(0, 0, 1)) /
+		sqrt(up.x * up.x + up.y * up.y + up.z * up.z)) * RAD2ANGLE;
 
+	rotation.x = acos(glm::dot(up, glm::vec3(1, 0, 0)) /
+		sqrt(up.x * up.x + up.y * up.y + up.z * up.z)) * RAD2ANGLE;
 }
 
-void Transform::lookAt(const glm::vec3& target, const glm::vec3 up) {
-
+void Transform::lookAt(const glm::vec3& target) {
+	setForward(glm::normalize(target - position));
 }
