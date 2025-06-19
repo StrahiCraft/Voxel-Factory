@@ -15,8 +15,8 @@ glm::vec4 windowColor = { 0.2f, 0.4f, 0.65f, 1.0f };
 
 const char* windowTitle = "Incremental Factory";
 
-glm::vec3 _cameraPos = { -3.0f, 1.0f, -3.0f };
-glm::vec3 _cameraTarget = { 0.0f, 0.0f, 0.0f };
+glm::vec3 _cameraPos = { 0.0f, 1.0f, -3.0f };
+glm::vec3 _cameraTarget = { 0.0f, 1.0f, 0.0f };
 glm::vec3 _cameraUp = { 0.0f, 1.0f, 0.0f };
 
 
@@ -64,10 +64,19 @@ void initGlut(int argv, char** argc) {
 }
 
 void initVariables() {
-	std::unique_ptr<GameObject> mesh = std::make_unique<GameObject>("Mesh");
-	mesh->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
+	std::unique_ptr<GameObject> door = std::make_unique<GameObject>("Door", std::vector<GameObject*> 
+	{
+		new GameObject("Kvaka", std::vector<GameObject*> 
+		{
+			new GameObject("Rucica")
+		})
+	});
 
-	_objects.push_back(std::move(mesh));
+	door->addComponent<MeshRenderer>("Models/Door/Door.obj");
+	door->getChild(0)->addComponent<MeshRenderer>("Models/Door/Kvaka.obj");
+	door->getChild(0)->getChild(0)->addComponent<MeshRenderer>("Models/Door/Rucica.obj");
+
+	_objects.push_back(std::move(door));
 }
 
 void initLight() {
