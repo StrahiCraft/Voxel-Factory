@@ -23,8 +23,14 @@ glm::vec3 _cameraUp = { 0.0f, 1.0f, 0.0f };
 std::vector<std::unique_ptr<GameObject>> _objects;
 
 void update() {
-	for (auto& object : _objects)
+	for (auto& object : _objects) {
 		object->update();
+		if (object->getName() == "Door") {
+			object->getComponent<Transform>()->rotation.y = abs(sin(Time::getTime())) * 30;
+			object->getChild(0)->getComponent<Transform>()->position.x = abs(sin(Time::getTime())) * 0.04f;
+			object->getChild(0)->getChild(0)->getComponent<Transform>()->position.y = -abs(sin(Time::getTime())) * 0.06f;
+		}
+	}
 }
 
 void render() {
