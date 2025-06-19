@@ -60,6 +60,8 @@ void initGlut(int argv, char** argc) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(windowSize.x, windowSize.y);
 	glutInitWindowPosition(windowPosition.x, windowPosition.y);
+	glPointSize(1);
+	glLineWidth(1);
 	glutCreateWindow(windowTitle);
 }
 

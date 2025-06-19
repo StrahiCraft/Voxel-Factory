@@ -5,7 +5,7 @@ MeshRenderer::MeshRenderer(const std::string& path) {
 }
 
 void MeshRenderer::render() {
-    for (const auto& mesh : _meshes) {
+    for (const Mesh& mesh : _meshes) {
 
         mesh.material.apply();
         mesh.material.handleTransparency();
@@ -25,5 +25,42 @@ void MeshRenderer::render() {
 
         glEnd();
         mesh.material.cleanup();
+
+        if (_selected) {
+            renderWireframe(mesh);
+        }
     }
+}
+
+void MeshRenderer::renderWireframe(const Mesh& mesh) {
+    glDisable(GL_LIGHTING);
+    glColor3f(_wireframeColor.r, _wireframeColor.g, _wireframeColor.b);
+    for (int i = 0; i < mesh.vertices.size(); i += 3) {
+        glBegin(GL_LINE_LOOP);
+
+        renderVertex(mesh.vertices[i]);
+        renderVertex(mesh.vertices[i + 1]);
+        renderVertex(mesh.vertices[i + 2]);
+
+        glEnd();
+    }
+    glEnable(GL_LIGHTING);
+
+    mesh.material.cleanup();
+}
+
+void MeshRenderer::renderVertex(Vertex vertex) {
+    glNormal3f(vertex.normal.x, vertex.normal.y, vertex.normal.z);
+
+    glVertex3f(vertex.position.x + vertex.normal.x * _wireframeOffset,
+        vertex.position.y + vertex.normal.y * _wireframeOffset,
+        vertex.position.z + vertex.normal.z * _wireframeOffset);
+}
+
+void MeshRenderer::setSelected(bool selected) {
+    _selected = selected;
+}
+
+bool MeshRenderer::getSelected() {
+    return _selected;
 }

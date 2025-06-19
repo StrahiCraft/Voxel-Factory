@@ -1,35 +1,33 @@
-﻿  Transform.cpp
+﻿  Main.cpp
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
-  (compiling source file 'Transform.cpp')
+  (compiling source file 'Main.cpp')
   
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(9,80): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(9,80): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(9,80): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(9,80): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(9,80): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(12,80): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(12,80): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(12,80): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(12,80): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(12,80): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(22,68): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(22,68): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(22,68): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(22,68): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(22,68): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(25,68): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(25,68): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(25,68): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(25,68): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(25,68): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(34,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(34,50): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(34,50): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(34,50): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(34,50): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(37,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(37,50): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(37,50): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(37,50): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(37,50): warning C4244:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,45): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,45): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,45): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,45): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,45): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,31): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,31): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,31): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,31): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(61,31): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,57): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,57): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,57): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,57): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,57): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244:         ]
+  MeshRenderer.cpp
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  (compiling source file 'MeshRenderer.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\MeshRenderer.cpp(38,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   IncrementalFactory.vcxproj -> E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe
