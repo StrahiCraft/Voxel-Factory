@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\BoundingBox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\BoundingBox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Vertex.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Vertex.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\MeshRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -15,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -27,12 +35,8 @@
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Transform.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -46,73 +50,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Vertex.h",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Vertex.h",
+              "RelativeDocumentMoniker": "IncrementalFactory\\Vertex.h",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Vertex.h",
+              "RelativeToolTip": "IncrementalFactory\\Vertex.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-19T18:38:08.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BoundingBox.h",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\BoundingBox.h",
+              "RelativeDocumentMoniker": "IncrementalFactory\\BoundingBox.h",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\BoundingBox.h",
+              "RelativeToolTip": "IncrementalFactory\\BoundingBox.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-19T18:37:13.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mesh.h",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Mesh.h",
+              "RelativeDocumentMoniker": "IncrementalFactory\\Mesh.h",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Mesh.h",
+              "RelativeToolTip": "IncrementalFactory\\Mesh.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-19T18:35:35.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MeshRenderer.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\MeshRenderer.h",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.h",
               "RelativeToolTip": "IncrementalFactory\\MeshRenderer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-19T14:01:28.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MeshRenderer.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\MeshRenderer.cpp",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.cpp",
               "RelativeToolTip": "IncrementalFactory\\MeshRenderer.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-19T14:01:00.652Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Time.cpp",
-              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.cpp",
-              "RelativeDocumentMoniker": "IncrementalFactory\\Time.cpp",
-              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.cpp",
-              "RelativeToolTip": "IncrementalFactory\\Time.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-18T06:48:35.372Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Time.h",
-              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.h",
-              "RelativeDocumentMoniker": "IncrementalFactory\\Time.h",
-              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Time.h",
-              "RelativeToolTip": "IncrementalFactory\\Time.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-18T06:48:00.041Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "GameObject.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\GameObject.cpp",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp",
               "RelativeToolTip": "IncrementalFactory\\GameObject.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-09T04:57:49.724Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "GameObject.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\GameObject.h",
@@ -124,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Transform.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\Transform.cpp",
@@ -136,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Transform.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Transform.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\Transform.h",
@@ -148,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Main.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\Main.cpp",

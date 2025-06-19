@@ -13,10 +13,8 @@ GameObject::GameObject(const std::string& name, std::vector<GameObject*> childre
 }
 
 void GameObject::update() {
-	Transform* transform = getComponent<Transform>();
-
-	transform->lookAt(glm::vec3(sin(Time::getTime()), cos(Time::getTime()), 0));
-	//std::cout << transform->getForward().x << " " << transform->getForward().y << " " << transform->getForward().z << std::endl;
+	// rotation only for testing remove when done
+	getComponent<Transform>()->rotation.y += Time::getRealTime() * 90;
 
 	for (auto& component : _components) {
 		component->update();

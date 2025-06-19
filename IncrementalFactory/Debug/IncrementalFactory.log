@@ -23,11 +23,13 @@ E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): w
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244:         [
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244:             T=float
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(62,39): warning C4244:         ]
+  Mesh.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
   MeshRenderer.cpp
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
   (compiling source file 'MeshRenderer.cpp')
   
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\MeshRenderer.cpp(38,23): warning C4018: '<': signed/unsigned mismatch
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\MeshRenderer.cpp(39,23): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
   IncrementalFactory.vcxproj -> E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe

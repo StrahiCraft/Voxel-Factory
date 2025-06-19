@@ -1,10 +1,9 @@
 #pragma once
 #include "Material.h"
 #include "Texture.h"
+#include "Vertex.h"
 
 #include <glut.h>
-
-#include <glm.hpp>
 
 #include <sstream>
 #include <iostream>
@@ -13,12 +12,6 @@
 #include <map>
 #include <string>
 #include <filesystem>
-
-struct Vertex {
-    glm::vec3 position;
-    glm::vec2 texcoord;
-    glm::vec3 normal;
-};
 
 class Mesh {
 public:
