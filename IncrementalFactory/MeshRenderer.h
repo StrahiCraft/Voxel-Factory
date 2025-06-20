@@ -1,12 +1,12 @@
 #pragma once
-#include "Component.h"
 #include "Mesh.h"
 #include "BoundingBox.h"
+
+class GameObject;
 
 class MeshRenderer : public Component {
 private:
     std::vector<Mesh> _meshes;
-    std::vector<BoundingBox> _boundingBoxes;
 
     bool _selected = false;
     float _wireframeOffset = 0.05f;

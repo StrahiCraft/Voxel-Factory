@@ -52,6 +52,10 @@ void GameObject::render() {
 	glPopMatrix();
 }
 
+void GameObject::addComponent(Component component) {
+	_components.push_back(std::make_unique<Component>(component));
+}
+
 void GameObject::setActive(bool value) {
 	_active = value;
 }

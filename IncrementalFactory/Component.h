@@ -11,7 +11,7 @@ class GameObject;
 #include <iostream>
 
 class Component {
-private:
+protected:
 	GameObject* _owner = nullptr;
 public:
 	virtual ~Component() = default;

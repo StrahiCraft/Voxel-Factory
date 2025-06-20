@@ -6,7 +6,7 @@
 #include "glut.h"
 #include <algorithm>
 
-class GameObject
+class GameObject 
 {
 private:
 	std::string _name;
@@ -35,7 +35,6 @@ public:
     * @param args Arguments forwarded to the component constructor.
     * @return A raw pointer to the newly created component.
     */
-
     template<typename T, typename... Args>
     T* addComponent(Args && ...args) {
         auto component = std::make_unique<T>(std::forward<Args>(args)...);
@@ -46,6 +45,8 @@ public:
 
         return addedComponentPointer;
     }
+
+    void addComponent(Component component);
 
     /**
      * Retrieves the first component of type T attached to this GameObject.

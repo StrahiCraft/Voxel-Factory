@@ -2,6 +2,7 @@
 
 MeshRenderer::MeshRenderer(const std::string& path) {
     _meshes = Mesh::loadMeshes(path);
+
     generateMeshBoundingBox();
 }
 
@@ -60,29 +61,12 @@ void MeshRenderer::renderVertex(Vertex vertex) {
 
 void MeshRenderer::generateMeshBoundingBox() {
     for (const Mesh& mesh : _meshes) {
-        BoundingBox meshBoundingBox;
+        BoundingBox currentSubmeshBoundingBox;
         for (const auto& vertex : mesh.vertices) {
-            if (vertex.position.x > meshBoundingBox.maxPosition.x) {
-                meshBoundingBox.maxPosition.x = vertex.position.x;
-            }
-            if (vertex.position.y > meshBoundingBox.maxPosition.y) {
-                meshBoundingBox.maxPosition.y = vertex.position.y;
-            }
-            if (vertex.position.z > meshBoundingBox.maxPosition.z) {
-                meshBoundingBox.maxPosition.z = vertex.position.z;
-            }
-
-            if (vertex.position.x < meshBoundingBox.minPosition.x) {
-                meshBoundingBox.minPosition.x = vertex.position.x;
-            }
-            if (vertex.position.y < meshBoundingBox.minPosition.y) {
-                meshBoundingBox.minPosition.y = vertex.position.y;
-            }
-            if (vertex.position.z < meshBoundingBox.minPosition.z) {
-                meshBoundingBox.minPosition.z = vertex.position.z;
-            }
+            currentSubmeshBoundingBox.setNewMaxPosition(vertex.position);
+            currentSubmeshBoundingBox.setNewMinPosition(vertex.position);
         }
-        _boundingBoxes.push_back(meshBoundingBox);
+        //(*_owner).addComponent(currentSubmeshBoundingBox);
     }
 }
 
