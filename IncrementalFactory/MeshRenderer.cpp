@@ -2,8 +2,6 @@
 
 MeshRenderer::MeshRenderer(const std::string& path) {
     _meshes = Mesh::loadMeshes(path);
-
-    generateMeshBoundingBox();
 }
 
 void MeshRenderer::render() {
@@ -57,19 +55,6 @@ void MeshRenderer::renderVertex(Vertex vertex) {
     glVertex3f(vertex.position.x + vertex.normal.x * _wireframeOffset,
         vertex.position.y + vertex.normal.y * _wireframeOffset,
         vertex.position.z + vertex.normal.z * _wireframeOffset);
-}
-
-std::vector<BoundingBox> MeshRenderer::generateMeshBoundingBox() {
-    std::vector<BoundingBox> boundingBoxes;
-    for (const Mesh& mesh : _meshes) {
-        BoundingBox currentSubmeshBoundingBox;
-        for (const auto& vertex : mesh.vertices) {
-            currentSubmeshBoundingBox.setNewMaxPosition(vertex.position);
-            currentSubmeshBoundingBox.setNewMinPosition(vertex.position);
-        }
-        boundingBoxes.push_back(currentSubmeshBoundingBox);
-    }
-    return boundingBoxes;
 }
 
 void MeshRenderer::setSelected(bool selected) {

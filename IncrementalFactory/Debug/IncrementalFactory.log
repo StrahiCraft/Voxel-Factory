@@ -1,8 +1,4 @@
-﻿  BoundingBox.cpp
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
-  (compiling source file 'BoundingBox.cpp')
-  
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 soil2.lib(SOIL2.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(SOIL2.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
 soil2.lib(image_DXT.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_DXT.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
 soil2.lib(image_helper.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_helper.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
