@@ -8,6 +8,8 @@ private:
 	glm::vec3 _minPosition = glm::vec3(0);
 
 public:
+	void render();
+
 	void setBounds(glm::vec3 maxPosition, glm::vec3 minPosition);
 	bool pointInBoundingBox(glm::vec3 point);
 

@@ -69,6 +69,12 @@ void initVariables() {
 	std::unique_ptr<GameObject> mesh = std::make_unique<GameObject>("Mesh");
 	mesh->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
 
+	std::vector<BoundingBox> boundingBoxes = mesh->getComponent<MeshRenderer>()->generateMeshBoundingBox();
+	
+	for (auto& boundingBox : boundingBoxes) {
+		mesh->addComponent<BoundingBox>(boundingBox);
+	}
+
 	_objects.push_back(std::move(mesh));
 }
 

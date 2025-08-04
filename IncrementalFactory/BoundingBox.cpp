@@ -1,5 +1,9 @@
 #include "BoundingBox.h"
 
+void BoundingBox::render() {
+
+}
+
 void BoundingBox::setBounds(glm::vec3 maxPosition, glm::vec3 minPosition) {
 	_maxPosition = maxPosition;
 	_minPosition = minPosition;

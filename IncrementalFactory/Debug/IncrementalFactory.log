@@ -1,54 +1,10 @@
-﻿  MeshRenderer.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+﻿  BoundingBox.cpp
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
-  (compiling source file 'MeshRenderer.cpp')
+  (compiling source file 'BoundingBox.cpp')
   
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\MeshRenderer.cpp(40,23): warning C4018: '<': signed/unsigned mismatch
-  Raycast.cpp
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
-  (compiling source file 'Raycast.cpp')
-  
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Raycast.h(8,14): warning C4091: 'static ': ignored on left of 'Raycast' when no variable is declared
-  (compiling source file 'Raycast.cpp')
-  
-  Transform.cpp
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
-  (compiling source file 'Transform.cpp')
-  
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(11,80): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(11,80): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(11,80): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(11,80): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(11,80): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(14,80): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(14,80): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(14,80): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(14,80): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(14,80): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(23,68): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(23,68): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(23,68): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(23,68): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(23,68): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(26,68): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(26,68): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(26,68): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(26,68): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(26,68): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(35,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(35,50): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(35,50): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(35,50): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(35,50): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(38,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(38,50): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(38,50): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(38,50): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Transform.cpp(38,50): warning C4244:         ]
-  Generating Code...
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-soil2.lib(SOIL2.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(SOIL2.obj)' or at ''; linking object as if no debug info
+soil2.lib(SOIL2.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(SOIL2.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
 soil2.lib(image_DXT.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_DXT.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
 soil2.lib(image_helper.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_helper.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
-soil2.lib(wfETC.obj) : warning LNK4099: PDB '' was not found with 'soil2.lib(wfETC.obj)' or at ''; linking object as if no debug info
+soil2.lib(wfETC.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(wfETC.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
   IncrementalFactory.vcxproj -> E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe

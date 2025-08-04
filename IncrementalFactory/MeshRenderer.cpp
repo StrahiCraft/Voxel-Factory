@@ -59,15 +59,17 @@ void MeshRenderer::renderVertex(Vertex vertex) {
         vertex.position.z + vertex.normal.z * _wireframeOffset);
 }
 
-void MeshRenderer::generateMeshBoundingBox() {
+std::vector<BoundingBox> MeshRenderer::generateMeshBoundingBox() {
+    std::vector<BoundingBox> boundingBoxes;
     for (const Mesh& mesh : _meshes) {
         BoundingBox currentSubmeshBoundingBox;
         for (const auto& vertex : mesh.vertices) {
             currentSubmeshBoundingBox.setNewMaxPosition(vertex.position);
             currentSubmeshBoundingBox.setNewMinPosition(vertex.position);
         }
-        //(*_owner).addComponent(currentSubmeshBoundingBox);
+        boundingBoxes.push_back(currentSubmeshBoundingBox);
     }
+    return boundingBoxes;
 }
 
 void MeshRenderer::setSelected(bool selected) {

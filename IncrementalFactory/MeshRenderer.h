@@ -8,7 +8,7 @@ class MeshRenderer : public Component {
 private:
     std::vector<Mesh> _meshes;
 
-    bool _selected = false;
+    bool _selected = true;
     float _wireframeOffset = 0.05f;
     glm::vec3 _wireframeColor = glm::vec3(235.0f / 255.0f, 143.0f / 255.0f, 52.0f / 255.0f);
 
@@ -19,6 +19,7 @@ public:
     void renderWireframe(const Mesh& mesh);
     void setSelected(bool selected);
     bool getSelected();
+    std::vector<BoundingBox> generateMeshBoundingBox();
 
 private:
     /// <summary>
@@ -30,5 +31,4 @@ private:
     /// </param>
     void renderVertex(Vertex vertex);
 
-    void generateMeshBoundingBox();
 };
