@@ -1,5 +1,4 @@
 #pragma once
-//#include "EventSystem.h"
 
 #include <stdlib.h>
 #include <freeglut.h>
@@ -16,20 +15,25 @@ private:
 
     static glm::vec3 _mousePosition;
 
-    static glm::vec3 _lastPosition;
-    static glm::vec3 _deltaPosition;
+    static glm::vec3 _lastMousePosition;
+    static glm::vec3 _mouseDeltaPosition;
 
 public:
-    static void mouseMove(int x, int y);
     static void setCallbackFunctions();
+    static void update();
+
     static bool getKeyDown(int keycode);
     static bool getKey(int keycode);
     static bool getKeyUp(int keycode);
+
     static void keyboard(unsigned char key, int x, int y);
     static void keyboardUp(unsigned char key, int x, int y);
-    static void mouseClick(int button, int state, int x, int y);
     static bool isAnyKeyPressed();
-    static void update();
+
+    static glm::vec3 getMousePosition();
+    static void mouseClick(int button, int state, int x, int y);
+    static glm::vec3 getMouseDeltaPosition();
+private:
+    static void updateMouse(int x, int y);
     static void updateCursorLock();
-    static glm::vec3 getMouse();
 };

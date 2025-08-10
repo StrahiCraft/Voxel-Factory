@@ -9,6 +9,7 @@ public:
 	void update();
 private:
 	void moveCamera();
+	void rotateCamera();
 	void setCameraMatrix();
 };
 

@@ -24,6 +24,12 @@ glm::vec3 _cameraUp = { 0.0f, 1.0f, 0.0f };
 std::vector<std::unique_ptr<GameObject>> _objects;
 
 void update() {
+	if (Input::getKeyDown(' ')) {
+		Input::_isCursorLocked = !Input::_isCursorLocked;
+	}
+
+	Input::update();
+
 	for (auto& object : _objects)
 		object->update();
 }

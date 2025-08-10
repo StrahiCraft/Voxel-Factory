@@ -5,10 +5,10 @@ bool Input::_keyDownDected[256] = { false };
 bool Input::_isCursorLocked = false;
 
 glm::vec3 Input::_mousePosition = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3 Input::_lastPosition = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3 Input::_deltaPosition = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 Input::_lastMousePosition = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 Input::_mouseDeltaPosition = glm::vec3(0.0f, 0.0f, 0.0f);
 
-void Input::mouseMove(int x, int y)
+void Input::updateMouse(int x, int y)
 {
     _mousePosition.x = x;
     _mousePosition.y = y;
@@ -17,7 +17,7 @@ void Input::mouseMove(int x, int y)
 void Input::setCallbackFunctions() {
     glutKeyboardFunc(keyboard);
     glutKeyboardUpFunc(keyboardUp);
-    glutPassiveMotionFunc(mouseMove);
+    glutPassiveMotionFunc(updateMouse);
     glutMouseFunc(mouseClick);
 }
 
@@ -61,6 +61,10 @@ void Input::mouseClick(int button, int state, int x, int y) {
     }
 }
 
+glm::vec3 Input::getMouseDeltaPosition() {
+    return _mouseDeltaPosition;
+}
+
 bool Input::isAnyKeyPressed() {
     for (int i = 0; i < 256; ++i) {
         if (_keyStates[i]) {
@@ -74,12 +78,12 @@ void Input::update() {
     updateCursorLock();
 
     if (!_isCursorLocked) {
-        _deltaPosition = _lastPosition - _mousePosition;
-        _lastPosition = _mousePosition;
+        _mouseDeltaPosition = _lastMousePosition - _mousePosition;
+        _lastMousePosition = _mousePosition;
     }
     else {
-        _deltaPosition.x = glutGet(GLUT_WINDOW_WIDTH) / 2 - _mousePosition.x;
-        _deltaPosition.y = glutGet(GLUT_WINDOW_HEIGHT) / 2 - _mousePosition.y;
+        _mouseDeltaPosition.x = glutGet(GLUT_WINDOW_WIDTH) / 2 - _mousePosition.x;
+        _mouseDeltaPosition.y = glutGet(GLUT_WINDOW_HEIGHT) / 2 - _mousePosition.y;
     }
 
     for (int i = 0; i < 256; i++) {
@@ -99,6 +103,6 @@ void Input::updateCursorLock() {
     }
 }
 
-glm::vec3 Input::getMouse() {
-    return glm::vec3(_mousePosition.x, (800 - _mousePosition.y), _mousePosition.z);
+glm::vec3 Input::getMousePosition() {
+    return glm::vec3(_mousePosition.x, (glutGet(GLUT_WINDOW_HEIGHT) - _mousePosition.y), _mousePosition.z);
 }

@@ -8,4 +8,14 @@ E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Camera.h(6,14): wa
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.h(6,14): warning C4091: 'static ': ignored on left of 'CameraController' when no variable is declared
   (compiling source file 'CameraController.cpp')
   
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,87): warning C4305: 'argument': truncation from 'double' to 'genType'
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,87): warning C4305:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,87): warning C4305:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,87): warning C4305:             genType=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,87): warning C4305:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,71): warning C4305: 'argument': truncation from 'double' to 'genType'
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,71): warning C4305:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,71): warning C4305:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,71): warning C4305:             genType=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.cpp(35,71): warning C4305:         ]
   IncrementalFactory.vcxproj -> E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe
