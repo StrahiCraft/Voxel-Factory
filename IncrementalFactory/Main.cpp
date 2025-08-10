@@ -96,17 +96,31 @@ void doLighting() {
 	glLightfv(GL_LIGHT0, GL_SPECULAR, diffuse_pos);
 }
 
+void updateWindow() {
+	glutReshapeWindow(windowSize.x, windowSize.y);
+	glViewport(0, 0, windowSize.x, windowSize.y);
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(75.0f, float(windowSize.x) / float(windowSize.y), 0.1f, 300.0f);
+	glMatrixMode(GL_MODELVIEW);
+}
+
 void initGame() {
 	glClearColor(windowColor.r, windowColor.g, windowColor.b, windowColor.a);
 	glEnable(GL_DEPTH_TEST);
 
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(60.0f, float(windowSize.x) / float(windowSize.y), 0.1f, 300.0f);
-	glMatrixMode(GL_MODELVIEW);
+	updateWindow();
 
 	doLighting();
 	initVariables();
+}
+
+void onResize(int newWidth, int newHeight) {
+	windowSize.x = newWidth;
+	windowSize.y = newHeight;
+
+	updateWindow();
 }
 
 int main(int argv, char** argc) {
@@ -116,6 +130,7 @@ int main(int argv, char** argc) {
 	initGame();
 
 	glutDisplayFunc(gameLoop);
+	glutReshapeFunc(onResize);
 	Input::setCallbackFunctions();
 
 	glutMainLoop();
