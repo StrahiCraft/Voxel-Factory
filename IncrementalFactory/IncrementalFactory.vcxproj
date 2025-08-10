@@ -140,6 +140,8 @@
   <ItemGroup>
     <ClCompile Include="BoundingBox.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraController.cpp" />
+    <ClCompile Include="CameraMatrix.h" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ConeRenderer.cpp" />
     <ClCompile Include="CubeRenderer.cpp" />
@@ -158,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraController.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ConeRenderer.h" />
     <ClInclude Include="CubeRenderer.h" />

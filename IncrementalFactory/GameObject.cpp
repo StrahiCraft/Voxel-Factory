@@ -13,9 +13,6 @@ GameObject::GameObject(const std::string& name, std::vector<GameObject*> childre
 }
 
 void GameObject::update() {
-	// rotation only for testing remove when done
-	getComponent<Transform>()->rotation.y += Time::getRealTime() * 90;
-
 	for (auto& component : _components) {
 		component->update();
 	}
@@ -33,8 +30,6 @@ void GameObject::render() {
 	Transform* transform = getComponent<Transform>();
 	if (transform != nullptr) {
 		glTranslatef(transform->position.x, transform->position.y, transform->position.z);
-		/*glm::mat4 rotation_matrix = glm::mat4(transform->rotation);
-		glMultMatrixf(glm::value_ptr(rotation_matrix));*/
 		glRotatef(transform->rotation.x, 1, 0, 0);
 		glRotatef(transform->rotation.y, 0, 1, 0);
 		glRotatef(transform->rotation.z, 0, 0, 1);

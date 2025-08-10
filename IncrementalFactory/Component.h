@@ -1,7 +1,5 @@
 #pragma once
 
-class GameObject;
-
 #include "glm.hpp"
 #include <gtc/type_ptr.hpp>
 #include <gtc/quaternion.hpp>
@@ -10,8 +8,9 @@ class GameObject;
 #include "Time.h"
 #include <iostream>
 
+class GameObject;
 class Component {
-protected:
+private:
 	GameObject* _owner = nullptr;
 public:
 	virtual ~Component() = default;

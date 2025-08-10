@@ -1,6 +1,7 @@
 #include "GameObject.h"
 #include "MeshRenderer.h"
 #include "SphereRenderer.h"
+#include "CameraController.h"
 
 PFNGLACTIVETEXTUREARBPROC Material::glActiveTextureARB = nullptr;
 PFNGLMULTITEXCOORD2FARBPROC Material::glMultiTexCoord2fARB = nullptr;
@@ -33,11 +34,12 @@ void render() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	gluLookAt(
+	/*gluLookAt(
 		_cameraPos.x, _cameraPos.y, _cameraPos.z,
 		_cameraTarget.x, _cameraTarget.y, _cameraTarget.z,
 		_cameraUp.x, _cameraUp.y, _cameraUp.z
-	);
+	);*/
+	Camera::applyCameraMatrix();
 
 	for (auto& object : _objects) {
 		object->render();
@@ -75,7 +77,12 @@ void initVariables() {
 		mesh->addComponent<BoundingBox>(boundingBox);
 	}
 
+	std::unique_ptr<GameObject> camera = std::make_unique<GameObject>("Camera");
+	camera->addComponent<CameraController>();
+	camera->getComponent<Transform>()->position = _cameraPos;
+
 	_objects.push_back(std::move(mesh));
+	_objects.push_back(std::move(camera));
 }
 
 void initLight() {
@@ -110,6 +117,7 @@ int main(int argv, char** argc) {
 	initGame();
 
 	glutDisplayFunc(gameLoop);
+	Input::setCallbackFunctions();
 
 	glutMainLoop();
 

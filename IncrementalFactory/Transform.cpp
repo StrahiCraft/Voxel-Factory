@@ -1,9 +1,15 @@
 #include "Transform.h"
 
 // TODO Fix setting directions
+// pitch = x rot
+// yaw = y rot
+// roll = z rot
 
 glm::vec3 Transform::getForward() {
-	return glm::vec3(-cos(rotation.x) * sin(rotation.y), -sin(rotation.x), cos(rotation.x) * cos(rotation.y));
+	return glm::normalize(glm::vec3(
+		cos(rotation.x) * sin(rotation.y),
+		-sin(rotation.x),
+		cos(rotation.x) * cos(rotation.y)));
 }
 
 void Transform::setForward(const glm::vec3& forward) {
@@ -15,7 +21,7 @@ void Transform::setForward(const glm::vec3& forward) {
 }
 
 glm::vec3 Transform::getRight() {
-	return glm::vec3(cos(rotation.y), 0, -sin(rotation.y));
+	return glm::normalize(glm::vec3(cos(rotation.y), 0, -sin(rotation.y)));
 }
 
 void Transform::setRight(const glm::vec3& right) {
@@ -27,7 +33,7 @@ void Transform::setRight(const glm::vec3& right) {
 }
 
 glm::vec3 Transform::getUp() {
-	return glm::cross(getForward(), getRight());
+	return glm::normalize(glm::cross(getForward(), getRight()));
 }
 
 void Transform::setUp(const glm::vec3& up) {
