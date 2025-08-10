@@ -8,7 +8,7 @@ class MeshRenderer : public Component {
 private:
     std::vector<Mesh> _meshes;
 
-    bool _selected = true;
+    bool _selected = false;
     float _wireframeOffset = 0.05f;
     glm::vec3 _wireframeColor = glm::vec3(235.0f / 255.0f, 143.0f / 255.0f, 52.0f / 255.0f);
 
@@ -30,5 +30,4 @@ private:
     /// Vertex of a mesh
     /// </param>
     void renderVertex(Vertex vertex);
-
 };

@@ -16,12 +16,9 @@ glm::vec4 windowColor = { 0.2f, 0.4f, 0.65f, 1.0f };
 
 const char* windowTitle = "Incremental Factory";
 
-glm::vec3 _cameraPos = { -3.0f, 1.0f, -3.0f };
-glm::vec3 _cameraTarget = { 0.0f, 0.0f, 0.0f };
-glm::vec3 _cameraUp = { 0.0f, 1.0f, 0.0f };
-
-
 std::vector<std::unique_ptr<GameObject>> _objects;
+
+void doLighting();
 
 void update() {
 	if (Input::getKeyDown(' ')) {
@@ -40,16 +37,13 @@ void render() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	/*gluLookAt(
-		_cameraPos.x, _cameraPos.y, _cameraPos.z,
-		_cameraTarget.x, _cameraTarget.y, _cameraTarget.z,
-		_cameraUp.x, _cameraUp.y, _cameraUp.z
-	);*/
 	Camera::applyCameraMatrix();
 
+	doLighting();
 	for (auto& object : _objects) {
 		object->render();
 	}
+	glDisable(GL_LIGHTING);
 
 	glutSwapBuffers();
 }
@@ -85,18 +79,17 @@ void initVariables() {
 
 	std::unique_ptr<GameObject> camera = std::make_unique<GameObject>("Camera");
 	camera->addComponent<CameraController>();
-	camera->getComponent<Transform>()->position = _cameraPos;
 
 	_objects.push_back(std::move(mesh));
 	_objects.push_back(std::move(camera));
 }
 
-void initLight() {
+void doLighting() {
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	GLfloat light_pos[4] = { 0.0f, 1.0f, 1.0f, 1.0f };
+	GLfloat light_pos[4] = { 0.0f, 1.0f, 1.0f, 0.0f };
 	GLfloat diffuse_pos[4] = { 1, 1, 1, 1 };
-	GLfloat ambient_pos[4] = { 0.2f, 0.2f, 0.2f, 1 };
+	GLfloat ambient_pos[4] = { 0.35f, 0.35f, 0.35f, 1 };
 	glLightfv(GL_LIGHT0, GL_POSITION, light_pos);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse_pos);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient_pos);
@@ -112,7 +105,7 @@ void initGame() {
 	gluPerspective(60.0f, float(windowSize.x) / float(windowSize.y), 0.1f, 300.0f);
 	glMatrixMode(GL_MODELVIEW);
 
-	initLight();
+	doLighting();
 	initVariables();
 }
 

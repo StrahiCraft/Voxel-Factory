@@ -21,6 +21,12 @@ void CameraController::moveCamera() {
 	if (Input::getKey('D')) {
 		transform->position += -transform->getRight() * (Time::getDeltaTime() * 5);
 	}
+	if (Input::getKey('E')) {
+		transform->position += glm::vec3(0, 1, 0) * (Time::getDeltaTime() * 5);
+	}
+	if (Input::getKey('Q')) {
+		transform->position += glm::vec3(0, -1, 0) * (Time::getDeltaTime() * 5);
+	}
 }
 
 void CameraController::rotateCamera() {
