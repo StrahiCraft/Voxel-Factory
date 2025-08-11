@@ -12,8 +12,6 @@ glm::vec4 windowColor = { 0.2f, 0.4f, 0.65f, 1.0f };
 
 const char* windowTitle = "Incremental Factory";
 
-int mapSize = 32;
-
 std::vector<std::unique_ptr<GameObject>> _objects;
 
 void doLighting();
@@ -85,19 +83,9 @@ void initVariables() {
 	_objects.push_back(std::move(mesh));
 	_objects.push_back(std::move(camera));
 
-	for (int x = -mapSize / 2; x < mapSize / 2; x++) {
-		for (int z = -mapSize / 2; z < mapSize / 2; z++) {
-			std::string name = "GroundChunk(x=" + x;
-			name += ",z=" + z;
-			name += ")";
-			std::unique_ptr<GameObject> groundChunk = std::make_unique<GameObject>(name);
-			groundChunk->addComponent<MeshRenderer>("Models/GroundChunk/GroundChunk.obj");
-			groundChunk->getComponent<Transform>()->position = glm::vec3(x * 1.55f, 0, z * 1.55f);
-			groundChunk->getComponent<Transform>()->rotation.x = 180;
-
-			_objects.push_back(std::move(groundChunk));
-		}
-	}
+	std::unique_ptr<GameObject> ground = std::make_unique<GameObject>("Ground");
+	ground->addComponent<MeshRenderer>("Models/Ground/Ground.obj");
+	_objects.push_back(std::move(ground));
 }
 
 void doLighting() {
