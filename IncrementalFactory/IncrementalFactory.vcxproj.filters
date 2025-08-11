@@ -90,12 +90,6 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="Raycast.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="BoundingBox.cpp">
-      <Filter>Source Files\Components\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="CameraController.cpp">
       <Filter>Source Files\Components\Utility</Filter>
     </ClCompile>
@@ -145,12 +139,6 @@
     </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Raycast.h">
-      <Filter>Header Files\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="BoundingBox.h">
-      <Filter>Header Files\Componets\Utility</Filter>
     </ClInclude>
     <ClInclude Include="CameraController.h">
       <Filter>Header Files\Componets\Utility</Filter>

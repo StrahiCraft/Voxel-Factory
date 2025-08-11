@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\MeshRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\MeshRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MeshRenderer.cpp",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.cpp",
+              "RelativeDocumentMoniker": "IncrementalFactory\\MeshRenderer.cpp",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.cpp",
+              "RelativeToolTip": "IncrementalFactory\\MeshRenderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-11T08:26:07.969Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,20 +45,20 @@
               "RelativeDocumentMoniker": "IncrementalFactory\\MeshRenderer.h",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\MeshRenderer.h",
               "RelativeToolTip": "IncrementalFactory\\MeshRenderer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-08-10T10:18:38.437Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Main.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\Main.cpp",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp",
               "RelativeToolTip": "IncrementalFactory\\Main.cpp",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAmwGgAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAE8AAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-10T08:07:53.12Z",
               "EditorCaption": ""

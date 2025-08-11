@@ -1,62 +1,24 @@
-﻿  Main.cpp
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
-  (compiling source file 'Main.cpp')
-  
+﻿  MeshRenderer.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Camera.h(6,14): warning C4091: 'static ': ignored on left of 'Camera' when no variable is declared
-  (compiling source file 'Main.cpp')
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  (compiling source file 'MeshRenderer.cpp')
   
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.h(6,14): warning C4091: 'static ': ignored on left of 'CameraController' when no variable is declared
-  (compiling source file 'Main.cpp')
-  
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,44): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,44): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,44): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,44): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,44): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,30): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,30): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,30): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,30): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,30): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,43): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,43): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,43): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,43): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,43): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,29): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,29): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,29): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,29): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(101,29): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(121,17): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(121,17): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(121,17): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(121,17): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(121,17): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\MeshRenderer.cpp(38,23): warning C4018: '<': signed/unsigned mismatch
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+Material.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+soil2.lib(SOIL2.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(SOIL2.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+soil2.lib(image_DXT.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_DXT.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+soil2.lib(image_helper.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(image_helper.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+soil2.lib(wfETC.obj) : warning LNK4099: PDB 'soil2.pdb' was not found with 'soil2.lib(wfETC.obj)' or at 'E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\soil2.pdb'; linking object as if no debug info
+GameObject.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+MeshRenderer.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Component.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Camera.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Mesh.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Input.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+ConeRenderer.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+CameraController.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Main.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+CubeRenderer.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+CameraMatrix.obj : warning LNK4020: a type record in 'e:\fakultet\2. godina\cs233\cs233-projekat\incrementalfactory\debug\vc143.pdb' is corrupted; some symbols and types may not be accessible from the debugger
   IncrementalFactory.vcxproj -> E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe

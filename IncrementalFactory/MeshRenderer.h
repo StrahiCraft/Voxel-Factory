@@ -1,6 +1,6 @@
 #pragma once
 #include "Mesh.h"
-#include "BoundingBox.h"
+#include "Component.h"
 
 class GameObject;
 
@@ -19,7 +19,6 @@ public:
     void renderWireframe(const Mesh& mesh);
     void setSelected(bool selected);
     bool getSelected();
-    std::vector<BoundingBox> generateMeshBoundingBox();
 
 private:
     /// <summary>
