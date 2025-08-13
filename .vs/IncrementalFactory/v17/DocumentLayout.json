@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\CameraController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{64B41860-4592-4B15-AAEC-A22FBCE6CA95}|IncrementalFactory\\IncrementalFactory.vcxproj|solutionrelative:IncrementalFactory\\CameraController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -42,23 +46,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "WorldGrid.cpp",
-              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\WorldGrid.cpp",
-              "RelativeDocumentMoniker": "IncrementalFactory\\WorldGrid.cpp",
-              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\WorldGrid.cpp",
-              "RelativeToolTip": "IncrementalFactory\\WorldGrid.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAEAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GameObject.cpp",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp",
+              "RelativeDocumentMoniker": "IncrementalFactory\\GameObject.cpp",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.cpp",
+              "RelativeToolTip": "IncrementalFactory\\GameObject.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-12T10:46:56.766Z"
+              "WhenOpened": "2025-08-13T10:31:54.263Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "WorldGrid.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\WorldGrid.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\WorldGrid.h",
@@ -70,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "GameObject.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\GameObject.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\GameObject.h",
@@ -82,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CameraController.h",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\CameraController.h",
               "RelativeDocumentMoniker": "IncrementalFactory\\CameraController.h",
@@ -94,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Player.cpp",
               "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Player.cpp",
               "RelativeDocumentMoniker": "IncrementalFactory\\Player.cpp",
@@ -102,34 +107,7 @@
               "RelativeToolTip": "IncrementalFactory\\Player.cpp",
               "ViewState": "AgIAAAUAAAAAAAAAAAAowBoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-11T09:40:03.348Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player.h",
-              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Player.h",
-              "RelativeDocumentMoniker": "IncrementalFactory\\Player.h",
-              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Player.h",
-              "RelativeToolTip": "IncrementalFactory\\Player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-11T09:37:36.62Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CameraController.cpp",
-              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\CameraController.cpp",
-              "RelativeDocumentMoniker": "IncrementalFactory\\CameraController.cpp",
-              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\CameraController.cpp",
-              "RelativeToolTip": "IncrementalFactory\\CameraController.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-11T09:37:50.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-11T09:40:03.348Z"
             },
             {
               "$type": "Document",
@@ -139,10 +117,46 @@
               "RelativeDocumentMoniker": "IncrementalFactory\\Main.cpp",
               "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Main.cpp",
               "RelativeToolTip": "IncrementalFactory\\Main.cpp",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAowG8AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAowFUAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-10T08:07:53.12Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WorldGrid.cpp",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\WorldGrid.cpp",
+              "RelativeDocumentMoniker": "IncrementalFactory\\WorldGrid.cpp",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\WorldGrid.cpp",
+              "RelativeToolTip": "IncrementalFactory\\WorldGrid.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-12T10:46:56.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.h",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Player.h",
+              "RelativeDocumentMoniker": "IncrementalFactory\\Player.h",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\Player.h",
+              "RelativeToolTip": "IncrementalFactory\\Player.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-11T09:37:36.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CameraController.cpp",
+              "DocumentMoniker": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\CameraController.cpp",
+              "RelativeDocumentMoniker": "IncrementalFactory\\CameraController.cpp",
+              "ToolTip": "E:\\Fakultet\\2. Godina\\CS233\\CS233-Projekat\\IncrementalFactory\\CameraController.cpp",
+              "RelativeToolTip": "IncrementalFactory\\CameraController.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-11T09:37:50.738Z"
             }
           ]
         }

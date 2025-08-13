@@ -83,7 +83,7 @@ void initVariables() {
 
 	std::unique_ptr<GameObject> ground = std::make_unique<GameObject>("Ground");
 	ground->addComponent<MeshRenderer>("Models/Ground/Ground.obj");
-	ground->getComponent<Transform>()->position = glm::vec3(15.78, 0, 15.22);
+	ground->getComponent<Transform>()->position = glm::vec3(15.5, 0, 15.5);
 	ground->getComponent<Transform>()->scale = glm::vec3(1 / 1.6f);
 	_objects.push_back(std::move(ground));
 

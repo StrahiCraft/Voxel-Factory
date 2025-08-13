@@ -39,6 +39,16 @@ E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(111,30): 
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(111,30): warning C4244:         [
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(111,30): warning C4244:             T=float
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(111,30): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,43): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,43): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,43): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,43): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,43): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,29): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,29): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,29): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,29): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(112,29): warning C4244:         ]
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(131,17): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(131,17): warning C4244:         with
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(131,17): warning C4244:         [

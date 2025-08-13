@@ -30,9 +30,8 @@ void GameObject::render() {
 	Transform* transform = getComponent<Transform>();
 	if (transform != nullptr) {
 		glTranslatef(transform->position.x, transform->position.y, transform->position.z);
-		glRotatef(transform->rotation.x, 1, 0, 0);
-		glRotatef(transform->rotation.y, 0, 1, 0);
-		glRotatef(transform->rotation.z, 0, 0, 1);
+		glm::mat4 rotation_matrix = glm::mat4(transform->rotation);
+		glMultMatrixf(glm::value_ptr(rotation_matrix));
 		glScalef(transform->scale.x, transform->scale.y, transform->scale.z);
 	}
 
