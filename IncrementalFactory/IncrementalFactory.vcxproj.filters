@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Utility\Camera">
       <UniqueIdentifier>{267f608a-9d8b-48f0-9fc9-98fba968cecc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Componets\Gameplay">
+      <UniqueIdentifier>{928f8ab1-7726-45fe-a45e-c5c706266e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components\Gameplay">
+      <UniqueIdentifier>{71d83ef7-01ab-4583-a50a-938597354073}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -99,6 +105,15 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files\Utility\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="Machine.cpp">
+      <Filter>Source Files\Components\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Components\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -145,6 +160,15 @@
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Header Files\Utility\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Machine.h">
+      <Filter>Header Files\Componets\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Componets\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldGrid.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -15,7 +15,7 @@ private:
 
     std::vector<std::unique_ptr<Component>> _components;
 
-    GameObject* _parent;
+    GameObject* _parent = nullptr;
     std::vector<GameObject*> _children;
 public:
 

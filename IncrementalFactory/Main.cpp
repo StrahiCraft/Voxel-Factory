@@ -1,7 +1,8 @@
 #include "GameObject.h"
 #include "MeshRenderer.h"
-#include "SphereRenderer.h"
+#include "CubeRenderer.h"
 #include "CameraController.h"
+#include "Player.h"
 
 PFNGLACTIVETEXTUREARBPROC Material::glActiveTextureARB = nullptr;
 PFNGLMULTITEXCOORD2FARBPROC Material::glMultiTexCoord2fARB = nullptr;
@@ -16,13 +17,6 @@ std::vector<std::unique_ptr<GameObject>> _objects;
 
 void doLighting();
 
-void fpsPrinter(int time) {
-	std::cout << "\x1B[2J\x1B[H";
-	std::cout << "FPS: " << (1.0 / Time::getDeltaTime()) << std::endl;
-
-	glutTimerFunc(time, fpsPrinter, time);
-}
-
 void update() {
 	if (Input::getKeyDown(' ')) {
 		Input::_isCursorLocked = !Input::_isCursorLocked;
@@ -32,6 +26,8 @@ void update() {
 
 	for (auto& object : _objects)
 		object->update();
+	_objects[0]->getComponent<Transform>()->position = (_objects[1]->getComponent<Player>()->_currentTarget);
+	std::cout << "Cube position: X=" << _objects[0]->getComponent<Transform>()->position.x << " Z=" << _objects[0]->getComponent<Transform>()->position.z << std::endl;
 }
 
 void render() {
@@ -75,17 +71,28 @@ void initGlut(int argv, char** argc) {
 
 void initVariables() {
 	std::unique_ptr<GameObject> mesh = std::make_unique<GameObject>("Mesh");
-	mesh->addComponent<MeshRenderer>("Models/skull/skull_downloadable.obj");
+	mesh->addComponent<CubeRenderer>();
 
-	std::unique_ptr<GameObject> camera = std::make_unique<GameObject>("Camera");
-	camera->addComponent<CameraController>();
+
+	std::unique_ptr<GameObject> player = std::make_unique<GameObject>("Player");
+	player->addComponent<Player>();
+	player->addComponent<CameraController>();
 
 	_objects.push_back(std::move(mesh));
-	_objects.push_back(std::move(camera));
+	_objects.push_back(std::move(player));
 
 	std::unique_ptr<GameObject> ground = std::make_unique<GameObject>("Ground");
 	ground->addComponent<MeshRenderer>("Models/Ground/Ground.obj");
+	ground->getComponent<Transform>()->position = glm::vec3(15.78, 0, 15.22);
+	ground->getComponent<Transform>()->scale = glm::vec3(1 / 1.6f);
 	_objects.push_back(std::move(ground));
+
+	for (int i = 0; i < 32; i++) {
+		std::unique_ptr<GameObject> mesh2 = std::make_unique<GameObject>("Mesh" + i);
+		mesh2->addComponent<CubeRenderer>();
+		mesh2->getComponent<Transform>()->position = glm::vec3(i, 0, 32);
+		_objects.push_back(std::move(mesh2));
+	}
 }
 
 void doLighting() {
@@ -136,8 +143,6 @@ int main(int argv, char** argc) {
 	glutDisplayFunc(gameLoop);
 	glutReshapeFunc(onResize);
 	Input::setCallbackFunctions();
-
-	glutTimerFunc(500, fpsPrinter, 500);
 
 	glutMainLoop();
 

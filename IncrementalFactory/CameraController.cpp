@@ -10,22 +10,22 @@ void CameraController::update() {
 void CameraController::moveCamera() {
 	Transform* transform = getOwner()->getComponent<Transform>();
 	if (Input::getKey('W')) {
-		transform->position += transform->getForward() * (Time::getDeltaTime() * 5);
+		transform->position += transform->getForward() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('A')) {
-		transform->position += transform->getRight() * (Time::getDeltaTime() * 5);
+		transform->position += transform->getRight() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('S')) {
-		transform->position += -transform->getForward() * (Time::getDeltaTime() * 5);
+		transform->position += -transform->getForward() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('D')) {
-		transform->position += -transform->getRight() * (Time::getDeltaTime() * 5);
+		transform->position += -transform->getRight() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('E')) {
-		transform->position += glm::vec3(0, 1, 0) * (Time::getDeltaTime() * 5);
+		transform->position += glm::vec3(0, 1, 0) * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('Q')) {
-		transform->position += glm::vec3(0, -1, 0) * (Time::getDeltaTime() * 5);
+		transform->position += glm::vec3(0, -1, 0) * (Time::getDeltaTime() * _flySpeed);
 	}
 }
 

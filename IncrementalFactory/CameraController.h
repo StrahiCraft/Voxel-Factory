@@ -5,6 +5,8 @@
 
 static class CameraController : public Component
 {
+private:
+	float _flySpeed = 10;
 public:
 	void update();
 private:
