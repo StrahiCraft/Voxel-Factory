@@ -17,6 +17,7 @@ public:
     Player();
 
     void update();
+    void setPlacingMachine();
 
     Component copy();
 private:

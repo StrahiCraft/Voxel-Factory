@@ -9,17 +9,20 @@ GameObject::GameObject(const std::string& name, std::vector<GameObject*> childre
 
 	for (GameObject* child : children) {
 		_children.push_back(child);
+		child->setParent(this);
 	}
 }
 
 GameObject::GameObject(const GameObject& other) {
 	_name = other._name;
 	
-	for (auto& component : other._components) {
-		_components.push_back(std::make_unique<Component>(component->copy()));
+	for (auto component : other._components) {
+ 		_components.push_back(component);
 	}
 
-	_children = other._children;
+	for (auto child : other._children) {
+		_children.push_back(child);
+	}
 }
 
 void GameObject::update() {
@@ -52,22 +55,15 @@ void GameObject::render() {
 	}
 
 	for (auto& child : _children) {
-		if (_ignoreParentTransformations) {
-			glPushMatrix();
-		}
-
 		child->render();
-
-		if (_ignoreParentTransformations) {
-			glPopMatrix();
-		}
 	}
 
 	glPopMatrix();
 }
 
 void GameObject::addComponent(Component component) {
-	_components.push_back(std::make_unique<Component>(component));
+	//_components.push_back(std::make_unique<Component>(component));
+	_components.push_back(&component);
 }
 
 void GameObject::setActive(bool value) {
@@ -109,4 +105,8 @@ GameObject* GameObject::getParent() {
 
 std::string GameObject::getName() {
 	return _name;
+}
+
+void GameObject::setIgnoreParentTransform(bool value) {
+	_ignoreParentTransformations = value;
 }

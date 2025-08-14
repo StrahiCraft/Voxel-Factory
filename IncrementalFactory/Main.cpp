@@ -70,10 +70,12 @@ void initGlut(int argv, char** argc) {
 void initVariables() {
 	Prefabs::initPrefabs();
 
-	std::unique_ptr<GameObject> player = std::make_unique<GameObject>("Player");
+	std::unique_ptr<GameObject> player = std::make_unique<GameObject>("Player", std::vector<GameObject*> {
+		new GameObject(Prefabs::getPrefab("PlacingMachine"))
+	});
 	player->addComponent<Player>();
 	player->addComponent<CameraController>();
-	player->addChild(new GameObject(Prefabs::getPrefab("PlacingMachine")));
+	player->getComponent<Player>()->setPlacingMachine();
 
 	_objects.push_back(std::move(player));
 

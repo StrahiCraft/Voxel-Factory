@@ -2,12 +2,17 @@
 #include "GameObject.h"
 
 Player::Player() {
-	_placingMachine = getOwner()->getChild(0);
+	//_placingMachine = getOwner()->getChild(0);
 }
 
 void Player::update() {
 	raycast();
 	handleInputs();
+}
+
+void Player::setPlacingMachine() {
+	_placingMachine = getOwner()->getChild(0);
+	_placingMachine->setActive(false);
 }
 
 void Player::raycast() {
@@ -47,7 +52,10 @@ void Player::handleInputs() {
 		if (Input::getKeyDown('B')) {
 			_building = false;
 			_placingMachine->setActive(false);
+			return;
 		}
+
+		_placingMachine->getComponent<Transform>()->position = glm::vec3(_currentTarget.x, 0, _currentTarget.z);
 		return;
 	}
 

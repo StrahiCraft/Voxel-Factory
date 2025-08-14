@@ -14,7 +14,8 @@ private:
 	bool _active = true;
     bool _ignoreParentTransformations = false;
 
-    std::vector<std::unique_ptr<Component>> _components = std::vector<std::unique_ptr<Component>>();
+    //std::vector<std::unique_ptr<Component>> _components = std::vector<std::unique_ptr<Component>>();
+    std::vector<Component*> _components;
 
     GameObject* _parent = nullptr;
     std::vector<GameObject*> _children;
@@ -40,11 +41,11 @@ public:
     */
     template<typename T, typename... Args>
     T* addComponent(Args && ...args) {
-        auto component = std::make_unique<T>(std::forward<Args>(args)...);
+        auto component = new T(std::forward<Args>(args)...);
         component->setOwner(this);
 
-        T* addedComponentPointer = component.get();
-        _components.push_back(std::move(component));
+        T* addedComponentPointer = component;
+        _components.push_back(component);
 
         return addedComponentPointer;
     }
@@ -64,7 +65,7 @@ public:
     template<typename T>
     T* getComponent() {
         for (auto& component : _components) {
-            if (auto type = dynamic_cast<T*>(component.get())) {
+            if (auto type = dynamic_cast<T*>(component)) {
                 return type;
             }
         }
@@ -83,4 +84,6 @@ public:
     GameObject* getParent();
 
     std::string getName();
+
+    void setIgnoreParentTransform(bool value);
 };
