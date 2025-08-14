@@ -11,7 +11,7 @@ private:
     glm::vec3 _currentTarget;
     bool _building = false;
 
-    GameObject _placingMachine;
+    GameObject* _placingMachine;
     Machine* _previousTargetedMachine = nullptr;
 public:
     Player();

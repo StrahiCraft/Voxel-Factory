@@ -2,7 +2,7 @@
 #include "GameObject.h"
 
 Player::Player() {
-	_placingMachine = GameObject(Prefabs::getPrefab("PlacingMachine"));
+	_placingMachine = getOwner()->getChild(0);
 }
 
 void Player::update() {
@@ -38,7 +38,7 @@ void Player::raycast() {
 
 void Player::handleInputs() {
 	if (_building) {
-		_placingMachine.getComponent<Transform>()->position = _currentTarget;
+		_placingMachine->getComponent<Transform>()->position = _currentTarget;
 		if (Input::getLeftMouseDown()) {
 			// check if player has enough money
 			// place machine
@@ -46,14 +46,14 @@ void Player::handleInputs() {
 
 		if (Input::getKeyDown('B')) {
 			_building = false;
-			_placingMachine.setActive(false);
+			_placingMachine->setActive(false);
 		}
 		return;
 	}
 
 	if (Input::getKeyDown('B')) {
 		_building = true;
-		_placingMachine.setActive(true);
+		_placingMachine->setActive(true);
 	}
 
 	Machine* targetedMachine = WorldGrid::getMachineAt(_currentTarget);

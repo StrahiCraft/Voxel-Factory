@@ -14,7 +14,7 @@ private:
 	bool _active = true;
     bool _ignoreParentTransformations = false;
 
-    std::vector<std::unique_ptr<Component>> _components;
+    std::vector<std::unique_ptr<Component>> _components = std::vector<std::unique_ptr<Component>>();
 
     GameObject* _parent = nullptr;
     std::vector<GameObject*> _children;

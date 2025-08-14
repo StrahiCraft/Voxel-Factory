@@ -73,6 +73,7 @@ void initVariables() {
 	std::unique_ptr<GameObject> player = std::make_unique<GameObject>("Player");
 	player->addComponent<Player>();
 	player->addComponent<CameraController>();
+	player->addChild(new GameObject(Prefabs::getPrefab("PlacingMachine")));
 
 	_objects.push_back(std::move(player));
 
