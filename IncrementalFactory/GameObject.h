@@ -12,6 +12,7 @@ class GameObject
 private:
 	std::string _name;
 	bool _active = true;
+    bool _ignoreParentTransformations = false;
 
     std::vector<std::unique_ptr<Component>> _components;
 
@@ -20,6 +21,7 @@ private:
 public:
 
     GameObject(const std::string& name = "GameObject", std::vector<GameObject*> children = {});
+    GameObject(const GameObject& other);
 
     void update();
     void render();

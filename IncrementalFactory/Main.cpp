@@ -68,6 +68,8 @@ void initGlut(int argv, char** argc) {
 }
 
 void initVariables() {
+	Prefabs::initPrefabs();
+
 	std::unique_ptr<GameObject> player = std::make_unique<GameObject>("Player");
 	player->addComponent<Player>();
 	player->addComponent<CameraController>();

@@ -13,3 +13,7 @@ const float& CubeRenderer::getSize() const {
 void CubeRenderer::setSize(const float& size) {
 	_size = size; 
 }
+
+Component CubeRenderer::copy() {
+	return CubeRenderer(_size);
+}

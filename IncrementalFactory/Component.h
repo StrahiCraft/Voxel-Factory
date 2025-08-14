@@ -16,6 +16,7 @@ public:
 	virtual ~Component() = default;
 	virtual void update();
 	virtual void render();
+	virtual Component copy();
 
 	void setOwner(GameObject* owner);
 	GameObject* getOwner();

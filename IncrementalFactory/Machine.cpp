@@ -94,3 +94,8 @@ std::vector<glm::vec2> Machine::getOccupiedPoints() {
 
     return occupiedPoints;
 }
+
+Component Machine::copy()
+{
+    return Machine(_delay, _machineCenterPosition, _occupiedPoints, _inputPositions, _outputPositions, _craftingRecipes);
+}

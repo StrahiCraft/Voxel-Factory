@@ -11,4 +11,6 @@ public:
 
     const float& getSize() const;
     void setSize(const float& size);
+
+    Component copy();
 };

@@ -5,11 +5,13 @@ class Product :
     public Component
 {
 private:
-    double _price;
+    double _price = 0;
     ProductType _type;
 
 public:
     Product(double price, ProductType type);
     double getPrice() const;
     ProductType getType() const;
+
+    Component copy();
 };

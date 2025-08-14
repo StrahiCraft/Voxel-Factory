@@ -24,4 +24,6 @@ public:
 
     const int& getStacks() const;
     void setStacks(const int& stacks);
+
+    Component copy();
 };

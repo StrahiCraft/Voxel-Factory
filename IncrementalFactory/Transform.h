@@ -19,5 +19,7 @@ public:
 	void setUp(const glm::vec3& up);
 
 	void lookAt(const glm::vec3& target);
+
+	Component copy();
 };
 

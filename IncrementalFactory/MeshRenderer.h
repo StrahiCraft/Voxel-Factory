@@ -7,6 +7,7 @@ class GameObject;
 class MeshRenderer : public Component {
 private:
     std::vector<Mesh> _meshes;
+    bool _renderMeshes = true;
 
     bool _selected = false;
     float _wireframeOffset = 0.05f;
@@ -14,12 +15,19 @@ private:
 
 public:
     MeshRenderer(const std::string& path);
+    MeshRenderer(std::vector<Mesh> meshes);
+    MeshRenderer();
+
+    void setMesh(std::string path);
 
     void render();
+    void setMeshRendering(bool value);
     void renderWireframe(const Mesh& mesh);
     void setSelected(bool selected);
+    void setSelectionColor(glm::vec3 color);
     bool getSelected();
 
+    Component copy();
 private:
     /// <summary>
     /// Used for rendering the wireframe, call this function 3 times for 3

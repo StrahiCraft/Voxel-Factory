@@ -49,3 +49,7 @@ void CameraController::setCameraMatrix() {
 
 	Camera::updateCameraMatrix(newCameraMatrix);
 }
+
+Component CameraController::copy() {
+	return CameraController();
+}

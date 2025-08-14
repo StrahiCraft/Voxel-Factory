@@ -47,3 +47,7 @@ void Transform::setUp(const glm::vec3& up) {
 void Transform::lookAt(const glm::vec3& target) {
 	setForward(glm::normalize(target - position));
 }
+
+Component Transform::copy() {
+	return Transform();
+}

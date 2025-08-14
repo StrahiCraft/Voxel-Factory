@@ -1,35 +1,52 @@
 #include "MeshRenderer.h"
 
 MeshRenderer::MeshRenderer(const std::string& path) {
+    setMesh(path);
+}
+
+MeshRenderer::MeshRenderer(std::vector<Mesh> meshes) {
+    _meshes = meshes;
+}
+
+MeshRenderer::MeshRenderer() {
+
+}
+
+void MeshRenderer::setMesh(std::string path) {
     _meshes = Mesh::loadMeshes(path);
 }
 
 void MeshRenderer::render() {
     for (const Mesh& mesh : _meshes) {
+        if (_renderMeshes) {
+            mesh.material.apply();
+            mesh.material.handleTransparency();
 
-        mesh.material.apply();
-        mesh.material.handleTransparency();
+            if (!mesh.material.diffuseMap) {
+                glDisable(GL_LIGHTING);
+                glColor4fv(mesh.material.diffuse);
+            }
 
-        if (!mesh.material.diffuseMap) {
-            glDisable(GL_LIGHTING);
-            glColor4fv(mesh.material.diffuse);
+            glBegin(GL_TRIANGLES);
+            for (const auto& vertex : mesh.vertices) {
+                glNormal3f(vertex.normal.x, vertex.normal.y, vertex.normal.z);
+                Material::glMultiTexCoord2fARB(GL_TEXTURE0, vertex.texcoord.x, vertex.texcoord.y);
+                Material::glMultiTexCoord2fARB(GL_TEXTURE1, vertex.texcoord.x, vertex.texcoord.y);
+                glVertex3f(vertex.position.x, vertex.position.y, vertex.position.z);
+            }
+
+            glEnd();
+            mesh.material.cleanup();
         }
-
-        glBegin(GL_TRIANGLES);
-        for (const auto& vertex : mesh.vertices) {
-            glNormal3f(vertex.normal.x, vertex.normal.y, vertex.normal.z);
-            Material::glMultiTexCoord2fARB(GL_TEXTURE0, vertex.texcoord.x, vertex.texcoord.y);
-            Material::glMultiTexCoord2fARB(GL_TEXTURE1, vertex.texcoord.x, vertex.texcoord.y);
-            glVertex3f(vertex.position.x, vertex.position.y, vertex.position.z);
-        }
-
-        glEnd();
-        mesh.material.cleanup();
 
         if (_selected) {
             renderWireframe(mesh);
         }
     }
+}
+
+void MeshRenderer::setMeshRendering(bool value) {
+    _renderMeshes = value;
 }
 
 void MeshRenderer::renderWireframe(const Mesh& mesh) {
@@ -61,6 +78,14 @@ void MeshRenderer::setSelected(bool selected) {
     _selected = selected;
 }
 
+void MeshRenderer::setSelectionColor(glm::vec3 color) {
+    _wireframeColor = color;
+}
+
 bool MeshRenderer::getSelected() {
     return _selected;
+}
+
+Component MeshRenderer::copy() {
+    return MeshRenderer(_meshes);
 }

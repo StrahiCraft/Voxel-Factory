@@ -12,3 +12,7 @@ double Product::getPrice() const {
 ProductType Product::getType() const {
 	return _type;
 }
+
+Component Product::copy() {
+	return Product(_price, _type);
+}

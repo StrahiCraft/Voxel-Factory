@@ -12,7 +12,19 @@ GameObject::GameObject(const std::string& name, std::vector<GameObject*> childre
 	}
 }
 
+GameObject::GameObject(const GameObject& other) {
+	_name = other._name;
+	
+	for (auto& component : other._components) {
+		_components.push_back(std::make_unique<Component>(component->copy()));
+	}
+
+	_children = other._children;
+}
+
 void GameObject::update() {
+	if (!_active) return;
+
 	for (auto& component : _components) {
 		component->update();
 	}
@@ -40,7 +52,15 @@ void GameObject::render() {
 	}
 
 	for (auto& child : _children) {
+		if (_ignoreParentTransformations) {
+			glPushMatrix();
+		}
+
 		child->render();
+
+		if (_ignoreParentTransformations) {
+			glPopMatrix();
+		}
 	}
 
 	glPopMatrix();

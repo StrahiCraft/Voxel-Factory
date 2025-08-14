@@ -45,4 +45,6 @@ public:
         CraftingRecipe craftingRecipe);
 
     std::vector<glm::vec2> getOccupiedPoints();
+
+    Component copy();
 };

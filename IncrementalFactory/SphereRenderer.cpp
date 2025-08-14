@@ -30,3 +30,7 @@ const int& SphereRenderer::getStacks() const {
 void SphereRenderer::setStacks(const int& stacks) { 
 	_stacks = stacks; 
 }
+
+Component SphereRenderer::copy() {
+	return SphereRenderer(_radius, _stacks, _slices);
+}

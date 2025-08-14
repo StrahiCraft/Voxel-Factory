@@ -1,28 +1,123 @@
-﻿  CameraMatrix.h
-  Input.cpp
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(18,24): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(18,24): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(18,24): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(18,24): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(18,24): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(19,24): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(19,24): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(19,24): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(19,24): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp(19,24): warning C4244:         ]
+﻿  Main.cpp
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  (compiling source file 'Main.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Camera.h(6,14): warning C4091: 'static ': ignored on left of 'Camera' when no variable is declared
+  (compiling source file 'Main.cpp')
+  
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.h(6,14): warning C4091: 'static ': ignored on left of 'CameraController' when no variable is declared
+  (compiling source file 'Main.cpp')
+  
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\WorldGrid.h(4,14): warning C4091: 'static ': ignored on left of 'WorldGrid' when no variable is declared
+  (compiling source file 'Main.cpp')
+  
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Prefabs.h(5,14): warning C4091: 'static ': ignored on left of 'Prefabs' when no variable is declared
+  (compiling source file 'Main.cpp')
+  
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,45): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(63,31): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,57): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(64,39): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,44): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,44): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,44): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,44): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,44): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,30): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,30): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,30): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,30): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(99,30): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,43): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,43): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,43): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,43): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,43): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,29): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,29): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,29): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,29): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(100,29): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(119,17): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(119,17): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(119,17): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(119,17): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(119,17): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Main.cpp(120,17): warning C4244:         ]
   Player.cpp
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
   (compiling source file 'Player.cpp')
   
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(28,44): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(28,44): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(28,44): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(28,44): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(28,44): warning C4244:         ]
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(31,44): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(31,44): warning C4244:         with
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(31,44): warning C4244:         [
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(31,44): warning C4244:             T=float
-E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(31,44): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\WorldGrid.h(4,14): warning C4091: 'static ': ignored on left of 'WorldGrid' when no variable is declared
+  (compiling source file 'Player.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Prefabs.h(5,14): warning C4091: 'static ': ignored on left of 'Prefabs' when no variable is declared
+  (compiling source file 'Player.cpp')
+  
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(32,44): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(32,44): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(32,44): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(32,44): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(32,44): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(35,44): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(35,44): warning C4244:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(35,44): warning C4244:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(35,44): warning C4244:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(35,44): warning C4244:         ]
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(86,76): warning C4305: '+=': truncation from 'double' to 'T'
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(86,76): warning C4305:         with
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(86,76): warning C4305:         [
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(86,76): warning C4305:             T=float
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp(86,76): warning C4305:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(1461,27): error C2280: 'std::unique_ptr<Component,std::default_delete<Component>> &std::unique_ptr<Component,std::default_delete<Component>>::operator =(const std::unique_ptr<Component,std::default_delete<Component>> &)': attempting to reference a deleted function
+  (compiling source file 'Player.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3476,17):
+      see declaration of 'std::unique_ptr<Component,std::default_delete<Component>>::operator ='
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3476,17):
+      'std::unique_ptr<Component,std::default_delete<Component>> &std::unique_ptr<Component,std::default_delete<Component>>::operator =(const std::unique_ptr<Component,std::default_delete<Component>> &)': function was explicitly deleted
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(1461,27):
+      the template instantiation context (the oldest one first) is
+          E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\GameObject.h(17,45):
+          see reference to class template instantiation 'std::vector<std::unique_ptr<Component,std::default_delete<Component>>,std::allocator<std::unique_ptr<Component,std::default_delete<Component>>>>' being compiled
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(1523,26):
+          while compiling class template member function 'std::vector<std::unique_ptr<Component,std::default_delete<Component>>,std::allocator<std::unique_ptr<Component,std::default_delete<Component>>>> &std::vector<std::unique_ptr<Component,std::default_delete<Component>>,std::allocator<std::unique_ptr<Component,std::default_delete<Component>>>>::operator =(const std::vector<std::unique_ptr<Component,std::default_delete<Component>>,std::allocator<std::unique_ptr<Component,std::default_delete<Component>>>> &)'
+              E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\GameObject.h(86,1):
+              see the first reference to 'std::vector<std::unique_ptr<Component,std::default_delete<Component>>,std::allocator<std::unique_ptr<Component,std::default_delete<Component>>>>::operator =' in 'GameObject::operator ='
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(1539,9):
+          see reference to function template instantiation 'void std::vector<std::unique_ptr<Component,std::default_delete<Component>>,std::allocator<std::unique_ptr<Component,std::default_delete<Component>>>>::_Assign_counted_range<std::unique_ptr<Component,std::default_delete<Component>>*>(_Iter,const unsigned int)' being compiled
+          with
+          [
+              _Iter=std::unique_ptr<Component,std::default_delete<Component>> *
+          ]
+  
+  Prefabs.cpp
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.h(4,14): warning C4091: 'static ': ignored on left of 'Time' when no variable is declared
+  (compiling source file 'Prefabs.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Prefabs.h(5,14): warning C4091: 'static ': ignored on left of 'Prefabs' when no variable is declared
+  (compiling source file 'Prefabs.cpp')
+  
   Generating Code...
-  IncrementalFactory.vcxproj -> E:\Fakultet\2. Godina\CS233\CS233-Projekat\Debug\IncrementalFactory.exe

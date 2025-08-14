@@ -10,3 +10,7 @@ void Component::setOwner(GameObject* owner) {
 GameObject* Component::getOwner() {
 	return _owner;
 }
+
+Component Component::copy() {
+	return Component();
+}
