@@ -8,6 +8,11 @@ glm::vec3 Input::_mousePosition = glm::vec3(0.0f, 0.0f, 0.0f);
 glm::vec3 Input::_lastMousePosition = glm::vec3(0.0f, 0.0f, 0.0f);
 glm::vec3 Input::_mouseDeltaPosition = glm::vec3(0.0f, 0.0f, 0.0f);
 
+bool Input::_leftMouse = false;
+bool Input::_rightMouse = false;
+bool Input::_leftMouseDown = false;
+bool Input::_rightMouseDown = false;
+
 void Input::updateMouse(int x, int y)
 {
     _mousePosition.x = x;
@@ -57,12 +62,43 @@ void Input::keyboardUp(unsigned char key, int x, int y) {
 
 void Input::mouseClick(int button, int state, int x, int y) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        //EventSystem::invokeChannel("OnMouseClick");
+        _leftMouse = true;
+        return;
+    }
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
+        _leftMouse = false;
+        _leftMouseDown = false;
+        return;
+    }
+    if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
+        _rightMouse = true;
+        return;
+    }
+    if (button == GLUT_RIGHT_BUTTON && state == GLUT_UP) {
+        _rightMouse = false;
+        _rightMouseDown = false;
+        return;
     }
 }
 
 glm::vec3 Input::getMouseDeltaPosition() {
     return _mouseDeltaPosition;
+}
+
+bool Input::getLeftMouseDown() {
+    if (_leftMouse && !_leftMouseDown) {
+        _leftMouseDown = true;
+        return true;
+    }
+    return false;
+}
+
+bool Input::getRightMouseDown() {
+    if (_rightMouse && !_rightMouseDown) {
+        _rightMouseDown = true;
+        return true;
+    }
+    return false;
 }
 
 bool Input::isAnyKeyPressed() {

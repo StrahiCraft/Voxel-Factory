@@ -4,11 +4,13 @@
 class Player :
     public Component
 {
-public:
+private:
     glm::vec3 _currentTarget;
+    bool _building = false;
 public:
     void update();
 private:
     void raycast();
+    void handleInputs();
 };
 

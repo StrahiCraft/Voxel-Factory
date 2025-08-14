@@ -143,6 +143,7 @@
     <ClCompile Include="CameraMatrix.h" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ConeRenderer.cpp" />
+    <ClCompile Include="CraftingRecipe.cpp" />
     <ClCompile Include="CubeRenderer.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="MeshRenderer.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Product.cpp" />
     <ClCompile Include="SphereRenderer.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Time.cpp" />
@@ -163,6 +165,7 @@
     <ClInclude Include="CameraController.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ConeRenderer.h" />
+    <ClInclude Include="CraftingRecipe.h" />
     <ClInclude Include="CubeRenderer.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
@@ -170,6 +173,8 @@
     <ClInclude Include="Material.h" />
     <ClInclude Include="MeshRenderer.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Product.h" />
+    <ClInclude Include="ProductType.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Mesh.h" />

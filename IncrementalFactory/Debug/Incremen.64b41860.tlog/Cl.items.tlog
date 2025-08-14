@@ -3,6 +3,7 @@ E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraController.c
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CameraMatrix.h;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\CameraMatrix.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Component.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\Component.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\ConeRenderer.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\ConeRenderer.obj
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CraftingRecipe.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\CraftingRecipe.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\CubeRenderer.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\CubeRenderer.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\GameObject.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\GameObject.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Input.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\Input.obj
@@ -12,6 +13,7 @@ E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Material.cpp;E:\Fa
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Mesh.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\Mesh.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\MeshRenderer.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\MeshRenderer.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Player.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\Player.obj
+E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Product.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\Product.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\SphereRenderer.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\SphereRenderer.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Texture.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\Texture.obj
 E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Time.cpp;E:\Fakultet\2. Godina\CS233\CS233-Projekat\IncrementalFactory\Debug\Time.obj

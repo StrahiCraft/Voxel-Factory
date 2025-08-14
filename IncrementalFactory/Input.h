@@ -18,6 +18,10 @@ private:
     static glm::vec3 _lastMousePosition;
     static glm::vec3 _mouseDeltaPosition;
 
+    static bool _leftMouse;
+    static bool _rightMouse;
+    static bool _leftMouseDown;
+    static bool _rightMouseDown;
 public:
     static void setCallbackFunctions();
     static void update();
@@ -33,6 +37,8 @@ public:
     static glm::vec3 getMousePosition();
     static void mouseClick(int button, int state, int x, int y);
     static glm::vec3 getMouseDeltaPosition();
+    static bool getLeftMouseDown();
+    static bool getRightMouseDown();
 private:
     static void updateMouse(int x, int y);
     static void updateCursorLock();

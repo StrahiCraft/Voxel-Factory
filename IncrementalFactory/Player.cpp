@@ -3,6 +3,7 @@
 
 void Player::update() {
 	raycast();
+	handleInputs();
 }
 
 void Player::raycast() {
@@ -28,5 +29,17 @@ void Player::raycast() {
 	}
 	if (intersectionPoint.z < 32 && intersectionPoint.z > 0) {
 		_currentTarget.z = (int)intersectionPoint.z;
+	}
+}
+
+void Player::handleInputs() {
+	if (Input::getLeftMouseDown()) {
+		std::cout << "Left Mouse";
+	}
+	if (Input::getRightMouseDown()) {
+		std::cout << "Right Mouse";
+	}
+	if (_building) {
+		
 	}
 }

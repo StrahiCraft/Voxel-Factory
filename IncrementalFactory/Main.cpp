@@ -26,8 +26,6 @@ void update() {
 
 	for (auto& object : _objects)
 		object->update();
-	_objects[0]->getComponent<Transform>()->position = (_objects[1]->getComponent<Player>()->_currentTarget);
-	std::cout << "Cube position: X=" << _objects[0]->getComponent<Transform>()->position.x << " Z=" << _objects[0]->getComponent<Transform>()->position.z << std::endl;
 }
 
 void render() {
@@ -70,15 +68,10 @@ void initGlut(int argv, char** argc) {
 }
 
 void initVariables() {
-	std::unique_ptr<GameObject> mesh = std::make_unique<GameObject>("Mesh");
-	mesh->addComponent<CubeRenderer>();
-
-
 	std::unique_ptr<GameObject> player = std::make_unique<GameObject>("Player");
 	player->addComponent<Player>();
 	player->addComponent<CameraController>();
 
-	_objects.push_back(std::move(mesh));
 	_objects.push_back(std::move(player));
 
 	std::unique_ptr<GameObject> ground = std::make_unique<GameObject>("Ground");
@@ -86,13 +79,6 @@ void initVariables() {
 	ground->getComponent<Transform>()->position = glm::vec3(15.5, 0, 15.5);
 	ground->getComponent<Transform>()->scale = glm::vec3(1 / 1.6f);
 	_objects.push_back(std::move(ground));
-
-	for (int i = 0; i < 32; i++) {
-		std::unique_ptr<GameObject> mesh2 = std::make_unique<GameObject>("Mesh" + i);
-		mesh2->addComponent<CubeRenderer>();
-		mesh2->getComponent<Transform>()->position = glm::vec3(i, 0, 32);
-		_objects.push_back(std::move(mesh2));
-	}
 }
 
 void doLighting() {

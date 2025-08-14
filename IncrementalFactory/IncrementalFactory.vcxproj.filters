@@ -55,6 +55,15 @@
     <Filter Include="Source Files\Components\Gameplay">
       <UniqueIdentifier>{71d83ef7-01ab-4583-a50a-938597354073}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SpecialTypes">
+      <UniqueIdentifier>{acac3c8d-c413-483d-b578-c78ccdea490e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Gameplay">
+      <UniqueIdentifier>{3485c611-608a-49b4-ac3b-0ce927d0e465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility\Gameplay">
+      <UniqueIdentifier>{4898175c-df3d-4ca5-bdb1-4efe94967bac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -111,8 +120,14 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Components\Gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>Source Files\Components\Gameplay</Filter>
+    </ClCompile>
     <ClCompile Include="WorldGrid.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Utility\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="CraftingRecipe.cpp">
+      <Filter>Source Files\Utility\Gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,8 +182,17 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files\Componets\Gameplay</Filter>
     </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Header Files\Componets\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductType.h">
+      <Filter>Header Files\SpecialTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="CraftingRecipe.h">
+      <Filter>Header Files\Utility\Gameplay</Filter>
+    </ClInclude>
     <ClInclude Include="WorldGrid.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Utility\Gameplay</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
