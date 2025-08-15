@@ -39,27 +39,35 @@ void Player::raycast() {
 
 void Player::handleInputs() {
 	if (_building) {
-		Transform* placingMachineTransform = _placingMachine->getComponent<Transform>();
-		placingMachineTransform->position = _currentTarget;
-		if (Input::getLeftMouseDown()) {
-			// check if player has enough money
-			// place machine
-		}
-
-		if (Input::getKeyDown('B')) {
-			_building = false;
-			_placingMachine->setActive(false);
-			return;
-		}
-
-		if (Input::getKeyDown('R')) {
-			_placingMachine->getComponent<Transform>()->rotation.y += 90 / RAD2ANGLE;
-		}
-
-		_placingMachine->getComponent<Transform>()->position = glm::vec3(_currentTarget.x, 0, _currentTarget.z);
+		handleBuildingInputs();
 		return;
 	}
 
+	handleNonBuildingInputs();
+}
+
+void Player::handleBuildingInputs() {
+	Transform* placingMachineTransform = _placingMachine->getComponent<Transform>();
+	placingMachineTransform->position = _currentTarget;
+	if (Input::getLeftMouseDown()) {
+		// check if player has enough money
+		// place machine
+	}
+
+	if (Input::getKeyDown('B')) {
+		_building = false;
+		_placingMachine->setActive(false);
+		return;
+	}
+
+	if (Input::getKeyDown('R')) {
+		_placingMachine->getComponent<Transform>()->rotate(90, glm::vec3(0, 1, 0));
+	}
+
+	_placingMachine->getComponent<Transform>()->position = glm::vec3(_currentTarget.x, 0, _currentTarget.z);
+}
+
+void Player::handleNonBuildingInputs() {
 	if (Input::getKeyDown('B')) {
 		_building = true;
 		_placingMachine->setActive(true);
@@ -82,10 +90,6 @@ void Player::handleInputs() {
 	targetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelected(true);
 	targetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(255.0 / 255.0, 249 / 255.0, 74 / 255.0));
 
-	if (Input::getLeftMouseDown()) {
-		// TODO info from machine
-	}
-
 	if (Input::getRightMouseDown()) {
 		// TODO destroy machine
 		WorldGrid::getMachineAt(_currentTarget);
@@ -93,7 +97,7 @@ void Player::handleInputs() {
 	}
 
 	if (Input::getKeyDown('R')) {
-		targetedMachine->getOwner()->getComponent<Transform>()->rotation.y += 90 / RAD2ANGLE;
+		targetedMachine->getOwner()->getComponent<Transform>()->rotation.y += 90;
 	}
 }
 

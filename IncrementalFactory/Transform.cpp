@@ -48,6 +48,10 @@ void Transform::lookAt(const glm::vec3& target) {
 	setForward(glm::normalize(target - position));
 }
 
+void Transform::rotate(float angle, const glm::vec3& rotationAxis) {
+	rotation = glm::rotate(rotation, angle / (float)RAD2ANGLE, rotationAxis);
+}
+
 Component Transform::copy() {
 	return Transform();
 }

@@ -20,6 +20,8 @@ public:
 
 	void lookAt(const glm::vec3& target);
 
+	void rotate(float angle, const glm::vec3& rotationAxis);
+
 	Component copy();
 };
 
