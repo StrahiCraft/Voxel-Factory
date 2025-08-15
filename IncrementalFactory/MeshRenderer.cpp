@@ -68,6 +68,7 @@ void MeshRenderer::renderWireframe(const Mesh& mesh) {
 
         glEnd();
     }
+    glColor3f(1, 1, 1);
     glEnable(GL_LIGHTING);
 
     mesh.material.cleanup();

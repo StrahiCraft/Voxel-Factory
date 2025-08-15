@@ -64,6 +64,12 @@
     <Filter Include="Header Files\Utility\Gameplay">
       <UniqueIdentifier>{4898175c-df3d-4ca5-bdb1-4efe94967bac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utility\GameObject">
+      <UniqueIdentifier>{9ab71a67-ee9e-4025-ad3c-fc8c143ec0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\GameObject">
+      <UniqueIdentifier>{d1af5154-1dc6-4578-979d-ad46105eed38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -99,9 +105,6 @@
     <ClCompile Include="Time.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
@@ -129,11 +132,14 @@
     <ClCompile Include="CraftingRecipe.cpp">
       <Filter>Source Files\Utility\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="Prefabs.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Prefabs.cpp">
+      <Filter>Source Files\Utility\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Utility\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,9 +173,6 @@
     <ClInclude Include="Time.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
@@ -200,11 +203,14 @@
     <ClInclude Include="WorldGrid.h">
       <Filter>Header Files\Utility\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="Prefabs.h">
-      <Filter>Header Files\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Utility\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefabs.h">
+      <Filter>Header Files\Utility\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

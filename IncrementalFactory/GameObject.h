@@ -9,7 +9,7 @@
 
 class GameObject 
 {
-private:
+protected:
 	std::string _name;
 	bool _active = true;
     bool _ignoreParentTransformations = false;

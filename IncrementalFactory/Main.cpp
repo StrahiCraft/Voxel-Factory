@@ -18,9 +18,6 @@ void update() {
 	if (Input::getKeyDown(' ')) {
 		Input::_isCursorLocked = !Input::_isCursorLocked;
 	}
-	if (Input::getKeyDown(']')) {
-		World::listObjects();
-	}
 
 	Input::update();
 
