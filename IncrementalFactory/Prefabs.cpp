@@ -6,6 +6,7 @@ void Prefabs::initPrefabs() {
 	GameObject placingMachine = GameObject("PlacingMachine", std::vector<GameObject*> {
 		new GameObject("PlacementArrow")
 	});
+	placingMachine.getComponent<Transform>()->scale = glm::vec3(1 / 1.6f);
 	placingMachine.setIgnoreParentTransform(true);
 	placingMachine.addComponent<MeshRenderer>("Models/Machines/Conveyor/Conveyor.obj");
 	placingMachine.getComponent<MeshRenderer>()->setMeshRendering(false);

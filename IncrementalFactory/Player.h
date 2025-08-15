@@ -14,10 +14,8 @@ private:
     GameObject* _placingMachine;
     Machine* _previousTargetedMachine = nullptr;
 public:
-    Player();
-
     void update();
-    void setPlacingMachine();
+    void setPlacingMachine(GameObject* placingMachine);
 
     Component copy();
 private:

@@ -1,17 +1,13 @@
 #include "Player.h"
 #include "GameObject.h"
 
-Player::Player() {
-	//_placingMachine = getOwner()->getChild(0);
-}
-
 void Player::update() {
 	raycast();
 	handleInputs();
 }
 
-void Player::setPlacingMachine() {
-	_placingMachine = getOwner()->getChild(0);
+void Player::setPlacingMachine(GameObject* placingMachine) {
+	_placingMachine = placingMachine;
 	_placingMachine->setActive(false);
 }
 
@@ -43,7 +39,8 @@ void Player::raycast() {
 
 void Player::handleInputs() {
 	if (_building) {
-		_placingMachine->getComponent<Transform>()->position = _currentTarget;
+		Transform* placingMachineTransform = _placingMachine->getComponent<Transform>();
+		placingMachineTransform->position = _currentTarget;
 		if (Input::getLeftMouseDown()) {
 			// check if player has enough money
 			// place machine
@@ -55,6 +52,10 @@ void Player::handleInputs() {
 			return;
 		}
 
+		if (Input::getKeyDown('R')) {
+			_placingMachine->getComponent<Transform>()->rotation.y += 90 / RAD2ANGLE;
+		}
+
 		_placingMachine->getComponent<Transform>()->position = glm::vec3(_currentTarget.x, 0, _currentTarget.z);
 		return;
 	}
@@ -62,6 +63,7 @@ void Player::handleInputs() {
 	if (Input::getKeyDown('B')) {
 		_building = true;
 		_placingMachine->setActive(true);
+		return;
 	}
 
 	Machine* targetedMachine = WorldGrid::getMachineAt(_currentTarget);
