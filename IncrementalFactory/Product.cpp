@@ -13,6 +13,6 @@ ProductType Product::getType() const {
 	return _type;
 }
 
-Component Product::copy() {
-	return Product(_price, _type);
+Component* Product::copy() {
+	return new Product(_price, _type);
 }

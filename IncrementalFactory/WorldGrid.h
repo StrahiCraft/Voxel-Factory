@@ -1,5 +1,6 @@
 #pragma once
 #include "Machine.h"
+#include "World.h"
 
 static class WorldGrid
 {
@@ -13,7 +14,7 @@ public:
 
 	static Machine* getMachineAt(glm::vec2 position);
 
-	static void placeMachine(Machine* machine);
+	static void placeMachine(GameObject* machineObject);
 	static void removeMachine(Machine* machine);
 private:
 	static void setGridOccupancyAt(std::vector<glm::vec2> positions, bool value);

@@ -11,6 +11,6 @@ GameObject* Component::getOwner() {
 	return _owner;
 }
 
-Component Component::copy() {
-	return Component();
+Component* Component::copy() {
+	return new Component();
 }

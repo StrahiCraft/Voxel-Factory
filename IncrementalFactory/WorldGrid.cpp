@@ -15,7 +15,7 @@ bool WorldGrid::isGridFreeAt(glm::vec2 position) {
 
 bool WorldGrid::isGridFreeAt(std::vector<glm::vec2> positions) {
     for (auto& position : positions) {
-        if (!_gridOccupancy[(int)position.x][(int)position.y]) {
+        if (_gridOccupancy[(int)position.x][(int)position.y]) {
             return false;
         }
     }
@@ -33,14 +33,20 @@ Machine* WorldGrid::getMachineAt(glm::vec2 position) {
     return nullptr;
 }
 
-void WorldGrid::placeMachine(Machine* machine) {
+void WorldGrid::placeMachine(GameObject* machineObject) {
+    Machine* machine = machineObject->getComponent<Machine>();
+    machine->setOwner(machineObject);
     _machines.push_back(machine);
     setGridOccupancyAt(machine->getOccupiedPoints(), true);
+
+    World::addObject(machineObject);
 }
 
 void WorldGrid::removeMachine(Machine* machine) {
     _machines.erase(std::remove(_machines.begin(), _machines.end(), machine), _machines.end());
     setGridOccupancyAt(machine->getOccupiedPoints(), false);
+
+    World::removeObject(machine->getOwner());
 }
 
 void WorldGrid::setGridOccupancyAt(std::vector<glm::vec2> positions, bool value) {

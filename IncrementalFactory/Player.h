@@ -17,7 +17,7 @@ public:
     void update();
     void setPlacingMachine(GameObject* placingMachine);
 
-    Component copy();
+    Component* copy();
 private:
     void raycast();
     void handleInputs();

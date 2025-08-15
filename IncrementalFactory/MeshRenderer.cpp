@@ -8,6 +8,13 @@ MeshRenderer::MeshRenderer(std::vector<Mesh> meshes) {
     _meshes = meshes;
 }
 
+MeshRenderer::MeshRenderer(std::vector<Mesh> meshes, bool rendererMeshes, bool selected, glm::vec3 wireframeColor) {
+    _meshes = meshes;
+    _renderMeshes = rendererMeshes;
+    _selected = selected;
+    _wireframeColor = wireframeColor;
+}
+
 MeshRenderer::MeshRenderer() {
 
 }
@@ -86,6 +93,6 @@ bool MeshRenderer::getSelected() {
     return _selected;
 }
 
-Component MeshRenderer::copy() {
-    return MeshRenderer(_meshes);
+Component* MeshRenderer::copy() {
+    return new MeshRenderer(_meshes, _renderMeshes, _selected, _wireframeColor);
 }

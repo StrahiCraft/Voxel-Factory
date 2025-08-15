@@ -1,6 +1,5 @@
-#include "GameObject.h"
+#include "World.h"
 #include "MeshRenderer.h"
-#include "CubeRenderer.h"
 #include "CameraController.h"
 #include "Player.h"
 
@@ -13,19 +12,19 @@ glm::vec4 windowColor = { 0.2f, 0.4f, 0.65f, 1.0f };
 
 const char* windowTitle = "Incremental Factory";
 
-std::vector<std::unique_ptr<GameObject>> _objects;
-
 void doLighting();
 
 void update() {
 	if (Input::getKeyDown(' ')) {
 		Input::_isCursorLocked = !Input::_isCursorLocked;
 	}
+	if (Input::getKeyDown(']')) {
+		World::listObjects();
+	}
 
 	Input::update();
 
-	for (auto& object : _objects)
-		object->update();
+	World::update();
 }
 
 void render() {
@@ -40,9 +39,9 @@ void render() {
 	Camera::applyCameraMatrix();
 
 	doLighting();
-	for (auto& object : _objects) {
-		object->render();
-	}
+	
+	World::render();
+
 	glDisable(GL_LIGHTING);
 
 	glutSwapBuffers();
@@ -70,21 +69,22 @@ void initGlut(int argv, char** argc) {
 void initVariables() {
 	Prefabs::initPrefabs();
 
-	std::unique_ptr<GameObject> player = std::make_unique<GameObject>("Player");
+	GameObject* player = new GameObject("Player");
 	player->addComponent<Player>();
 	player->addComponent<CameraController>();
-	std::unique_ptr<GameObject> placingMachine = std::make_unique<GameObject>(Prefabs::getPrefab("PlacingMachine"));
+	GameObject* placingMachine = new GameObject(Prefabs::getPrefab("PlacingMachine"));
 
-	player->getComponent<Player>()->setPlacingMachine(placingMachine.get());
+	player->getComponent<Player>()->setPlacingMachine(placingMachine);
+	player->getComponent<Transform>()->_position = glm::vec3(16, 2, 16);
 
-	_objects.push_back(std::move(player));
-	_objects.push_back(std::move(placingMachine));
+	World::addObject(player);
+	World::addObject(placingMachine);
 
-	std::unique_ptr<GameObject> ground = std::make_unique<GameObject>("Ground");
+	GameObject* ground = new GameObject("Ground");
 	ground->addComponent<MeshRenderer>("Models/Ground/Ground.obj");
-	ground->getComponent<Transform>()->position = glm::vec3(15.5, 0, 15.5);
-	ground->getComponent<Transform>()->scale = glm::vec3(1 / 1.6f);
-	_objects.push_back(std::move(ground));
+	ground->getComponent<Transform>()->_position = glm::vec3(15.5, 0, 15.5);
+	ground->getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+	World::addObject(ground);
 }
 
 void doLighting() {

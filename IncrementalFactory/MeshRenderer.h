@@ -14,9 +14,10 @@ private:
     glm::vec3 _wireframeColor = glm::vec3(235.0f / 255.0f, 143.0f / 255.0f, 52.0f / 255.0f);
 
 public:
+    MeshRenderer();
     MeshRenderer(const std::string& path);
     MeshRenderer(std::vector<Mesh> meshes);
-    MeshRenderer();
+    MeshRenderer(std::vector<Mesh> meshes, bool rendererMeshes, bool selected, glm::vec3 wireframeColor);
 
     void setMesh(std::string path);
 
@@ -27,7 +28,7 @@ public:
     void setSelectionColor(glm::vec3 color);
     bool getSelected();
 
-    Component copy();
+    Component* copy();
 private:
     /// <summary>
     /// Used for rendering the wireframe, call this function 3 times for 3

@@ -132,6 +132,9 @@
     <ClCompile Include="Prefabs.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -198,6 +201,9 @@
       <Filter>Header Files\Utility\Gameplay</Filter>
     </ClInclude>
     <ClInclude Include="Prefabs.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
   </ItemGroup>

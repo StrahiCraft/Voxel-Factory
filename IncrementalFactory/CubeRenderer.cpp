@@ -14,6 +14,6 @@ void CubeRenderer::setSize(const float& size) {
 	_size = size; 
 }
 
-Component CubeRenderer::copy() {
-	return CubeRenderer(_size);
+Component* CubeRenderer::copy() {
+	return new CubeRenderer(_size);
 }

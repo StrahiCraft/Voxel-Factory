@@ -13,15 +13,15 @@ GameObject::GameObject(const std::string& name, std::vector<GameObject*> childre
 	}
 }
 
-GameObject::GameObject(const GameObject& other) {
-	_name = other._name;
+GameObject::GameObject(GameObject* other) {
+	_name = other->_name;
 	
-	for (auto component : other._components) {
- 		_components.push_back(component);
+	for (auto& component : other->_components) {
+ 		_components.push_back(component->copy());
 	}
 
-	for (auto child : other._children) {
-		_children.push_back(child);
+	for (auto& child : other->_children) {
+		_children.push_back(new GameObject(child));
 	}
 }
 
@@ -44,10 +44,10 @@ void GameObject::render() {
 
 	Transform* transform = getComponent<Transform>();
 	if (transform != nullptr) {
-		glTranslatef(transform->position.x, transform->position.y, transform->position.z);
-		glm::mat4 rotation_matrix = glm::mat4(transform->rotation);
+		glTranslatef(transform->_position.x, transform->_position.y, transform->_position.z);
+		glm::mat4 rotation_matrix = glm::mat4(transform->_rotation);
 		glMultMatrixf(glm::value_ptr(rotation_matrix));
-		glScalef(transform->scale.x, transform->scale.y, transform->scale.z);
+		glScalef(transform->_scale.x, transform->_scale.y, transform->_scale.z);
 	}
 
 	for (auto& component : _components) {
@@ -59,6 +59,14 @@ void GameObject::render() {
 	}
 
 	glPopMatrix();
+}
+
+void GameObject::printChildren() {
+	for (auto& child : _children) {
+		std::cout << child->getName() << ", ";
+		child->printChildren();
+		std::cout << std::endl;
+	}
 }
 
 void GameObject::addComponent(Component component) {

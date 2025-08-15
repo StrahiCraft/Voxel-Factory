@@ -10,22 +10,22 @@ void CameraController::update() {
 void CameraController::moveCamera() {
 	Transform* transform = getOwner()->getComponent<Transform>();
 	if (Input::getKey('W')) {
-		transform->position += transform->getForward() * (Time::getDeltaTime() * _flySpeed);
+		transform->_position += transform->getForward() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('A')) {
-		transform->position += transform->getRight() * (Time::getDeltaTime() * _flySpeed);
+		transform->_position += transform->getRight() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('S')) {
-		transform->position += -transform->getForward() * (Time::getDeltaTime() * _flySpeed);
+		transform->_position += -transform->getForward() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('D')) {
-		transform->position += -transform->getRight() * (Time::getDeltaTime() * _flySpeed);
+		transform->_position += -transform->getRight() * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('E')) {
-		transform->position += glm::vec3(0, 1, 0) * (Time::getDeltaTime() * _flySpeed);
+		transform->_position += glm::vec3(0, 1, 0) * (Time::getDeltaTime() * _flySpeed);
 	}
 	if (Input::getKey('Q')) {
-		transform->position += glm::vec3(0, -1, 0) * (Time::getDeltaTime() * _flySpeed);
+		transform->_position += glm::vec3(0, -1, 0) * (Time::getDeltaTime() * _flySpeed);
 	}
 }
 
@@ -36,20 +36,20 @@ void CameraController::rotateCamera() {
 	float yRotation = mouseMovement.x * Time::getDeltaTime() * 0.1f;
 	float xRotation = mouseMovement.y * Time::getDeltaTime() * 0.1f;
 	
-	transform->rotation.y += yRotation;
-	transform->rotation.x -= xRotation;
-	transform->rotation.x = glm::clamp<float>(transform->rotation.x, -90 / RAD2ANGLE, 90 / RAD2ANGLE);
+	transform->_rotation.y += yRotation;
+	transform->_rotation.x -= xRotation;
+	transform->_rotation.x = glm::clamp<float>(transform->_rotation.x, -90 / RAD2ANGLE, 90 / RAD2ANGLE);
 }
 
 void CameraController::setCameraMatrix() {
 	CameraMatrix newCameraMatrix = CameraMatrix();
-	newCameraMatrix.position = getOwner()->getComponent<Transform>()->position;
+	newCameraMatrix.position = getOwner()->getComponent<Transform>()->_position;
 	newCameraMatrix.target = getOwner()->getComponent<Transform>()->getForward() + newCameraMatrix.position;
 	newCameraMatrix.up = getOwner()->getComponent<Transform>()->getUp();
 
 	Camera::updateCameraMatrix(newCameraMatrix);
 }
 
-Component CameraController::copy() {
-	return CameraController();
+Component* CameraController::copy() {
+	return new CameraController();
 }

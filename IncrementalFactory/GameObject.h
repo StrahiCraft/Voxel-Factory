@@ -14,7 +14,6 @@ private:
 	bool _active = true;
     bool _ignoreParentTransformations = false;
 
-    //std::vector<std::unique_ptr<Component>> _components = std::vector<std::unique_ptr<Component>>();
     std::vector<Component*> _components;
 
     GameObject* _parent = nullptr;
@@ -22,10 +21,12 @@ private:
 public:
 
     GameObject(const std::string& name = "GameObject", std::vector<GameObject*> children = {});
-    GameObject(const GameObject& other);
+    GameObject(GameObject* other);
 
     void update();
     void render();
+
+    void printChildren();
 
     /**
     * Adds a new component of type T to the GameObject.

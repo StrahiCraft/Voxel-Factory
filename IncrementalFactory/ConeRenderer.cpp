@@ -39,6 +39,6 @@ void ConeRenderer::setStacks(const int& stacks) {
 	_stacks = stacks;
 }
 
-Component ConeRenderer::copy() {
-	return ConeRenderer(_base, _height, _slices, _stacks);
+Component* ConeRenderer::copy() {
+	return new ConeRenderer(_base, _height, _slices, _stacks);
 }

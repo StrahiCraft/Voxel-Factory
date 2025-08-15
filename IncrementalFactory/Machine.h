@@ -46,5 +46,5 @@ public:
 
     std::vector<glm::vec2> getOccupiedPoints();
 
-    Component copy();
+    Component* copy();
 };

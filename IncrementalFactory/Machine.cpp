@@ -11,7 +11,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::
     _inputPositions = inputPositions;
     _outputPositions = outputPositions;
     _craftingRecipes = craftingRecipes;
-    WorldGrid::placeMachine(this);
 }
 
 Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::vec2> occupiedPoints, glm::vec2 inputPosition, glm::vec2 outputPosition, std::vector<CraftingRecipe> craftingRecipes) {
@@ -21,7 +20,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::
     _inputPositions.push_back(inputPosition);
     _outputPositions.push_back(outputPosition);
     _craftingRecipes = craftingRecipes;
-    WorldGrid::placeMachine(this);
 }
 
 Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::vec2> inputPositions, std::vector<glm::vec2> outputPositions, std::vector<CraftingRecipe> craftingRecipes) {
@@ -30,7 +28,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::
     _inputPositions = inputPositions;
     _outputPositions = outputPositions;
     _craftingRecipes = craftingRecipes;
-    WorldGrid::placeMachine(this);
 }
 
 Machine::Machine(float delay, glm::vec2 machineCenterPosition, glm::vec2 inputPosition, glm::vec2 outputPosition, std::vector<CraftingRecipe> craftingRecipes) {
@@ -39,7 +36,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, glm::vec2 inputPo
     _inputPositions.push_back(inputPosition);
     _outputPositions.push_back(outputPosition);
     _craftingRecipes = craftingRecipes;
-    WorldGrid::placeMachine(this);
 }
 
 Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::vec2> occupiedPoints, std::vector<glm::vec2> inputPositions, std::vector<glm::vec2> outputPositions, CraftingRecipe craftingRecipe) {
@@ -49,7 +45,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::
     _inputPositions = inputPositions;
     _outputPositions = outputPositions;
     _craftingRecipes.push_back(craftingRecipe);
-    WorldGrid::placeMachine(this);
 }
 
 Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::vec2> occupiedPoints, glm::vec2 inputPosition, glm::vec2 outputPosition, CraftingRecipe craftingRecipe) {
@@ -59,7 +54,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::
     _inputPositions.push_back(inputPosition);
     _outputPositions.push_back(outputPosition);
     _craftingRecipes.push_back(craftingRecipe);
-    WorldGrid::placeMachine(this);
 }
 
 Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::vec2> inputPositions, std::vector<glm::vec2> outputPositions, CraftingRecipe craftingRecipe) {
@@ -68,7 +62,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, std::vector<glm::
     _inputPositions = inputPositions;
     _outputPositions = outputPositions;
     _craftingRecipes.push_back(craftingRecipe);
-    WorldGrid::placeMachine(this);
 }
 
 Machine::Machine(float delay, glm::vec2 machineCenterPosition, glm::vec2 inputPosition, glm::vec2 outputPosition, CraftingRecipe craftingRecipe) {
@@ -77,7 +70,6 @@ Machine::Machine(float delay, glm::vec2 machineCenterPosition, glm::vec2 inputPo
     _inputPositions.push_back(inputPosition);
     _outputPositions.push_back(outputPosition);
     _craftingRecipes.push_back(craftingRecipe);
-    WorldGrid::placeMachine(this);
 }
 
 std::vector<glm::vec2> Machine::getOccupiedPoints() {
@@ -85,17 +77,17 @@ std::vector<glm::vec2> Machine::getOccupiedPoints() {
     glm::vec3 direction = transform->getForward();
 
     std::vector<glm::vec2> occupiedPoints;
-    occupiedPoints.push_back(_machineCenterPosition);
+    occupiedPoints.push_back(_machineCenterPosition + glm::vec2(transform->_position.x, transform->_position.z));
 
     for (auto position : _occupiedPoints) {
-        glm::vec2 offset = glm::vec2(position.x * direction.x, position.y * direction.z);
+        glm::vec2 offset = glm::vec2(position.x * direction.x, position.y * direction.z) + glm::vec2(transform->_position.x, transform->_position.z);
         occupiedPoints.push_back(_machineCenterPosition + offset);
     }
 
     return occupiedPoints;
 }
 
-Component Machine::copy()
+Component* Machine::copy()
 {
-    return Machine(_delay, _machineCenterPosition, _occupiedPoints, _inputPositions, _outputPositions, _craftingRecipes);
+    return new Machine(_delay, _machineCenterPosition, _occupiedPoints, _inputPositions, _outputPositions, _craftingRecipes);
 }

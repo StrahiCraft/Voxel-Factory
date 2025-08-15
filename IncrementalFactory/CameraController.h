@@ -14,6 +14,6 @@ private:
 	void rotateCamera();
 	void setCameraMatrix();
 
-	Component copy();
+	Component* copy();
 };
 

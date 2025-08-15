@@ -13,5 +13,5 @@ public:
     double getPrice() const;
     ProductType getType() const;
 
-    Component copy();
+    Component* copy();
 };
