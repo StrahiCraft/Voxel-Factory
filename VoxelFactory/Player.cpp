@@ -28,6 +28,7 @@ void Player::raycast() {
 		glm::length(glm::cross(playerDirection, gridDirection));
 
 	glm::vec3 intersectionPoint = playerPosition + a * playerDirection;
+	intersectionPoint += glm::vec3(0.5f);
 
 	if (intersectionPoint.x < 32 && intersectionPoint.x > 0) {
 		_currentTarget.x = (int)intersectionPoint.x;
