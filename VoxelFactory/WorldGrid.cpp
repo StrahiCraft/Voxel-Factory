@@ -1,6 +1,6 @@
 #include "WorldGrid.h"
 
-bool WorldGrid::_gridOccupancy[32][32];
+bool WorldGrid::_gridOccupancy[32 * 32];
 std::vector<Machine*> WorldGrid::_machines;
 
 bool WorldGrid::isGridFreeAt(int x, int y) {
@@ -15,7 +15,7 @@ bool WorldGrid::isGridFreeAt(glm::vec2 position) {
 
 bool WorldGrid::isGridFreeAt(std::vector<glm::vec2> positions) {
     for (auto& position : positions) {
-        if (_gridOccupancy[(int)position.x][(int)position.y]) {
+        if (_gridOccupancy[(int)position.x + (int)position.x * (int)position.y]) {
             return false;
         }
     }
@@ -51,6 +51,6 @@ void WorldGrid::removeMachine(Machine* machine) {
 
 void WorldGrid::setGridOccupancyAt(std::vector<glm::vec2> positions, bool value) {
     for (auto position : positions) {
-        _gridOccupancy[(int)position.x][(int)position.y] = value;
+        _gridOccupancy[(int)position.x + (int)position.x * (int)position.y] = value;
     }
 }

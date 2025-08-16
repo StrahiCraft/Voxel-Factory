@@ -9,6 +9,8 @@ private:
 	static std::vector<GameObject> _prefabs;
 public:
 	static void initPrefabs();
+	static void initMachines();
+
 	static GameObject* getPrefab(std::string name);
 };
 

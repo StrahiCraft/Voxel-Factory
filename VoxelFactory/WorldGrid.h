@@ -5,7 +5,7 @@
 static class WorldGrid
 {
 private:
-	static bool _gridOccupancy[32][32];
+	static bool _gridOccupancy[32 * 32];
 	static std::vector<Machine*> _machines;
 public:
 	static bool isGridFreeAt(int x, int y);

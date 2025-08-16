@@ -5,5 +5,11 @@ enum ProductType {
 	ANY,
 	LOG,
 	STRIPPED_LOG,
-	PLANK
+	PLANK,
+	STONE,
+	CUT_STONE,
+	STONE_BRICK,
+	IRON_ORE,
+	IRON_INGOT,
+	IRON_PLATE,
 };
