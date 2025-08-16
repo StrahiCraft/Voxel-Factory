@@ -10,7 +10,7 @@ glm::vec2 windowSize = { 1280, 720 };
 glm::vec2 windowPosition = { 50, 50 };
 glm::vec4 windowColor = { 0.2f, 0.4f, 0.65f, 1.0f };
 
-const char* windowTitle = "Incremental Factory";
+const char* windowTitle = "Voxel Factory";
 
 void doLighting();
 
