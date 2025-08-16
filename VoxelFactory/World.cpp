@@ -14,6 +14,12 @@ void World::update() {
 }
 
 void World::render() {
+	render3D();
+
+	render2D();
+}
+
+void World::render3D() {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 
 	glMatrixMode(GL_MODELVIEW);
@@ -31,7 +37,9 @@ void World::render() {
 
 	glPopMatrix();
 	glPopAttrib();
+}
 
+void World::render2D() {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 
 	glMatrixMode(GL_PROJECTION);
@@ -56,6 +64,8 @@ void World::render() {
 		_uiObjects[i]->render();
 	}
 
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_BLEND);
 	glPopMatrix();
 
 	glMatrixMode(GL_PROJECTION);
@@ -81,3 +91,4 @@ void World::addUIObject(GameObject* newObject) {
 void World::removeUIObject(GameObject* objectToRemove) {
 	_uiObjects.erase(std::remove(_uiObjects.begin(), _uiObjects.end(), objectToRemove), _uiObjects.end());
 }
+

@@ -141,6 +141,9 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files\Utility\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -211,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="Prefabs.h">
       <Filter>Header Files\Utility\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

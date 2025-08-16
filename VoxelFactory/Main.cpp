@@ -2,6 +2,7 @@
 #include "MeshRenderer.h"
 #include "CameraController.h"
 #include "Player.h"
+#include "Sprite.h"
 
 PFNGLACTIVETEXTUREARBPROC Material::glActiveTextureARB = nullptr;
 PFNGLMULTITEXCOORD2FARBPROC Material::glMultiTexCoord2fARB = nullptr;
@@ -82,6 +83,13 @@ void initVariables() {
 	ground->getComponent<Transform>()->_position = glm::vec3(15.5, 0, 15.5);
 	ground->getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	World::addObject(ground);
+
+	GameObject* testSprite = new GameObject("Test");
+	testSprite->addComponent<Sprite>("Sprites/RedEyesBlackDragon.jpg", glm::vec2(421, 614), 1, glm::vec2(1), false);
+	testSprite->getComponent<Transform>()->_position = glm::vec3(500, 300, 0);
+
+
+	World::addUIObject(testSprite);
 }
 
 void doLighting() {
