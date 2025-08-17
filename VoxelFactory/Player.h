@@ -3,6 +3,7 @@
 #include "Machine.h"
 #include "WorldGrid.h"
 #include "Prefabs.h"
+#include "TextRenderer.h"
 
 class Player :
     public Component
@@ -16,9 +17,12 @@ private:
 
     std::vector<GameObject*> _machinesToPlace;
     int _placingMachineIndex = 0;
+
+    TextRenderer* _machinePlacementText;
 public:
     void update();
-    void init(GameObject* placingMachine);
+    void setupMachines(GameObject* placingMachine);
+    void setupMachinePlacementText(TextRenderer* machinePlacementText);
 
     Component* copy();
 private:

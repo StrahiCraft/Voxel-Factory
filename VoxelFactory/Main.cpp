@@ -72,7 +72,7 @@ void initVariables() {
 	player->addComponent<CameraController>();
 	GameObject* placingMachine = new GameObject(Prefabs::getPrefab("PlacingMachine"));
 
-	player->getComponent<Player>()->init(placingMachine);
+	player->getComponent<Player>()->setupMachines(placingMachine);
 	player->getComponent<Transform>()->_position = glm::vec3(16, 2, 16);
 
 	World::addObject(player);
@@ -84,12 +84,14 @@ void initVariables() {
 	ground->getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	World::addObject(ground);
 
-	GameObject* testText = new GameObject("Test text");
-	testText->addComponent<TextRenderer>("Test!");
-	testText->getComponent<Transform>()->_position = glm::vec3(600, 300, 0);
-	testText->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	GameObject* machinePlacementText = new GameObject("Machine placement text");
+	machinePlacementText->addComponent<TextRenderer>("Conveyor\nPrice=");
+	machinePlacementText->getComponent<Transform>()->_position = glm::vec3(0, 50, 0);
+	machinePlacementText->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
 
-	World::addUIObject(testText);
+	player->getComponent<Player>()->setupMachinePlacementText(machinePlacementText->getComponent<TextRenderer>());
+
+	World::addUIObject(machinePlacementText);
 }
 
 void doLighting() {

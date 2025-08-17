@@ -17,18 +17,18 @@ void TextRenderer::setText(std::string newText) {
 void TextRenderer::render() {
 	glPushMatrix();
 
-	int wordLetters = 1;
+	int lineLetters = 1;
 
 	for (int i = 0; i < _characterSprites.size(); i++) {
 		glTranslatef(_characterOffset, 0, 0.0f);
 
-		if (_text[i] == '_') {
-			glTranslatef(wordLetters * -_characterOffset, -_characterOffset, 0.0f);
-			wordLetters = 1;
+		if (_text[i] == '\n') {
+			glTranslatef(lineLetters * -_characterOffset, -_characterOffset, 0.0f);
+			lineLetters = 1;
 		}
 		else {
 			_characterSprites[i]->render();
-			wordLetters++;
+			lineLetters++;
 		}
 	}
 

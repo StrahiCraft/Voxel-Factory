@@ -1,6 +1,7 @@
 #pragma once
 #include "Component.h"
 #include "Sprite.h"
+#include "TextCentering.h"
 #include <vector>
 
 class TextRenderer :

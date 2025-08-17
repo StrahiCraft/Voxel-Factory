@@ -224,5 +224,8 @@
     <ClInclude Include="TextRenderer.h">
       <Filter>Header Files\Componets\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="TextCentering.h">
+      <Filter>Header Files\SpecialTypes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@ void Player::update() {
 	handleInputs();
 }
 
-void Player::init(GameObject* placingMachine) {
+void Player::setupMachines(GameObject* placingMachine) {
 	_placingMachine = placingMachine;
 	_placingMachine->setActive(false);
 
@@ -18,6 +18,12 @@ void Player::init(GameObject* placingMachine) {
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Furnace")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Metal press")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Seller")));
+}
+
+void Player::setupMachinePlacementText(TextRenderer* machinePlacementText) {
+	_machinePlacementText = machinePlacementText;
+	_machinePlacementText->getOwner()->setActive(false);
+	changePlacingMachine(0);
 }
 
 void Player::raycast() {
@@ -93,6 +99,7 @@ void Player::handleBuildingInputs() {
 	if (Input::getKeyDown('B')) {
 		_building = false;
 		_placingMachine->setActive(false);
+		_machinePlacementText->getOwner()->setActive(false);
 		return;
 	}
 
@@ -117,6 +124,7 @@ void Player::handleNonBuildingInputs() {
 	if (Input::getKeyDown('B')) {
 		_building = true;
 		_placingMachine->setActive(true);
+		_machinePlacementText->getOwner()->setActive(true);
 		if (targetedMachine != nullptr) {
 			targetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelected(false);
 		}
@@ -152,6 +160,7 @@ void Player::changePlacingMachine(int indexUpdate) {
 	_placingMachineIndex %= _machinesToPlace.size();
 
 	_placingMachine->getComponent<MeshRenderer>()->setMesh(_machinesToPlace[_placingMachineIndex]->getComponent<MeshRenderer>()->getMeshes());
+	_machinePlacementText->setText(_machinesToPlace[_placingMachineIndex]->getName() + "\nPrice:");
 }
 
 Component* Player::copy() {
