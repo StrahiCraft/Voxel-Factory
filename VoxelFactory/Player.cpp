@@ -82,8 +82,6 @@ void Player::handleBuildingInputs() {
 
 	if (Input::getLeftMouseDown()) {
 		// check if player has enough money
-		// place machine
-
 		if (!WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
 			// play a cant place sound
 			return;

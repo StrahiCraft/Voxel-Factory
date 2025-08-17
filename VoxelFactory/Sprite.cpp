@@ -56,7 +56,6 @@ void Sprite::render() {
 	}
 
 	glBindTexture(GL_TEXTURE_2D, _textures[0]);
-	glColor3f(1.0f, 1.0f, 1.0f);
 
 	GLfloat x = 0;
 	GLfloat y = 0;

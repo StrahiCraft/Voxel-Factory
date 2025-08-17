@@ -14,8 +14,14 @@ void TextRenderer::setText(std::string newText) {
 	}
 }
 
+void TextRenderer::setTextColor(glm::vec3 color) {
+	_textColor = color;
+}
+
 void TextRenderer::render() {
 	glPushMatrix();
+
+	glColor3f(_textColor.r, _textColor.g, _textColor.b);
 
 	int lineLetters = 1;
 
@@ -31,6 +37,8 @@ void TextRenderer::render() {
 			lineLetters++;
 		}
 	}
+
+	glColor3f(1, 1, 1);
 
 	glPopMatrix();
 }

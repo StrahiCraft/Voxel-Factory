@@ -12,10 +12,12 @@ private:
 	int _characterOffset = 27;
 	int _firstCharacterASCIIOffset = 32;
 	std::vector<Sprite*> _characterSprites;
+	glm::vec3 _textColor = glm::vec3(1);
 	std::string _text;
 public:
 	TextRenderer(std::string text);
 	void setText(std::string newText);
+	void setTextColor(glm::vec3 color);
 	void render();
 
 	Component* copy();
