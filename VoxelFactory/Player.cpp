@@ -6,9 +6,18 @@ void Player::update() {
 	handleInputs();
 }
 
-void Player::setPlacingMachine(GameObject* placingMachine) {
+void Player::init(GameObject* placingMachine) {
 	_placingMachine = placingMachine;
 	_placingMachine->setActive(false);
+
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Conveyor")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("WoodGenerator")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("StoneGenerator")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("IronGenerator")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Saw")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Furnace")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("MetalPress")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Seller")));
 }
 
 void Player::raycast() {
@@ -51,6 +60,13 @@ void Player::handleBuildingInputs() {
 	Transform* placingMachineTransform = _placingMachine->getComponent<Transform>();
 	placingMachineTransform->_position = _currentTarget;
 
+	if (Input::getKeyDown('Z')) {
+		changePlacingMachine(-1);
+	}
+	if (Input::getKeyDown('C')) {
+		changePlacingMachine(1);
+	}
+
 	if (WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
 		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(0, 1, 0));
 	}
@@ -67,7 +83,7 @@ void Player::handleBuildingInputs() {
 			return;
 		}
 
-		GameObject* newMachine = new GameObject(Prefabs::getPrefab("Conveyor"));
+		GameObject* newMachine = new GameObject(_machinesToPlace[_placingMachineIndex]);
 		newMachine->getComponent<Transform>()->_position = _currentTarget;
 		newMachine->getComponent<Transform>()->_rotation = _placingMachine->getComponent<Transform>()->_rotation;
 
@@ -124,6 +140,18 @@ void Player::handleNonBuildingInputs() {
 		targetedMachine->getOwner()->getComponent<Transform>()->rotate(-90, glm::vec3(0, 1, 0));
 	}
 
+}
+
+void Player::changePlacingMachine(int indexUpdate) {
+	_placingMachineIndex += indexUpdate;
+
+	if (_placingMachineIndex < 0) {
+		_placingMachineIndex = _machinesToPlace.size() - 1;
+	}
+	
+	_placingMachineIndex %= _machinesToPlace.size();
+
+	_placingMachine->getComponent<MeshRenderer>()->setMesh(_machinesToPlace[_placingMachineIndex]->getComponent<MeshRenderer>()->getMeshes());
 }
 
 Component* Player::copy() {

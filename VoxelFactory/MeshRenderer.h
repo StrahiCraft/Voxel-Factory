@@ -19,7 +19,9 @@ public:
     MeshRenderer(std::vector<Mesh> meshes);
     MeshRenderer(std::vector<Mesh> meshes, bool rendererMeshes, bool selected, glm::vec3 wireframeColor);
 
+    std::vector<Mesh> getMeshes();
     void setMesh(std::string path);
+    void setMesh(std::vector<Mesh> meshes);
 
     void render();
     void setMeshRendering(bool value);

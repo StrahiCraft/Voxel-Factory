@@ -19,8 +19,16 @@ MeshRenderer::MeshRenderer() {
 
 }
 
+std::vector<Mesh> MeshRenderer::getMeshes() {
+    return _meshes;
+}
+
 void MeshRenderer::setMesh(std::string path) {
     _meshes = Mesh::loadMeshes(path);
+}
+
+void MeshRenderer::setMesh(std::vector<Mesh> meshes) {
+    _meshes = std::vector<Mesh>(meshes);
 }
 
 void MeshRenderer::render() {

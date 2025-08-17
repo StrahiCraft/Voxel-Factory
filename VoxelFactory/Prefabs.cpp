@@ -33,6 +33,17 @@ void Prefabs::initMachines() {
 	conveyor.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(conveyor));
 
+	GameObject seller = GameObject("Seller");
+	seller.addComponent<MeshRenderer>("Models/Machines/Seller/Seller.obj");
+	seller.addComponent<Machine>(1, glm::vec2(0),  std::vector<glm::vec2>{
+		glm::vec2(0, 1),
+			glm::vec2(0, -1),
+			glm::vec2(1, 0),
+			glm::vec2(-1, 0)}, std::vector<glm::vec2>{},
+		CraftingRecipe(ProductType::ANY, ProductType::NOTHING));
+	seller.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+	_prefabs.push_back(GameObject(seller));
+
 	// ===============================================================================================================
 	// CRAFTERS
 	// ===============================================================================================================
@@ -69,6 +80,7 @@ void Prefabs::initMachines() {
 
 	GameObject ironGenerator = GameObject("IronGenerator");
 	ironGenerator.addComponent<MeshRenderer>("Models/Machines/IronGenerator/IronGenerator.obj");
+	ironGenerator.getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
 	ironGenerator.addComponent<Machine>(1, glm::vec2(0), std::vector<glm::vec2>{}, std::vector<glm::vec2>{
 		glm::vec2(0, 1),
 		glm::vec2(0, -1), 

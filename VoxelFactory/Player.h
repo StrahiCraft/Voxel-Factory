@@ -13,9 +13,12 @@ private:
 
     GameObject* _placingMachine;
     Machine* _previousTargetedMachine = nullptr;
+
+    std::vector<GameObject*> _machinesToPlace;
+    int _placingMachineIndex = 0;
 public:
     void update();
-    void setPlacingMachine(GameObject* placingMachine);
+    void init(GameObject* placingMachine);
 
     Component* copy();
 private:
@@ -24,5 +27,7 @@ private:
 
     void handleBuildingInputs();
     void handleNonBuildingInputs();
+
+    void changePlacingMachine(int indexUpdate);
 };
 

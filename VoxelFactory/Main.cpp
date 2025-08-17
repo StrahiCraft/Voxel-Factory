@@ -72,7 +72,7 @@ void initVariables() {
 	player->addComponent<CameraController>();
 	GameObject* placingMachine = new GameObject(Prefabs::getPrefab("PlacingMachine"));
 
-	player->getComponent<Player>()->setPlacingMachine(placingMachine);
+	player->getComponent<Player>()->init(placingMachine);
 	player->getComponent<Transform>()->_position = glm::vec3(16, 2, 16);
 
 	World::addObject(player);
@@ -83,8 +83,6 @@ void initVariables() {
 	ground->getComponent<Transform>()->_position = glm::vec3(15.5, 0, 15.5);
 	ground->getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	World::addObject(ground);
-
-
 }
 
 void doLighting() {
