@@ -17,6 +17,6 @@ public:
 	static void placeMachine(GameObject* machineObject);
 	static void removeMachine(Machine* machine);
 private:
-	static void setGridOccupancyAt(std::vector<glm::vec2> positions, bool value);
+	static void setGridOccupancyAt(glm::vec2 positions, bool value);
 };
 

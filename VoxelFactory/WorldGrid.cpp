@@ -15,7 +15,7 @@ bool WorldGrid::isGridFreeAt(glm::vec2 position) {
 
 bool WorldGrid::isGridFreeAt(std::vector<glm::vec2> positions) {
     for (auto& position : positions) {
-        if (_gridOccupancy[(int)position.x + (int)position.x * (int)position.y]) {
+        if (_gridOccupancy[(int)position.x + 32 * (int)position.y]) {
             return false;
         }
     }
@@ -24,10 +24,9 @@ bool WorldGrid::isGridFreeAt(std::vector<glm::vec2> positions) {
 
 Machine* WorldGrid::getMachineAt(glm::vec2 position) {
     for (Machine* machine : _machines) {
-        for (glm::vec2 machinePoint : machine->getOccupiedPoints()) {
-            if (machinePoint == position) {
-                return machine;
-            }
+        glm::vec3 machinePosition = machine->getOwner()->getComponent<Transform>()->_position;
+        if (glm::vec2((int)machinePosition.x, (int)machinePosition.z) == position) {
+            return machine;
         }
     }
     return nullptr;
@@ -37,20 +36,20 @@ void WorldGrid::placeMachine(GameObject* machineObject) {
     Machine* machine = machineObject->getComponent<Machine>();
     machine->setOwner(machineObject);
     _machines.push_back(machine);
-    setGridOccupancyAt(machine->getOccupiedPoints(), true);
+    glm::vec3 machinePosition = machine->getOwner()->getComponent<Transform>()->_position;
+    setGridOccupancyAt(glm::vec2((int)machinePosition.x, (int)machinePosition.z), true);
 
     World::addObject(machineObject);
 }
 
 void WorldGrid::removeMachine(Machine* machine) {
     _machines.erase(std::remove(_machines.begin(), _machines.end(), machine), _machines.end());
-    setGridOccupancyAt(machine->getOccupiedPoints(), false);
+    glm::vec3 machinePosition = machine->getOwner()->getComponent<Transform>()->_position;
+    setGridOccupancyAt(glm::vec2((int)machinePosition.x, (int)machinePosition.z), false);
 
     World::removeObject(machine->getOwner());
 }
 
-void WorldGrid::setGridOccupancyAt(std::vector<glm::vec2> positions, bool value) {
-    for (auto position : positions) {
-        _gridOccupancy[(int)position.x + (int)position.x * (int)position.y] = value;
-    }
+void WorldGrid::setGridOccupancyAt(glm::vec2 position, bool value) {
+    _gridOccupancy[(int)position.x + 32 * (int)position.y] = value;
 }
