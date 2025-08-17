@@ -1,5 +1,4 @@
 #pragma once
-#include "Component.h"
 #include "Time.h"
 
 #include "SOIL2.h"
@@ -8,8 +7,7 @@
 
 #include <iostream>
 
-class Sprite :
-    public Component
+class Sprite
 {
 private:
 	const char* _fileName;
@@ -75,7 +73,5 @@ public:
 
 	glm::vec2 getSize() const;
 	void setSize(const glm::vec2& size);
-
-	Component* copy();
 };
 

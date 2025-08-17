@@ -144,6 +144,9 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="TextRenderer.cpp">
+      <Filter>Source Files\Components\Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -217,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderer.h">
+      <Filter>Header Files\Componets\Rendering</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

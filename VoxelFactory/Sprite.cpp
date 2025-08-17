@@ -165,7 +165,3 @@ void Sprite::setSpriteFlip(const glm::vec2& spriteFlip) { this->_spriteFlip = sp
 
 glm::vec2 Sprite::getSize() const { return _size; }
 void Sprite::setSize(const glm::vec2& size) { this->_size = size; }
-
-Component* Sprite::copy() {
-	return new Sprite(_fileName, _size, _numberOfTextures, _numberOfFrames, _isTransparent);
-}

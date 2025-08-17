@@ -67,7 +67,7 @@ void Prefabs::initMachines() {
 	saw.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(saw));
 
-	GameObject metalPress = GameObject("MetalPress");
+	GameObject metalPress = GameObject("Metal press");
 	metalPress.addComponent<MeshRenderer>("Models/Machines/MetalPress/MetalPress.obj");
 	metalPress.addComponent<Machine>(1, glm::vec2(0), glm::vec2(0, -1), glm::vec2(0, 1), 
 		CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE));
@@ -78,7 +78,7 @@ void Prefabs::initMachines() {
 	// PRODUCT GENERATORS
 	// ===============================================================================================================
 
-	GameObject ironGenerator = GameObject("IronGenerator");
+	GameObject ironGenerator = GameObject("Iron generator");
 	ironGenerator.addComponent<MeshRenderer>("Models/Machines/IronGenerator/IronGenerator.obj");
 	ironGenerator.getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
 	ironGenerator.addComponent<Machine>(1, glm::vec2(0), std::vector<glm::vec2>{}, std::vector<glm::vec2>{
@@ -90,7 +90,7 @@ void Prefabs::initMachines() {
 	ironGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(ironGenerator));
 
-	GameObject woodGenerator = GameObject("WoodGenerator");
+	GameObject woodGenerator = GameObject("Wood generator");
 	woodGenerator.addComponent<MeshRenderer>("Models/Machines/WoodGenerator/WoodGenerator.obj");
 	woodGenerator.addComponent<Machine>(1, glm::vec2(0), std::vector<glm::vec2>{}, std::vector<glm::vec2>{
 		glm::vec2(0, 1),
@@ -101,7 +101,7 @@ void Prefabs::initMachines() {
 	woodGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(woodGenerator));
 
-	GameObject stoneGenerator = GameObject("StoneGenerator");
+	GameObject stoneGenerator = GameObject("Stone generator");
 	stoneGenerator.addComponent<MeshRenderer>("Models/Machines/StoneGenerator/StoneGenerator.obj");
 	stoneGenerator.addComponent<Machine>(1, glm::vec2(0), std::vector<glm::vec2>{}, std::vector<glm::vec2>{
 		glm::vec2(0, 1),

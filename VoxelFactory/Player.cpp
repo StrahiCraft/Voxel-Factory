@@ -11,12 +11,12 @@ void Player::init(GameObject* placingMachine) {
 	_placingMachine->setActive(false);
 
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Conveyor")));
-	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("WoodGenerator")));
-	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("StoneGenerator")));
-	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("IronGenerator")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Wood generator")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Stone generator")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Iron generator")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Saw")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Furnace")));
-	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("MetalPress")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Metal press")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Seller")));
 }
 

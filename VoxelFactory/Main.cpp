@@ -2,7 +2,7 @@
 #include "MeshRenderer.h"
 #include "CameraController.h"
 #include "Player.h"
-#include "Sprite.h"
+#include "TextRenderer.h"
 
 PFNGLACTIVETEXTUREARBPROC Material::glActiveTextureARB = nullptr;
 PFNGLMULTITEXCOORD2FARBPROC Material::glMultiTexCoord2fARB = nullptr;
@@ -83,6 +83,13 @@ void initVariables() {
 	ground->getComponent<Transform>()->_position = glm::vec3(15.5, 0, 15.5);
 	ground->getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	World::addObject(ground);
+
+	GameObject* testText = new GameObject("Test text");
+	testText->addComponent<TextRenderer>("Test!");
+	testText->getComponent<Transform>()->_position = glm::vec3(600, 300, 0);
+	testText->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+
+	World::addUIObject(testText);
 }
 
 void doLighting() {
@@ -90,7 +97,7 @@ void doLighting() {
 	glEnable(GL_LIGHT0);
 	GLfloat light_pos[4] = { 0.0f, 1.0f, 1.0f, 0.0f };
 	GLfloat diffuse_pos[4] = { 1, 1, 1, 1 };
-	GLfloat ambient_pos[4] = { 0.35f, 0.35f, 0.35f, 1 };
+	GLfloat ambient_pos[4] = { 0.25f, 0.25f, 0.25f, 1 };
 	glLightfv(GL_LIGHT0, GL_POSITION, light_pos);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse_pos);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient_pos);
