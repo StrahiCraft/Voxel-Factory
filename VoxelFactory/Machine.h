@@ -14,8 +14,13 @@ private:
 
     std::vector<CraftingRecipe> _craftingRecipes;
     std::vector<Product> _productInside;
+
+    int _price;
 public:
-    Machine(float delay, std::vector<glm::vec2> inputPositions, std::vector<glm::vec2> outputPositions, std::vector<CraftingRecipe> craftingRecipes);
+    Machine(float delay, std::vector<glm::vec2> inputPositions, std::vector<glm::vec2> outputPositions,
+        std::vector<CraftingRecipe> craftingRecipes, int price);
+
+    int getPrice();
 
     Component* copy();
 };

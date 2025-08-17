@@ -30,7 +30,7 @@ void Prefabs::initMachines() {
 	GameObject conveyor = GameObject("Conveyor");
 	conveyor.addComponent<MeshRenderer>("Models/Machines/Conveyor/Conveyor.obj");
 	conveyor.addComponent<Machine>(1, std::vector<glm::vec2>{glm::vec2(0, -1)},
-		std::vector<glm::vec2>{glm::vec2(0, 1)}, std::vector<CraftingRecipe>{CraftingRecipe(ProductType::ANY, ProductType::ANY)});
+		std::vector<glm::vec2>{glm::vec2(0, 1)}, std::vector<CraftingRecipe>{CraftingRecipe(ProductType::ANY, ProductType::ANY)}, 10);
 	conveyor.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(conveyor));
 
@@ -41,7 +41,7 @@ void Prefabs::initMachines() {
 			glm::vec2(0, -1),
 			glm::vec2(1, 0),
 			glm::vec2(-1, 0)}, std::vector<glm::vec2>{},
-			std::vector<CraftingRecipe>{CraftingRecipe(ProductType::ANY, ProductType::NOTHING)});
+			std::vector<CraftingRecipe>{CraftingRecipe(ProductType::ANY, ProductType::NOTHING)}, 50);
 	seller.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(seller));
 
@@ -56,7 +56,7 @@ void Prefabs::initMachines() {
 		std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::IRON_ORE, ProductType::IRON_INGOT),
 			CraftingRecipe(ProductType::CUT_STONE, ProductType::STONE_BRICK)
-	});
+	}, 300);
 	furnace.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(furnace));
 
@@ -68,7 +68,7 @@ void Prefabs::initMachines() {
 			CraftingRecipe(ProductType::LOG, ProductType::STRIPPED_LOG),
 			CraftingRecipe(ProductType::STRIPPED_LOG, ProductType::PLANK),
 			CraftingRecipe(ProductType::STONE, ProductType::CUT_STONE)
-	});
+	}, 50);
 	saw.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(saw));
 
@@ -76,7 +76,7 @@ void Prefabs::initMachines() {
 	metalPress.addComponent<MeshRenderer>("Models/Machines/MetalPress/MetalPress.obj");
 	metalPress.addComponent<Machine>(1, std::vector<glm::vec2>{
 		glm::vec2(0, -1)}, std::vector<glm::vec2> {glm::vec2(0, 1)},
-			std::vector<CraftingRecipe> {CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE)});
+			std::vector<CraftingRecipe> {CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE)}, 700);
 	metalPress.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(metalPress));
 
@@ -92,7 +92,7 @@ void Prefabs::initMachines() {
 		glm::vec2(0, -1), 
 		glm::vec2(1, 0),
 		glm::vec2(-1, 0)},
-		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::IRON_ORE)});
+		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::IRON_ORE)}, 500);
 	ironGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(ironGenerator));
 
@@ -103,7 +103,7 @@ void Prefabs::initMachines() {
 		glm::vec2(0, -1),
 		glm::vec2(1, 0),
 		glm::vec2(-1, 0)},
-		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::LOG)});
+		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::LOG)}, 30);
 	woodGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(woodGenerator));
 
@@ -114,7 +114,7 @@ void Prefabs::initMachines() {
 		glm::vec2(0, -1),
 		glm::vec2(1, 0),
 		glm::vec2(-1, 0)},
-		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::STONE)});
+		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::STONE)}, 100);
 	stoneGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(stoneGenerator));
 }

@@ -26,6 +26,11 @@ void Player::setupMachinePlacementText(TextRenderer* machinePlacementText) {
 	changePlacingMachine(0);
 }
 
+void Player::setupMoneyCounter(TextRenderer* moneyCounter) {
+	_moneyCounter = moneyCounter;
+	_moneyCounter->setTextColor(glm::vec3(0, 1, 0));
+}
+
 void Player::raycast() {
 	Transform* transform = getOwner()->getComponent<Transform>();
 
@@ -82,6 +87,11 @@ void Player::handleBuildingInputs() {
 
 	if (Input::getLeftMouseDown()) {
 		// check if player has enough money
+		if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > _cash) {
+			// play a cant place sound
+			return;
+		}
+
 		if (!WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
 			// play a cant place sound
 			return;
@@ -92,6 +102,9 @@ void Player::handleBuildingInputs() {
 		newMachine->getComponent<Transform>()->_rotation = _placingMachine->getComponent<Transform>()->_rotation;
 
 		WorldGrid::placeMachine(newMachine);
+
+		_cash -= _machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice();
+		_moneyCounter->setText(std::to_string(_cash) + "$");
 	}
 
 	if (Input::getKeyDown('B')) {
@@ -140,6 +153,8 @@ void Player::handleNonBuildingInputs() {
 
 	if (Input::getRightMouseDown()) {
 		WorldGrid::removeMachine(WorldGrid::getMachineAt(glm::vec2(_currentTarget.x, _currentTarget.z)));
+		_cash += targetedMachine->getPrice();
+		_moneyCounter->setText(std::to_string(_cash) + "$");
 	}
 
 	if (Input::getKeyDown('R')) {
@@ -158,7 +173,9 @@ void Player::changePlacingMachine(int indexUpdate) {
 	_placingMachineIndex %= _machinesToPlace.size();
 
 	_placingMachine->getComponent<MeshRenderer>()->setMesh(_machinesToPlace[_placingMachineIndex]->getComponent<MeshRenderer>()->getMeshes());
-	_machinePlacementText->setText(_machinesToPlace[_placingMachineIndex]->getName() + "\nPrice:");
+	std::string placementText = _machinesToPlace[_placingMachineIndex]->getName() + "\nPrice: ";
+	placementText.append(std::to_string(_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice()) + "$");
+	_machinePlacementText->setText(placementText);
 }
 
 Component* Player::copy() {
