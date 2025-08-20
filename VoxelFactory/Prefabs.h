@@ -1,7 +1,9 @@
 #pragma once
 #include "GameObject.h"
-#include "Machine.h"
 #include "MeshRenderer.h"
+#include "Machine.h"
+class ProductOnConveyor;
+
 
 static class Prefabs
 {

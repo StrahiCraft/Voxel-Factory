@@ -1,4 +1,5 @@
 #include "Prefabs.h"
+#include "ProductOnConveyor.h"
 
 std::vector<GameObject> Prefabs::_prefabs;
 std::vector<GameObject> Prefabs::_products;
@@ -29,14 +30,20 @@ void Prefabs::initMachines() {
 	// MISC
 	// ===============================================================================================================
 
-	GameObject conveyor = GameObject("Conveyor");
+	GameObject conveyor = GameObject("Conveyor", std::vector<GameObject*> {new GameObject("ProductOnConveyor")});
 	conveyor.addComponent<MeshRenderer>("Models/Machines/Conveyor/Conveyor.obj");
-	conveyor.addComponent<Machine>(2, std::vector<Direction>{
+	conveyor.addComponent<Machine>(1, std::vector<Direction>{
 		Direction::BACK,
 		Direction::LEFT,
 		Direction::RIGHT},
 		std::vector<Direction>{Direction::FORWARD}, std::vector<CraftingRecipe>{CraftingRecipe(ProductType::ANY, ProductType::ANY)}, 10);
 	conveyor.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+
+	conveyor.getChild(0)->getComponent<Transform>()->_position.y = 0.7f;
+	conveyor.getChild(0)->addComponent<MeshRenderer>();
+	conveyor.getChild(0)->addComponent<ProductOnConveyor>(conveyor.getComponent<Machine>());
+	conveyor.getChild(0)->setActive(false);
+
 	_prefabs.push_back(GameObject(conveyor));
 
 	GameObject seller = GameObject("Seller");
@@ -56,7 +63,7 @@ void Prefabs::initMachines() {
 
 	GameObject furnace = GameObject("Furnace");
 	furnace.addComponent<MeshRenderer>("Models/Machines/Furnace/Furnace.obj");
-	furnace.addComponent<Machine>(6.25f, std::vector<Direction> {
+	furnace.addComponent<Machine>(5, std::vector<Direction> {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
 		std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::IRON_ORE, ProductType::IRON_INGOT),
@@ -67,7 +74,7 @@ void Prefabs::initMachines() {
 
 	GameObject saw = GameObject("Saw");
 	saw.addComponent<MeshRenderer>("Models/Machines/Saw/Saw.obj");
-	saw.addComponent<Machine>(3.5f, std::vector<Direction> {
+	saw.addComponent<Machine>(2, std::vector<Direction> {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
 		std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::LOG, ProductType::STRIPPED_LOG),
@@ -79,7 +86,7 @@ void Prefabs::initMachines() {
 
 	GameObject metalPress = GameObject("Metal press");
 	metalPress.addComponent<MeshRenderer>("Models/Machines/MetalPress/MetalPress.obj");
-	metalPress.addComponent<Machine>(4, std::vector<Direction>{
+	metalPress.addComponent<Machine>(2.5f, std::vector<Direction>{
 		Direction::BACK}, std::vector<Direction> {Direction::FORWARD},
 			std::vector<CraftingRecipe> {CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE)}, 700);
 	metalPress.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
@@ -92,7 +99,7 @@ void Prefabs::initMachines() {
 	GameObject ironGenerator = GameObject("Iron generator");
 	ironGenerator.addComponent<MeshRenderer>("Models/Machines/IronGenerator/IronGenerator.obj");
 	ironGenerator.getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
-	ironGenerator.addComponent<Machine>(15, std::vector<Direction>{}, std::vector<Direction>{
+	ironGenerator.addComponent<Machine>(10, std::vector<Direction>{}, std::vector<Direction>{
 		Direction::FORWARD,
 		Direction::BACK,
 		Direction::LEFT,
@@ -103,7 +110,7 @@ void Prefabs::initMachines() {
 
 	GameObject woodGenerator = GameObject("Wood generator");
 	woodGenerator.addComponent<MeshRenderer>("Models/Machines/WoodGenerator/WoodGenerator.obj");
-	woodGenerator.addComponent<Machine>(6, std::vector<Direction>{}, std::vector<Direction>{
+	woodGenerator.addComponent<Machine>(4, std::vector<Direction>{}, std::vector<Direction>{
 		Direction::FORWARD,
 		Direction::BACK,
 		Direction::LEFT,
@@ -114,7 +121,7 @@ void Prefabs::initMachines() {
 
 	GameObject stoneGenerator = GameObject("Stone generator");
 	stoneGenerator.addComponent<MeshRenderer>("Models/Machines/StoneGenerator/StoneGenerator.obj");
-	stoneGenerator.addComponent<Machine>(12, std::vector<Direction>{}, std::vector<Direction>{
+	stoneGenerator.addComponent<Machine>(6.5f, std::vector<Direction>{}, std::vector<Direction>{
 		Direction::FORWARD,
 		Direction::BACK,
 		Direction::LEFT,

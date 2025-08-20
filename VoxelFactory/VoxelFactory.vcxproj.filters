@@ -156,6 +156,9 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\Graphics\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ProductOnConveyor.cpp">
+      <Filter>Source Files\Components\Gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -238,6 +241,9 @@
     </ClInclude>
     <ClInclude Include="CashManager.h">
       <Filter>Header Files\Graphics\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductOnConveyor.h">
+      <Filter>Header Files\Componets\Gameplay</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

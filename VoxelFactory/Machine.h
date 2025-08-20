@@ -28,7 +28,11 @@ public:
     void update();
 
     int getPrice();
+    ProductType getProductType();
+
     void tryToInsertProduct(glm::vec2 insertPoint, Product product);
+
+    float getCraftingCompletionAmount();
 
     Component* copy();
 private:
@@ -41,6 +45,6 @@ private:
 
     bool anyCrafter();
     bool nothingCrafter();
-protected:
+
     void onProductEnter();
 };

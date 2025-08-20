@@ -34,12 +34,9 @@ Machine* WorldGrid::getMachineAt(glm::vec2 position) {
 
 void WorldGrid::placeMachine(GameObject* machineObject) {
     Machine* machine = machineObject->getComponent<Machine>();
-    machine->setOwner(machineObject);
     _machines.push_back(machine);
     glm::vec3 machinePosition = machine->getOwner()->getComponent<Transform>()->_position;
     setGridOccupancyAt(glm::vec2((int)machinePosition.x, (int)machinePosition.z), true);
-
-    std::cout << "Machine placed at " << (int)machinePosition.x << " " << (int)machinePosition.z << std::endl;
 
     World::addObject(machineObject);
 }

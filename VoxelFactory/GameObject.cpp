@@ -15,13 +15,16 @@ GameObject::GameObject(const std::string& name, std::vector<GameObject*> childre
 
 GameObject::GameObject(GameObject* other) {
 	_name = other->_name;
+	_active = other->_active;
 	
 	for (auto& component : other->_components) {
  		_components.push_back(component->copy());
+		_components.back()->setOwner(this);
 	}
 
 	for (auto& child : other->_children) {
 		_children.push_back(new GameObject(child));
+		_children.back()->setParent(this);
 	}
 }
 

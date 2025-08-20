@@ -27,14 +27,25 @@ void Machine::update() {
     if (_timer >= _delay) {
         craftNewProduct();
         _timer = 0;
-        if (!nothingCrafter()) {
-            _incrementTimer = false;
+        if (nothingCrafter()) {
+            return;
+        }
+        _incrementTimer = false;
+
+        GameObject* child = getOwner()->getChild(0);
+
+        if (child != nullptr) {
+            child->setActive(false);
         }
     }
 }
 
 int Machine::getPrice() {
     return _price;
+}
+
+ProductType Machine::getProductType() {
+    return _productInside.getType();
 }
 
 void Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
@@ -49,6 +60,10 @@ void Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) {
     _productInside = product;
 
     onProductEnter();
+}
+
+float Machine::getCraftingCompletionAmount() {
+    return _timer / _delay;
 }
 
 Component* Machine::copy() {
@@ -178,4 +193,10 @@ void Machine::onProductEnter() {
         return;
     }
     _incrementTimer = true;
+
+    GameObject* child = getOwner()->getChild(0);
+
+    if (child != nullptr) {
+        child->setActive(true);
+    }
 }

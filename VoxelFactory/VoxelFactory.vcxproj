@@ -156,6 +156,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Prefabs.cpp" />
     <ClCompile Include="Product.cpp" />
+    <ClCompile Include="ProductOnConveyor.cpp" />
     <ClCompile Include="SphereRenderer.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Prefabs.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="ProductOnConveyor.h" />
     <ClInclude Include="ProductType.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Sprite.h" />
