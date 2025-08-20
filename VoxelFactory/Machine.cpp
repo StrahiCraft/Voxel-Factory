@@ -49,30 +49,18 @@ ProductType Machine::getProductType() {
 }
 
 void Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
-    std::cout << "Trying to insert into " << getOwner()->getComponent<Transform>()->_position.x << " " <<
-        getOwner()->getComponent<Transform>()->_position.z << " from " << insertPoint.x << " " << insertPoint.y << std::endl;
     if (!productValidForCrafting(product) && !anyCrafter()) {
         std::cout << "Failed 1" << std::endl;
         return;
     }
 
     if (!productFromValidDirection(insertPoint)) {
-        std::cout << "Failed 2" << std::endl;
-
-        Direction insertingFrom = directionFromPoint(insertPoint);
-        std::cout << "Inserting from " << insertingFrom << ", but only accepting: ";
-        for (auto& direction : _inputDirections) {
-            std::cout << direction << " ";
-        }
-        std::cout << std::endl;
-
         return;
     }
 
     _productInside = product;
 
     onProductEnter();
-    std::cout << "Success" << std::endl;
 }
 
 float Machine::getCraftingCompletionAmount() {
@@ -101,15 +89,6 @@ bool Machine::productValidForCrafting(Product product) {
 
 bool Machine::productFromValidDirection(glm::vec2 insertPoint) {
     Direction insertingFrom = directionFromPoint(insertPoint);
-
-    if (insertingFrom == Direction::NOT_FOUND) {
-        Transform* transform = getOwner()->getComponent<Transform>();
-        glm::ivec3 forward = glm::vec3(glm::round(transform->_position + transform->getTrueForward()));
-        glm::ivec3 back = glm::vec3(glm::round(transform->_position - transform->getTrueForward()));
-        glm::ivec3 left = glm::vec3(glm::round(transform->_position + transform->getTrueRight()));
-        glm::ivec3 right = glm::vec3(glm::round(transform->_position - transform->getTrueRight()));
-
-    }
 
     for (auto& direction : _inputDirections) {
         if (direction == insertingFrom) {
