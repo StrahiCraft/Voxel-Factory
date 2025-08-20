@@ -76,6 +76,9 @@
     <Filter Include="Source Files\Graphics\UI">
       <UniqueIdentifier>{d108fc7f-5794-421b-b6e7-e7d71c514250}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SpecialTypes">
+      <UniqueIdentifier>{e6b3e4e2-fb4f-4468-85bd-b1c17ab03903}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -158,6 +161,15 @@
     </ClCompile>
     <ClCompile Include="ProductOnConveyor.cpp">
       <Filter>Source Files\Components\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioManager.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="DictionaryItem.cpp">
+      <Filter>Source Files\SpecialTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Dictionary.cpp">
+      <Filter>Source Files\SpecialTypes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +256,15 @@
     </ClInclude>
     <ClInclude Include="ProductOnConveyor.h">
       <Filter>Header Files\Componets\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="DictionaryItem.h">
+      <Filter>Header Files\SpecialTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dictionary.h">
+      <Filter>Header Files\SpecialTypes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

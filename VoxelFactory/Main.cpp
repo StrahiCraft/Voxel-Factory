@@ -64,8 +64,22 @@ void initGlut(int argv, char** argc) {
 	glutCreateWindow(windowTitle);
 }
 
+void initAudio() {
+	AudioManager::init();
+
+	AudioManager::addSong("Zeigarnik Effect", "Audio/Music/Zeigarnik Effect.mp3");
+
+	AudioManager::addSound("Place", "Audio/SFX/Place.mp3");
+	AudioManager::addSound("Destroy", "Audio/SFX/Destroy.mp3");
+	AudioManager::addSound("Rotate", "Audio/SFX/Rotate.wav");
+	AudioManager::addSound("InvalidPlacement", "Audio/SFX/InvalidPlacement.mp3");
+
+	AudioManager::playSong("Zeigarnik Effect");
+}
+
 void initVariables() {
 	Prefabs::initPrefabs();
+	initAudio();
 
 	GameObject* player = new GameObject("Player");
 	player->addComponent<Player>();

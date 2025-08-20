@@ -81,13 +81,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>FREEGLUT_STATIC;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)linking\GLEXT\include\gl;$(SolutionDir)linking\SOIL\include;$(SolutionDir)linking\GLM\include;$(SolutionDir)linking\GLUT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)linking\GLEXT\include\gl;$(SolutionDir)linking\SOIL\include;$(SolutionDir)linking\GLM\include;$(SolutionDir)linking\GLUT\include;$(SolutionDir)linking\FMOD\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)linking\GLEXT\lib;$(SolutionDir)linking\SOIL\lib;$(SolutionDir)linking\GLUT\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>soil2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)linking\GLEXT\lib;$(SolutionDir)linking\SOIL\lib;$(SolutionDir)linking\GLUT\lib;$(SolutionDir)linking\FMOD\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="CameraMatrix.h" />
@@ -146,6 +147,8 @@
     <ClCompile Include="ConeRenderer.cpp" />
     <ClCompile Include="CraftingRecipe.cpp" />
     <ClCompile Include="CubeRenderer.cpp" />
+    <ClCompile Include="Dictionary.cpp" />
+    <ClCompile Include="DictionaryItem.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Machine.cpp" />
@@ -167,6 +170,7 @@
     <ClCompile Include="WorldGrid.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraController.h" />
     <ClInclude Include="CashManager.h" />
@@ -174,6 +178,8 @@
     <ClInclude Include="ConeRenderer.h" />
     <ClInclude Include="CraftingRecipe.h" />
     <ClInclude Include="CubeRenderer.h" />
+    <ClInclude Include="Dictionary.h" />
+    <ClInclude Include="DictionaryItem.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />

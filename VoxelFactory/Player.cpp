@@ -82,12 +82,12 @@ void Player::handleBuildingInputs() {
 
 	if (Input::getLeftMouseDown()) {
 		if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
-			// play a cant place sound
+			AudioManager::playSound("InvalidPlacement");
 			return;
 		}
 
 		if (!WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
-			// play a cant place sound
+			AudioManager::playSound("InvalidPlacement");
 			return;
 		}
 
@@ -98,6 +98,8 @@ void Player::handleBuildingInputs() {
 		WorldGrid::placeMachine(newMachine);
 
 		CashManager::updateMoney(-_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice());
+
+		AudioManager::playSound("Place");
 	}
 
 	if (Input::getKeyDown('B')) {
@@ -108,6 +110,7 @@ void Player::handleBuildingInputs() {
 	}
 
 	if (Input::getKeyDown('R')) {
+		AudioManager::playSound("Rotate");
 		_placingMachine->getComponent<Transform>()->rotate(-90, glm::vec3(0, 1, 0));
 	}
 
@@ -145,11 +148,13 @@ void Player::handleNonBuildingInputs() {
 	targetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(255.0 / 255.0, 249 / 255.0, 74 / 255.0));
 
 	if (Input::getRightMouseDown()) {
+		AudioManager::playSound("Destroy");
 		WorldGrid::removeMachine(WorldGrid::getMachineAt(glm::vec2(_currentTarget.x, _currentTarget.z)));
 		CashManager::updateMoney(targetedMachine->getPrice());
 	}
 
 	if (Input::getKeyDown('R')) {
+		AudioManager::playSound("Rotate");
 		targetedMachine->getOwner()->getComponent<Transform>()->rotate(-90, glm::vec3(0, 1, 0));
 	}
 

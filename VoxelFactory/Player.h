@@ -3,6 +3,7 @@
 #include "Machine.h"
 #include "WorldGrid.h"
 #include "Prefabs.h"
+#include "AudioManager.h"
 #include "CashManager.h"
 
 class Player :
