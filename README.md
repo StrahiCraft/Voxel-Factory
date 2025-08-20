@@ -1,5 +1,6 @@
 <h1>Controls</h1>
 WASD - Move<br>
+[Spacebar] - Toggle mouse lock<br>
 B - Toggle build mode<br>
 R - rotate building<br>
 While in build mode:<br>
