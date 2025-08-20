@@ -39,12 +39,10 @@ int Machine::getPrice() {
 
 void Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
     if (!productValidForCrafting(product) && !anyCrafter()) {
-        std::cout << "Product not valid" << std::endl;
         return;
     }
 
     if (!productFromValidDirection(insertPoint)) {
-        std::cout << "Product not from valid source" << std::endl;
         return;
     }
 
@@ -74,9 +72,7 @@ bool Machine::productValidForCrafting(Product product) {
 }
 
 bool Machine::productFromValidDirection(glm::vec2 insertPoint) {
-    std::cout << "Inserting from " << insertPoint.x << " " << insertPoint.y << std::endl;
     Direction insertingFrom = directionFromPoint(insertPoint);
-    std::cout << "This is direction " << insertingFrom << std::endl;
     for (auto& direction : _inputDirections) {
         if (direction == insertingFrom) {
             return true;
@@ -147,8 +143,6 @@ void Machine::craftNewProduct() {
         if (outputMachine == nullptr) {
             continue;
         }
-
-        std::cout << "Machine found!" << std::endl;
 
         if (nothingCrafter()) {
             _productInside = Prefabs::getProduct(getRecipeOutput(ProductType::NOTHING))->getComponent<Product>();

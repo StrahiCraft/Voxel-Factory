@@ -20,9 +20,6 @@ public:
 	glm::vec3 getTrueRight();
 	glm::vec3 getTrueUp();
 
-	glm::vec3 getEulerAngles();
-	void setEulerAngles(glm::vec3 eulerAngles);
-
 	void rotate(float angle, const glm::vec3& rotationAxis);
 
 	Component* copy();

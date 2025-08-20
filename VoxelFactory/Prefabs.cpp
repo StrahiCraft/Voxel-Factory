@@ -31,7 +31,7 @@ void Prefabs::initMachines() {
 
 	GameObject conveyor = GameObject("Conveyor");
 	conveyor.addComponent<MeshRenderer>("Models/Machines/Conveyor/Conveyor.obj");
-	conveyor.addComponent<Machine>(0.5f, std::vector<Direction>{
+	conveyor.addComponent<Machine>(2, std::vector<Direction>{
 		Direction::BACK,
 		Direction::LEFT,
 		Direction::RIGHT},
@@ -56,7 +56,7 @@ void Prefabs::initMachines() {
 
 	GameObject furnace = GameObject("Furnace");
 	furnace.addComponent<MeshRenderer>("Models/Machines/Furnace/Furnace.obj");
-	furnace.addComponent<Machine>(0.5f, std::vector<Direction> {
+	furnace.addComponent<Machine>(6.25f, std::vector<Direction> {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
 		std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::IRON_ORE, ProductType::IRON_INGOT),
@@ -67,7 +67,7 @@ void Prefabs::initMachines() {
 
 	GameObject saw = GameObject("Saw");
 	saw.addComponent<MeshRenderer>("Models/Machines/Saw/Saw.obj");
-	saw.addComponent<Machine>(0.5f, std::vector<Direction> {
+	saw.addComponent<Machine>(3.5f, std::vector<Direction> {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
 		std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::LOG, ProductType::STRIPPED_LOG),
@@ -79,7 +79,7 @@ void Prefabs::initMachines() {
 
 	GameObject metalPress = GameObject("Metal press");
 	metalPress.addComponent<MeshRenderer>("Models/Machines/MetalPress/MetalPress.obj");
-	metalPress.addComponent<Machine>(0.5f, std::vector<Direction>{
+	metalPress.addComponent<Machine>(4, std::vector<Direction>{
 		Direction::BACK}, std::vector<Direction> {Direction::FORWARD},
 			std::vector<CraftingRecipe> {CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE)}, 700);
 	metalPress.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
@@ -92,7 +92,7 @@ void Prefabs::initMachines() {
 	GameObject ironGenerator = GameObject("Iron generator");
 	ironGenerator.addComponent<MeshRenderer>("Models/Machines/IronGenerator/IronGenerator.obj");
 	ironGenerator.getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
-	ironGenerator.addComponent<Machine>(2, std::vector<Direction>{}, std::vector<Direction>{
+	ironGenerator.addComponent<Machine>(15, std::vector<Direction>{}, std::vector<Direction>{
 		Direction::FORWARD,
 		Direction::BACK,
 		Direction::LEFT,
@@ -103,7 +103,7 @@ void Prefabs::initMachines() {
 
 	GameObject woodGenerator = GameObject("Wood generator");
 	woodGenerator.addComponent<MeshRenderer>("Models/Machines/WoodGenerator/WoodGenerator.obj");
-	woodGenerator.addComponent<Machine>(1, std::vector<Direction>{}, std::vector<Direction>{
+	woodGenerator.addComponent<Machine>(6, std::vector<Direction>{}, std::vector<Direction>{
 		Direction::FORWARD,
 		Direction::BACK,
 		Direction::LEFT,
@@ -114,7 +114,7 @@ void Prefabs::initMachines() {
 
 	GameObject stoneGenerator = GameObject("Stone generator");
 	stoneGenerator.addComponent<MeshRenderer>("Models/Machines/StoneGenerator/StoneGenerator.obj");
-	stoneGenerator.addComponent<Machine>(1.5f, std::vector<Direction>{}, std::vector<Direction>{
+	stoneGenerator.addComponent<Machine>(12, std::vector<Direction>{}, std::vector<Direction>{
 		Direction::FORWARD,
 		Direction::BACK,
 		Direction::LEFT,

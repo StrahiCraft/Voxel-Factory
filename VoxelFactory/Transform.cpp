@@ -22,14 +22,6 @@ glm::vec3 Transform::getTrueUp() {
 	return glm::vec3(0, 1, 0) + 2.0f * glm::cross(glm::vec3(_rotation.x, _rotation.y, _rotation.z),
 		glm::cross(glm::vec3(_rotation.x, _rotation.y, _rotation.z), glm::vec3(0, 1, 0)) + _rotation.w * glm::vec3(0, 1, 0));
 }
-//
-//glm::vec3 Transform::getEulerAngles() {
-//	return glm::eulerAngles(_rotation);
-//}
-//
-//void Transform::setEulerAngles(glm::vec3 eulerAngles) {
-//	_rotation = glm::quat(eulerAngles);
-//}
 
 glm::vec3 Transform::getForward() {
 	return glm::normalize(glm::vec3(
