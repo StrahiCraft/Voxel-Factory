@@ -16,6 +16,8 @@ public:
 
 	static void placeMachine(GameObject* machineObject);
 	static void removeMachine(Machine* machine);
+
+	static void debugPrint();
 private:
 	static void setGridOccupancyAt(glm::vec2 positions, bool value);
 };

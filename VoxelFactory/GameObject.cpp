@@ -65,6 +65,7 @@ void GameObject::render() {
 }
 
 void GameObject::printChildren() {
+	std::cout << _name << ": ";
 	for (auto& child : _children) {
 		std::cout << child->getName() << ", ";
 		child->printChildren();
@@ -73,7 +74,6 @@ void GameObject::printChildren() {
 }
 
 void GameObject::addComponent(Component component) {
-	//_components.push_back(std::make_unique<Component>(component));
 	_components.push_back(&component);
 }
 

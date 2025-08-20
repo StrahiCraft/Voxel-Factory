@@ -9,14 +9,13 @@ void Prefabs::initPrefabs() {
 		new GameObject("PlacementArrow")
 	});
 	placingMachine.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
-	placingMachine.setIgnoreParentTransform(true);
 	placingMachine.addComponent<MeshRenderer>("Models/Machines/Conveyor/Conveyor.obj");
 	placingMachine.getComponent<MeshRenderer>()->setMeshRendering(false);
 	placingMachine.getComponent<MeshRenderer>()->setSelected(true);
 	placingMachine.getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(0, 1, 0));
 	placingMachine.getChild(0)->addComponent<MeshRenderer>("Models/PlacementArrow/PlacementArrow.obj");
 	placingMachine.getChild(0)->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
-
+	
 	_prefabs.push_back(GameObject(placingMachine));
 
 	// =======================================================================================================

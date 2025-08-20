@@ -15,6 +15,7 @@ public:
 	static void addUIObject(GameObject* newObject);
 	static void removeUIObject(GameObject* objectToRemove);
 
+	static void printWorld();
 private:
 	static void render3D();
 	static void render2D();

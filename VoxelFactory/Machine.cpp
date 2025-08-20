@@ -49,17 +49,30 @@ ProductType Machine::getProductType() {
 }
 
 void Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
+    std::cout << "Trying to insert into " << getOwner()->getComponent<Transform>()->_position.x << " " <<
+        getOwner()->getComponent<Transform>()->_position.z << " from " << insertPoint.x << " " << insertPoint.y << std::endl;
     if (!productValidForCrafting(product) && !anyCrafter()) {
+        std::cout << "Failed 1" << std::endl;
         return;
     }
 
     if (!productFromValidDirection(insertPoint)) {
+        std::cout << "Failed 2" << std::endl;
+
+        Direction insertingFrom = directionFromPoint(insertPoint);
+        std::cout << "Inserting from " << insertingFrom << ", but only accepting: ";
+        for (auto& direction : _inputDirections) {
+            std::cout << direction << " ";
+        }
+        std::cout << std::endl;
+
         return;
     }
 
     _productInside = product;
 
     onProductEnter();
+    std::cout << "Success" << std::endl;
 }
 
 float Machine::getCraftingCompletionAmount() {
@@ -88,12 +101,21 @@ bool Machine::productValidForCrafting(Product product) {
 
 bool Machine::productFromValidDirection(glm::vec2 insertPoint) {
     Direction insertingFrom = directionFromPoint(insertPoint);
+
+    if (insertingFrom == Direction::NOT_FOUND) {
+        Transform* transform = getOwner()->getComponent<Transform>();
+        glm::ivec3 forward = glm::vec3(glm::round(transform->_position + transform->getTrueForward()));
+        glm::ivec3 back = glm::vec3(glm::round(transform->_position - transform->getTrueForward()));
+        glm::ivec3 left = glm::vec3(glm::round(transform->_position + transform->getTrueRight()));
+        glm::ivec3 right = glm::vec3(glm::round(transform->_position - transform->getTrueRight()));
+
+    }
+
     for (auto& direction : _inputDirections) {
         if (direction == insertingFrom) {
             return true;
         }
     }
-
     return false;
 }
 
@@ -101,16 +123,16 @@ Direction Machine::directionFromPoint(glm::vec2 point)
 {
     Transform* transform = getOwner()->getComponent<Transform>();
 
-    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(transform->_position + transform->getTrueForward())) {
+    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(glm::round(transform->_position + transform->getTrueForward()))) {
         return Direction::FORWARD;
     }
-    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(transform->_position - transform->getTrueForward())) {
+    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(glm::round(transform->_position - transform->getTrueForward()))) {
         return Direction::BACK;
     }
-    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(transform->_position + transform->getTrueRight())) {
+    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(glm::round(transform->_position + transform->getTrueRight()))) {
         return Direction::RIGHT;
     }
-    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(transform->_position - transform->getTrueRight())) {
+    if (glm::ivec3(point.x, 0, point.y) == glm::ivec3(glm::round(transform->_position - transform->getTrueRight()))) {
         return Direction::LEFT;
     }
     return Direction::NOT_FOUND;
@@ -121,13 +143,13 @@ glm::vec3 Machine::pointFromDirection(Direction direction) {
 
     switch (direction) {
     case Direction::FORWARD:
-        return transform->_position + transform->getTrueForward();
+        return glm::round(transform->_position + transform->getTrueForward());
     case Direction::BACK:
-        return transform->_position - transform->getTrueForward();
+        return glm::round(transform->_position - transform->getTrueForward());
     case Direction::RIGHT:
-        return transform->_position + transform->getTrueRight();
+        return glm::round(transform->_position + transform->getTrueRight());
     case Direction::LEFT:
-        return transform->_position - transform->getTrueRight();
+        return glm::round(transform->_position - transform->getTrueRight());
     }
 
     return transform->_position;
@@ -145,15 +167,11 @@ ProductType Machine::getRecipeOutput(ProductType input) {
 
 void Machine::craftNewProduct() {
     Transform* transform = getOwner()->getComponent<Transform>();
-    if (!anyCrafter() && !nothingCrafter()) {
-        GameObject* product = Prefabs::getProduct(getRecipeOutput(_productInside.getType()));
-        _productInside = product->getComponent<Product>();
-    }
 
     for (auto& outputDirection : _outputDirections) {
         glm::vec3 outputPosition = pointFromDirection(outputDirection);
 
-        Machine* outputMachine = WorldGrid::getMachineAt(glm::vec2((int)outputPosition.x, (int)outputPosition.z));
+        Machine* outputMachine = WorldGrid::getMachineAt(glm::ivec2(outputPosition.x, outputPosition.z));
 
         if (outputMachine == nullptr) {
             continue;
@@ -162,7 +180,7 @@ void Machine::craftNewProduct() {
         if (nothingCrafter()) {
             _productInside = Prefabs::getProduct(getRecipeOutput(ProductType::NOTHING))->getComponent<Product>();
         }
-        outputMachine->tryToInsertProduct(glm::vec2(transform->_position.x, transform->_position.z), _productInside);
+        outputMachine->tryToInsertProduct(glm::ivec2(transform->_position.x, transform->_position.z), _productInside);
     }
 
     _productInside = new Product();

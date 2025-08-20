@@ -92,3 +92,10 @@ void World::removeUIObject(GameObject* objectToRemove) {
 	_uiObjects.erase(std::remove(_uiObjects.begin(), _uiObjects.end(), objectToRemove), _uiObjects.end());
 }
 
+void World::printWorld() {
+	for (int i = 0; i < _objects.size(); i++) {
+		_objects[i]->printChildren();
+		std::cout << std::endl;
+	}
+}
+

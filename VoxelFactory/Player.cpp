@@ -96,6 +96,7 @@ void Player::handleBuildingInputs() {
 		newMachine->getComponent<Transform>()->_rotation = _placingMachine->getComponent<Transform>()->_rotation;
 
 		WorldGrid::placeMachine(newMachine);
+		WorldGrid::debugPrint();
 
 		CashManager::updateMoney(-_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice());
 
@@ -157,7 +158,6 @@ void Player::handleNonBuildingInputs() {
 		AudioManager::playSound("Rotate");
 		targetedMachine->getOwner()->getComponent<Transform>()->rotate(-90, glm::vec3(0, 1, 0));
 	}
-
 }
 
 void Player::changePlacingMachine(int indexUpdate) {

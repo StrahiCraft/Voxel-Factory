@@ -20,6 +20,10 @@ void update() {
 		Input::_isCursorLocked = !Input::_isCursorLocked;
 	}
 
+	if (Input::getKeyDown(']')) {
+		World::printWorld();
+	}
+
 	Input::update();
 
 	World::update();
