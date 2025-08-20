@@ -1,9 +1,9 @@
 <h1>Controls</h1>
-WASD - Move
-B - Toggle build mode
-R - rotate building
-While in build mode:
-Left mouse button - Place building
-Z and C - Cycle buildings
-While not in build mode:
-Right mouse button - Destroy building
+WASD - Move<br>
+B - Toggle build mode<br>
+R - rotate building<br>
+While in build mode:<br>
+Left mouse button - Place building<br>
+Z and C - Cycle buildings<br>
+While not in build mode:<br>
+Right mouse button - Destroy building<br>
