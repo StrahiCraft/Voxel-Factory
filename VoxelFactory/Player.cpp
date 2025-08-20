@@ -68,9 +68,11 @@ void Player::handleBuildingInputs() {
 
 	if (Input::getKeyDown('Z')) {
 		changePlacingMachine(-1);
+		AudioManager::playSound("ChangeMachine");
 	}
 	if (Input::getKeyDown('C')) {
 		changePlacingMachine(1);
+		AudioManager::playSound("ChangeMachine");
 	}
 
 	if (WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {

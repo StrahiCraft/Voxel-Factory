@@ -77,6 +77,7 @@ void initAudio() {
 	AudioManager::addSound("Destroy", "Audio/SFX/Destroy.mp3");
 	AudioManager::addSound("Rotate", "Audio/SFX/Rotate.wav");
 	AudioManager::addSound("InvalidPlacement", "Audio/SFX/InvalidPlacement.mp3");
+	AudioManager::addSound("ChangeMachine", "Audio/SFX/ChangeMachine.wav");
 
 	AudioManager::playSong("Zeigarnik Effect");
 }

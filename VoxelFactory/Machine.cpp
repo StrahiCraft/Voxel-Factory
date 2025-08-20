@@ -50,7 +50,6 @@ ProductType Machine::getProductType() {
 
 void Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
     if (!productValidForCrafting(product) && !anyCrafter()) {
-        std::cout << "Failed 1" << std::endl;
         return;
     }
 
@@ -146,6 +145,11 @@ ProductType Machine::getRecipeOutput(ProductType input) {
 
 void Machine::craftNewProduct() {
     Transform* transform = getOwner()->getComponent<Transform>();
+
+    if (!anyCrafter() && !nothingCrafter()) {
+        GameObject* product = Prefabs::getProduct(getRecipeOutput(_productInside.getType()));
+        _productInside = product->getComponent<Product>();
+    }
 
     for (auto& outputDirection : _outputDirections) {
         glm::vec3 outputPosition = pointFromDirection(outputDirection);
