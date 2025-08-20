@@ -141,6 +141,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="CameraMatrix.h" />
+    <ClCompile Include="CashManager.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ConeRenderer.cpp" />
     <ClCompile Include="CraftingRecipe.cpp" />
@@ -167,10 +168,12 @@
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraController.h" />
+    <ClInclude Include="CashManager.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ConeRenderer.h" />
     <ClInclude Include="CraftingRecipe.h" />
     <ClInclude Include="CubeRenderer.h" />
+    <ClInclude Include="Direction.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Machine.h" />
@@ -182,7 +185,6 @@
     <ClInclude Include="ProductType.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="TextCentering.h" />
     <ClInclude Include="TextRenderer.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Mesh.h" />

@@ -3,7 +3,7 @@
 #include "Machine.h"
 #include "WorldGrid.h"
 #include "Prefabs.h"
-#include "TextRenderer.h"
+#include "CashManager.h"
 
 class Player :
     public Component
@@ -19,14 +19,10 @@ private:
     int _placingMachineIndex = 0;
 
     TextRenderer* _machinePlacementText;
-    TextRenderer* _moneyCounter;
-
-    int _cash = 100;
 public:
     void update();
     void setupMachines(GameObject* placingMachine);
     void setupMachinePlacementText(TextRenderer* machinePlacementText);
-    void setupMoneyCounter(TextRenderer* moneyCounter);
 
     Component* copy();
 private:

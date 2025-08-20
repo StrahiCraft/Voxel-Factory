@@ -9,7 +9,10 @@ private:
     ProductType _type;
 
 public:
+    Product();
     Product(double price, ProductType type);
+    Product(Product* other);
+
     double getPrice() const;
     ProductType getType() const;
 

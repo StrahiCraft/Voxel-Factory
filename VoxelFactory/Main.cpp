@@ -98,7 +98,7 @@ void initVariables() {
 	moneyCounter->getComponent<Transform>()->_position = glm::vec3(0, 660, 0);
 	moneyCounter->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
 
-	player->getComponent<Player>()->setupMoneyCounter(moneyCounter->getComponent<TextRenderer>());
+	CashManager::setupMoneyCounter(moneyCounter->getComponent<TextRenderer>());
 
 	World::addUIObject(moneyCounter);
 }

@@ -26,11 +26,6 @@ void Player::setupMachinePlacementText(TextRenderer* machinePlacementText) {
 	changePlacingMachine(0);
 }
 
-void Player::setupMoneyCounter(TextRenderer* moneyCounter) {
-	_moneyCounter = moneyCounter;
-	_moneyCounter->setTextColor(glm::vec3(0, 1, 0));
-}
-
 void Player::raycast() {
 	Transform* transform = getOwner()->getComponent<Transform>();
 
@@ -86,8 +81,7 @@ void Player::handleBuildingInputs() {
 	}
 
 	if (Input::getLeftMouseDown()) {
-		// check if player has enough money
-		if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > _cash) {
+		if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
 			// play a cant place sound
 			return;
 		}
@@ -103,8 +97,7 @@ void Player::handleBuildingInputs() {
 
 		WorldGrid::placeMachine(newMachine);
 
-		_cash -= _machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice();
-		_moneyCounter->setText(std::to_string(_cash) + "$");
+		CashManager::updateMoney(-_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice());
 	}
 
 	if (Input::getKeyDown('B')) {
@@ -153,8 +146,7 @@ void Player::handleNonBuildingInputs() {
 
 	if (Input::getRightMouseDown()) {
 		WorldGrid::removeMachine(WorldGrid::getMachineAt(glm::vec2(_currentTarget.x, _currentTarget.z)));
-		_cash += targetedMachine->getPrice();
-		_moneyCounter->setText(std::to_string(_cash) + "$");
+		CashManager::updateMoney(targetedMachine->getPrice());
 	}
 
 	if (Input::getKeyDown('R')) {

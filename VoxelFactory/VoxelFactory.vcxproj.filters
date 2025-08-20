@@ -70,6 +70,12 @@
     <Filter Include="Source Files\Utility\GameObject">
       <UniqueIdentifier>{d1af5154-1dc6-4578-979d-ad46105eed38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Graphics\UI">
+      <UniqueIdentifier>{c8b84dd6-2c1a-4b3c-9a1c-cb7b95fbe01a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\UI">
+      <UniqueIdentifier>{d108fc7f-5794-421b-b6e7-e7d71c514250}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -141,11 +147,14 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files\Utility\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="TextRenderer.cpp">
       <Filter>Source Files\Components\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="CashManager.cpp">
+      <Filter>Source Files\Graphics\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\Graphics\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,14 +227,17 @@
     <ClInclude Include="Prefabs.h">
       <Filter>Header Files\Utility\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="TextRenderer.h">
       <Filter>Header Files\Componets\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="TextCentering.h">
+    <ClInclude Include="Direction.h">
       <Filter>Header Files\SpecialTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Graphics\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CashManager.h">
+      <Filter>Header Files\Graphics\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
