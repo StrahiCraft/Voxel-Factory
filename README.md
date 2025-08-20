@@ -1,5 +1,7 @@
 <h1>Controls</h1>
 WASD - Move<br>
+E - Ascend<br>
+Q - Descend<br>
 [Spacebar] - Toggle mouse lock<br>
 B - Toggle build mode<br>
 R - rotate building<br>
