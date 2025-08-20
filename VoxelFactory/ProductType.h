@@ -4,7 +4,7 @@ enum ProductType {
 	INVALID,
 	NOTHING,
 	ANY,
-	LOG,
+	WOOD,
 	STRIPPED_LOG,
 	PLANK,
 	STONE,

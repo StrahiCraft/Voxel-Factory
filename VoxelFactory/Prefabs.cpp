@@ -76,7 +76,7 @@ void Prefabs::initMachines() {
 	saw.addComponent<Machine>(2, std::vector<Direction> {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
 		std::vector<CraftingRecipe> {
-			CraftingRecipe(ProductType::LOG, ProductType::STRIPPED_LOG),
+			CraftingRecipe(ProductType::WOOD, ProductType::STRIPPED_LOG),
 			CraftingRecipe(ProductType::STRIPPED_LOG, ProductType::PLANK),
 			CraftingRecipe(ProductType::STONE, ProductType::CUT_STONE)
 	}, 50);
@@ -126,7 +126,7 @@ void Prefabs::initMachines() {
 		Direction::BACK,
 		Direction::LEFT,
 		Direction::RIGHT},
-		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::LOG)}, 30);
+		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::WOOD)}, 30);
 	woodGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(woodGenerator));
 
@@ -143,10 +143,10 @@ void Prefabs::initMachines() {
 }
 
 void Prefabs::initProducts() {
-	GameObject log = GameObject("Log");
-	log.addComponent<MeshRenderer>("Models/Product/Log/Log.obj");
-	log.addComponent<Product>(3, ProductType::LOG);
-	_products.push_back(log);
+	GameObject wood = GameObject("Wood");
+	wood.addComponent<MeshRenderer>("Models/Product/Wood/Wood.obj");
+	wood.addComponent<Product>(3, ProductType::WOOD);
+	_products.push_back(wood);
 
 	GameObject strippedLog = GameObject("Stripped log");
 	strippedLog.addComponent<MeshRenderer>("Models/Product/StrippedLog/StrippedLog.obj");
