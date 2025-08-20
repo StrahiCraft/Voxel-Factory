@@ -72,7 +72,7 @@ void Prefabs::initMachines() {
 	furnace.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(furnace));
 
-	GameObject saw = GameObject("Saw");
+	GameObject saw = GameObject("Saw", std::vector<GameObject*> {new GameObject("ProductOnConveyor")});
 	saw.addComponent<MeshRenderer>("Models/Machines/Saw/Saw.obj");
 	saw.addComponent<Machine>(2, std::vector<Direction> {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
@@ -82,14 +82,26 @@ void Prefabs::initMachines() {
 			CraftingRecipe(ProductType::STONE, ProductType::CUT_STONE)
 	}, 50);
 	saw.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+
+	saw.getChild(0)->getComponent<Transform>()->_position.y = 0.7f;
+	saw.getChild(0)->addComponent<MeshRenderer>();
+	saw.getChild(0)->addComponent<ProductOnConveyor>(saw.getComponent<Machine>());
+	saw.getChild(0)->setActive(false);
+
 	_prefabs.push_back(GameObject(saw));
 
-	GameObject metalPress = GameObject("Metal press");
+	GameObject metalPress = GameObject("Metal press", std::vector<GameObject*> {new GameObject("ProductOnConveyor")});
 	metalPress.addComponent<MeshRenderer>("Models/Machines/MetalPress/MetalPress.obj");
 	metalPress.addComponent<Machine>(2.5f, std::vector<Direction>{
 		Direction::BACK}, std::vector<Direction> {Direction::FORWARD},
 			std::vector<CraftingRecipe> {CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE)}, 700);
 	metalPress.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+
+	metalPress.getChild(0)->getComponent<Transform>()->_position.y = 0.7f;
+	metalPress.getChild(0)->addComponent<MeshRenderer>();
+	metalPress.getChild(0)->addComponent<ProductOnConveyor>(metalPress.getComponent<Machine>());
+	metalPress.getChild(0)->setActive(false);
+
 	_prefabs.push_back(GameObject(metalPress));
 
 	// ===============================================================================================================

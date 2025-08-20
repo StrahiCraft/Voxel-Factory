@@ -1,6 +1,7 @@
 #pragma once
 
 enum ProductType {
+	INVALID,
 	NOTHING,
 	ANY,
 	LOG,

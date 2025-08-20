@@ -140,7 +140,7 @@ ProductType Machine::getRecipeOutput(ProductType input) {
         }
     }
 
-    return ProductType::NOTHING;
+    return ProductType::INVALID;
 }
 
 void Machine::craftNewProduct() {
@@ -192,6 +192,8 @@ void Machine::onProductEnter() {
         _productInside = new Product();
         return;
     }
+
+
     _incrementTimer = true;
 
     GameObject* child = getOwner()->getChild(0);
