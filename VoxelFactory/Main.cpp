@@ -103,7 +103,7 @@ void initVariables() {
 	ground->getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	Game::addObject("Factory", ground);
 
-	GameObject* machinePlacementText = new GameObject("Machine placement text");
+	UIObject* machinePlacementText = new UIObject("Machine placement text", ScreenAlignment::BOTTOM_LEFT);
 	machinePlacementText->addComponent<TextRenderer>("Conveyor\nPrice=");
 	machinePlacementText->getComponent<Transform>()->_position = glm::vec3(0, 50, 0);
 	machinePlacementText->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
@@ -112,9 +112,9 @@ void initVariables() {
 
 	Game::addUIObject("Factory", machinePlacementText);
 
-	GameObject* moneyCounter = new GameObject("MoneyCounter");
+	UIObject* moneyCounter = new UIObject("MoneyCounter", ScreenAlignment::TOP_LEFT);
 	moneyCounter->addComponent<TextRenderer>("100$");
-	moneyCounter->getComponent<Transform>()->_position = glm::vec3(0, 660, 0);
+	moneyCounter->getComponent<Transform>()->_position = glm::vec3(0, -50, 0);
 	moneyCounter->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
 
 	CashManager::setupMoneyCounter(moneyCounter->getComponent<TextRenderer>());
@@ -134,31 +134,14 @@ void doLighting() {
 	glLightfv(GL_LIGHT0, GL_SPECULAR, diffuse_pos);
 }
 
-void updateWindow() {
-	glutReshapeWindow(windowSize.x, windowSize.y);
-	glViewport(0, 0, windowSize.x, windowSize.y);
-
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(75.0f, float(windowSize.x) / float(windowSize.y), 0.1f, 300.0f);
-	glMatrixMode(GL_MODELVIEW);
-}
-
 void initGame() {
 	glClearColor(windowColor.r, windowColor.g, windowColor.b, windowColor.a);
 	glEnable(GL_DEPTH_TEST);
 
-	updateWindow();
+	Window::updateWindow();
 
 	doLighting();
 	initVariables();
-}
-
-void onResize(int newWidth, int newHeight) {
-	windowSize.x = newWidth;
-	windowSize.y = newHeight;
-
-	updateWindow();
 }
 
 int main(int argv, char** argc) {
@@ -168,7 +151,7 @@ int main(int argv, char** argc) {
 	initGame();
 
 	glutDisplayFunc(gameLoop);
-	glutReshapeFunc(onResize);
+	glutReshapeFunc(Window::reshape);
 	Input::setCallbackFunctions();
 
 	glutMainLoop();

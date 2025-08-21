@@ -1,5 +1,5 @@
 #pragma once
-#include "GameObject.h"
+#include "UIObject.h"
 #include "Scene.h"
 #include "Dictionary.h"
 #include "Dictionary.cpp"
@@ -18,10 +18,10 @@ public:
 	static void removeObject(GameObject* objectToRemove);
 	static void removeObject(std::string sceneName, GameObject* objectToRemove);
 
-	static void addUIObject(GameObject* newObject);
-	static void addUIObject(std::string sceneName, GameObject* newObject);
-	static void removeUIObject(GameObject* objectToRemove);
-	static void removeUIObject(std::string sceneName, GameObject* objectToRemove);
+	static void addUIObject(UIObject* newObject);
+	static void addUIObject(std::string sceneName, UIObject* newObject);
+	static void removeUIObject(UIObject* objectToRemove);
+	static void removeUIObject(std::string sceneName, UIObject* objectToRemove);
 
 	static void setCurrentScene(std::string sceneName);
 	static void addScene(std::string sceneName);

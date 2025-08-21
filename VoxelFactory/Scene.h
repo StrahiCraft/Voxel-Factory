@@ -1,11 +1,11 @@
 #pragma once
 #include <vector>
-#include "GameObject.h"
+#include "UIObject.h"
 
 class Scene {
 private:
 	std::vector<GameObject*> _objects;
-	std::vector<GameObject*> _uiObjects;
+	std::vector<UIObject*> _uiObjects;
 
 public:
 	void update();
@@ -14,8 +14,8 @@ public:
 	void addObject(GameObject* newObject);
 	void removeObject(GameObject* objectToRemove);
 
-	void addUIObject(GameObject* newUIObject);
-	void removeUIObject(GameObject* uiObjectToRemove);
+	void addUIObject(UIObject* newUIObject);
+	void removeUIObject(UIObject* uiObjectToRemove);
 
 private:
 	void render3D();

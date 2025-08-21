@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "UIObject.h"
 
 Dictionary<std::string, Scene*> Game::_scenes;
 Scene* Game::_currentScene;
@@ -27,19 +28,19 @@ void Game::removeObject(std::string sceneName, GameObject* objectToRemove) {
 	_scenes.getValue(sceneName)->removeObject(objectToRemove);
 }
 
-void Game::addUIObject(GameObject* newObject) {
+void Game::addUIObject(UIObject* newObject) {
 	_currentScene->addUIObject(newObject);
 }
 
-void Game::addUIObject(std::string sceneName, GameObject* newObject) {
+void Game::addUIObject(std::string sceneName, UIObject* newObject) {
 	_scenes.getValue(sceneName)->addUIObject(newObject);
 }
 
-void Game::removeUIObject(GameObject* objectToRemove) {
+void Game::removeUIObject(UIObject* objectToRemove) {
 	_currentScene->removeUIObject(objectToRemove);
 }
 
-void Game::removeUIObject(std::string sceneName, GameObject* objectToRemove) {
+void Game::removeUIObject(std::string sceneName, UIObject* objectToRemove) {
 	_scenes.getValue(sceneName)->removeUIObject(objectToRemove);
 }
 

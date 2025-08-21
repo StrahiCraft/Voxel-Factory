@@ -168,6 +168,8 @@
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="UIObject.cpp" />
+    <ClCompile Include="Window.cpp" />
     <ClCompile Include="WorldGrid.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +195,7 @@
     <ClInclude Include="ProductOnConveyor.h" />
     <ClInclude Include="ProductType.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="ScreenAlignment.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextRenderer.h" />
@@ -200,8 +203,10 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Transform.h" />
+    <ClInclude Include="UIObject.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Window.h" />
     <ClInclude Include="WorldGrid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

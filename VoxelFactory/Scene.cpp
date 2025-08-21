@@ -81,10 +81,10 @@ void Scene::removeObject(GameObject* objectToRemove) {
 	_objects.erase(std::remove(_objects.begin(), _objects.end(), objectToRemove), _objects.end());
 }
 
-void Scene::addUIObject(GameObject* newObject) {
+void Scene::addUIObject(UIObject* newObject) {
 	_uiObjects.push_back(newObject);
 }
 
-void Scene::removeUIObject(GameObject* objectToRemove) {
+void Scene::removeUIObject(UIObject* objectToRemove) {
 	_uiObjects.erase(std::remove(_uiObjects.begin(), _uiObjects.end(), objectToRemove), _uiObjects.end());
 }
