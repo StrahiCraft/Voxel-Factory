@@ -20,10 +20,17 @@ private:
     int _placingMachineIndex = 0;
 
     TextRenderer* _machinePlacementText;
+
+    UIObject* _buildHint;
+    UIObject* _rotationHint;
+    UIObject* _destroyHint;
+    UIObject* _placeHint;
+    UIObject* _scrollHint;
 public:
     void update();
     void setupMachines(GameObject* placingMachine);
     void setupMachinePlacementText(TextRenderer* machinePlacementText);
+    void setupHints(UIObject* buildHint, UIObject* rotationHint, UIObject* placeHint, UIObject* destroyHint, UIObject* scrollHint);
 
     Component* copy();
 private:

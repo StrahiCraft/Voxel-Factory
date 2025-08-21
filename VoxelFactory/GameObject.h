@@ -12,7 +12,6 @@ class GameObject
 protected:
 	std::string _name;
 	bool _active = true;
-    bool _ignoreParentTransformations = false;
 
     std::vector<Component*> _components;
 
@@ -85,6 +84,4 @@ public:
     GameObject* getParent();
 
     std::string getName();
-
-    void setIgnoreParentTransform(bool value);
 };

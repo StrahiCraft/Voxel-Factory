@@ -120,6 +120,51 @@ void initVariables() {
 	CashManager::setupMoneyCounter(moneyCounter->getComponent<TextRenderer>());
 
 	Game::addUIObject("Factory", moneyCounter);
+
+	UIObject* buildHint = new UIObject("BuildHint", ScreenAlignment::BOTTOM_RIGHT);
+	buildHint->addComponent<TextRenderer>("[B]toggle build");
+	buildHint->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	buildHint->getComponent<Transform>()->_position = glm::vec3(-490, 20, 0);
+	buildHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(0, 1, 0));
+
+	Game::addUIObject("Factory", buildHint);
+
+	UIObject* rotationHint = new UIObject("RotationHint", ScreenAlignment::BOTTOM_RIGHT);
+	rotationHint->addComponent<TextRenderer>("[R]rotate");
+	rotationHint->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	rotationHint->getComponent<Transform>()->_position = glm::vec3(-490, 60, 0);
+	rotationHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(243.0 / 255.0, 247.0 / 255.0, 2.0 / 255.0));
+	rotationHint->setActive(false);
+
+	Game::addUIObject("Factory", rotationHint);
+
+	UIObject* destroyHint = new UIObject("DestroyHint", ScreenAlignment::BOTTOM_RIGHT);
+	destroyHint->addComponent<TextRenderer>("[R_mouse]destroy");
+	destroyHint->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	destroyHint->getComponent<Transform>()->_position = glm::vec3(-490, 100, 0);
+	destroyHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(1, 0, 0));
+	destroyHint->setActive(false);
+
+	Game::addUIObject("Factory", destroyHint);
+
+	UIObject* placeHint = new UIObject("PlaceHint", ScreenAlignment::BOTTOM_RIGHT);
+	placeHint->addComponent<TextRenderer>("[L_mouse]place");
+	placeHint->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	placeHint->getComponent<Transform>()->_position = glm::vec3(-490, 100, 0);
+	placeHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(0, 1, 0));
+	placeHint->setActive(false);
+
+	Game::addUIObject("Factory", placeHint);
+
+	UIObject* scrollHint = new UIObject("ScrollHint", ScreenAlignment::BOTTOM);
+	scrollHint->addComponent<TextRenderer>("<[Z]|[C]>");
+	scrollHint->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	scrollHint->getComponent<Transform>()->_position = glm::vec3(-160, 20, 0);
+	scrollHint->setActive(false);
+
+	Game::addUIObject("Factory", scrollHint);
+
+	player->getComponent<Player>()->setupHints(buildHint, rotationHint, placeHint, destroyHint, scrollHint);
 }
 
 void doLighting() {

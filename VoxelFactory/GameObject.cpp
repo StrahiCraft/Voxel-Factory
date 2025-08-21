@@ -117,7 +117,3 @@ GameObject* GameObject::getParent() {
 std::string GameObject::getName() {
 	return _name;
 }
-
-void GameObject::setIgnoreParentTransform(bool value) {
-	_ignoreParentTransformations = value;
-}

@@ -26,6 +26,14 @@ void Player::setupMachinePlacementText(TextRenderer* machinePlacementText) {
 	changePlacingMachine(0);
 }
 
+void Player::setupHints(UIObject* buildHint, UIObject* rotationHint, UIObject* placeHint, UIObject* destroyHint, UIObject* scrollHint) {
+	_buildHint = buildHint;
+	_rotationHint = rotationHint;
+	_placeHint = placeHint;
+	_destroyHint = destroyHint;
+	_scrollHint = scrollHint;
+}
+
 void Player::raycast() {
 	Transform* transform = getOwner()->getComponent<Transform>();
 
@@ -74,6 +82,10 @@ void Player::handleBuildingInputs() {
 	}
 
 	if (Input::getKeyDown('B')) {
+		_buildHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(0, 1, 0));
+		_placeHint->setActive(false);
+		_scrollHint->setActive(false);
+
 		_building = false;
 		_placingMachine->setActive(false);
 		_machinePlacementText->getOwner()->setActive(false);
@@ -100,6 +112,12 @@ void Player::handleNonBuildingInputs() {
 	}
 
 	if (Input::getKeyDown('B')) {
+		_buildHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(1, 0, 0));
+		_rotationHint->setActive(true);
+		_scrollHint->setActive(true);
+		_placeHint->setActive(true);
+		_destroyHint->setActive(false);
+
 		_building = true;
 		_placingMachine->setActive(true);
 		_machinePlacementText->getOwner()->setActive(true);
@@ -109,11 +127,17 @@ void Player::handleNonBuildingInputs() {
 		if (_previousTargetedMachine != nullptr) {
 			_previousTargetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelected(false);
 		}
+		return;
 	}
 
 	if (targetedMachine == nullptr) {
+		_rotationHint->setActive(false);
+		_destroyHint->setActive(false);
 		return;
 	}
+
+	_rotationHint->setActive(true);
+	_destroyHint->setActive(true);
 
 	targetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelected(true);
 	targetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(255.0 / 255.0, 249 / 255.0, 74 / 255.0));
@@ -144,12 +168,16 @@ void Player::handleMachineChange() {
 void Player::handleBuildColor() {
 	if (WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
 		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(0, 1, 0));
+		_placeHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(0, 1, 0));
 	}
 	else {
 		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(1, 0, 0));
+		_placeHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(1, 0, 0));
+		return;
 	}
 	if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
 		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(242.0 / 255.0, 89.0 / 255.0, 0));
+		_placeHint->getComponent<TextRenderer>()->setTextColor(glm::vec3(242.0 / 255.0, 89.0 / 255.0, 0));
 	}
 }
 
