@@ -93,6 +93,10 @@ bool Input::getLeftMouseDown() {
     return false;
 }
 
+bool Input::getLeftMouse() {
+    return _leftMouse;
+}
+
 bool Input::getRightMouseDown() {
     if (_rightMouse && !_rightMouseDown) {
         _rightMouseDown = true;

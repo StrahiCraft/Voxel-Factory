@@ -38,6 +38,7 @@ public:
     static void mouseClick(int button, int state, int x, int y);
     static glm::vec3 getMouseDeltaPosition();
     static bool getLeftMouseDown();
+    static bool getLeftMouse();
     static bool getRightMouseDown();
 private:
     static void updateMouse(int x, int y);

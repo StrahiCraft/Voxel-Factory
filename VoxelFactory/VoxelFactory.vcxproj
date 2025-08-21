@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="CameraMatrix.h" />
@@ -160,9 +161,11 @@
     <ClCompile Include="Prefabs.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductOnConveyor.cpp" />
+    <ClCompile Include="QuitButton.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SphereRenderer.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StartButton.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Time.cpp" />
@@ -174,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraController.h" />
     <ClInclude Include="CashManager.h" />
@@ -194,10 +198,12 @@
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProductOnConveyor.h" />
     <ClInclude Include="ProductType.h" />
+    <ClInclude Include="QuitButton.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ScreenAlignment.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StartButton.h" />
     <ClInclude Include="TextRenderer.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Mesh.h" />

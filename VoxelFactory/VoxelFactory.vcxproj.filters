@@ -88,6 +88,12 @@
     <Filter Include="Source Files\SpecialTypes\Dictionary">
       <UniqueIdentifier>{c765d270-0f6e-4854-84c7-1c382d21cab9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Components\Buttons">
+      <UniqueIdentifier>{f354d043-9f95-4149-8603-c9d50a128fee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Componets\Buttons">
+      <UniqueIdentifier>{24bc044c-6708-4d11-aa02-ada88be77e6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -188,6 +194,15 @@
     </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\Components\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="StartButton.cpp">
+      <Filter>Source Files\Components\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="QuitButton.cpp">
+      <Filter>Source Files\Components\Buttons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +310,15 @@
     </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\Componets\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="StartButton.h">
+      <Filter>Header Files\Componets\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="QuitButton.h">
+      <Filter>Header Files\Componets\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@ public:
 
     void render();
 
+    glm::vec3 getAlignmentOffset();
 private:
     void align();
 };

@@ -52,35 +52,32 @@ void UIObject::render() {
 	glPopMatrix();
 }
 
-void UIObject::align() {
+glm::vec3 UIObject::getAlignmentOffset() {
 	glm::vec2 windowSize = Window::getWindowSize();
 	switch (_screenAlignment) {
 	case ScreenAlignment::BOTTOM_LEFT:
-		glTranslatef(0, 0, 0);
-		break;
+		return glm::vec3(0, 0, 0);
 	case ScreenAlignment::BOTTOM:
-		glTranslatef(windowSize.x / 2, 0, 0);
-		break;
+		return glm::vec3(windowSize.x / 2, 0, 0);
 	case ScreenAlignment::BOTTOM_RIGHT:
-		glTranslatef(windowSize.x, 0, 0);
-		break;
+		return glm::vec3(windowSize.x, 0, 0);
 	case ScreenAlignment::CENTER_LEFT:
-		glTranslatef(0, windowSize.y / 2, 0);
-		break;
+		return glm::vec3(0, windowSize.y / 2, 0);
 	case ScreenAlignment::CENTER:
-		glTranslatef(windowSize.x / 2, windowSize.y / 2, 0);
-		break;
+		return glm::vec3(windowSize.x / 2, windowSize.y / 2, 0);
 	case ScreenAlignment::CENTER_RIGHT:
-		glTranslatef(windowSize.x, windowSize.y / 2, 0);
-		break;
+		return glm::vec3(windowSize.x, windowSize.y / 2, 0);
 	case ScreenAlignment::TOP_LEFT:
-		glTranslatef(0, windowSize.y, 0);
-		break;
+		return glm::vec3(0, windowSize.y, 0);
 	case ScreenAlignment::TOP:
-		glTranslatef(windowSize.x / 2, windowSize.y, 0);
-		break;
+		return glm::vec3(windowSize.x / 2, windowSize.y, 0);
 	case ScreenAlignment::TOP_RIGHT:
-		glTranslatef(windowSize.x, windowSize.y, 0);
-		break;
+		return glm::vec3(windowSize.x, windowSize.y, 0);
 	}
+	return glm::vec3(0, 0, 0);
+}
+
+void UIObject::align() {
+	glm::vec3 offset = getAlignmentOffset();
+	glTranslatef(offset.x, offset.y, offset.z);
 }

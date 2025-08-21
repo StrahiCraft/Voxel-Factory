@@ -3,6 +3,8 @@
 #include "CameraController.h"
 #include "Player.h"
 #include "TextRenderer.h"
+#include "StartButton.h"
+#include "QuitButton.h"
 
 PFNGLACTIVETEXTUREARBPROC Material::glActiveTextureARB = nullptr;
 PFNGLMULTITEXCOORD2FARBPROC Material::glMultiTexCoord2fARB = nullptr;
@@ -83,8 +85,35 @@ void initVariables() {
 	initAudio();
 
 	Game::addScene("Factory");
-	// TODO set to main menu instead
-	Game::setCurrentScene("Factory");
+	Game::addScene("MainMenu");
+
+	Game::setCurrentScene("MainMenu");
+
+	UIObject* title = new UIObject("Title", ScreenAlignment::TOP);
+	title->addComponent<TextRenderer>("Voxel Factory");
+	title->getComponent<Transform>()->_position = glm::vec3(-400, -100, 0);
+	title->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	title->getComponent<Transform>()->_scale = glm::vec3(2);
+	title->getComponent<TextRenderer>()->setTextColor(glm::vec3(0, 1, 229.0 / 255.0));
+
+	Game::addUIObject("MainMenu", title);
+
+	UIObject* startButton = new UIObject("StartButton", ScreenAlignment::CENTER, std::vector<UIObject*> {
+		new UIObject("Text")});
+	startButton->addComponent<StartButton>(glm::vec2(400, 120), glm::vec3(0, 1, 0));
+	startButton->getChild(0)->addComponent<TextRenderer>("Start");
+	startButton->getChild(0)->getComponent<Transform>()->_position = glm::vec3(100, -10, 0);
+
+	Game::addUIObject("MainMenu", startButton);
+
+	UIObject* quitButton = new UIObject("QuitButton", ScreenAlignment::CENTER, std::vector<UIObject*> {
+		new UIObject("Text")});
+	quitButton->addComponent<QuitButton>(glm::vec2(400, 120), glm::vec3(1, 0, 0));
+	quitButton->getComponent<Transform>()->_position = glm::vec3(0, -170, 0);
+	quitButton->getChild(0)->addComponent<TextRenderer>("Quit");
+	quitButton->getChild(0)->getComponent<Transform>()->_position = glm::vec3(85, -10, 0);
+
+	Game::addUIObject("MainMenu", quitButton);
 
 	GameObject* player = new GameObject("Player");
 	player->addComponent<Player>();

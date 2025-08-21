@@ -62,6 +62,10 @@ void Player::raycast() {
 }
 
 void Player::handleInputs() {
+	if (Input::getKeyDown(27)) {
+		Game::setCurrentScene("MainMenu");
+	}
+
 	if (_building) {
 		handleBuildingInputs();
 		return;
