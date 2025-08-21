@@ -160,13 +160,14 @@
     <ClCompile Include="Prefabs.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductOnConveyor.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SphereRenderer.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="World.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="WorldGrid.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +192,7 @@
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProductOnConveyor.h" />
     <ClInclude Include="ProductType.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextRenderer.h" />
@@ -199,7 +201,7 @@
     <ClInclude Include="Time.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vertex.h" />
-    <ClInclude Include="World.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="WorldGrid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -141,7 +141,7 @@
     <ClCompile Include="CraftingRecipe.cpp">
       <Filter>Source Files\Utility\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="World.cpp">
+    <ClCompile Include="Game.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
     <ClCompile Include="Prefabs.cpp">
@@ -170,6 +170,9 @@
     </ClCompile>
     <ClCompile Include="Dictionary.cpp">
       <Filter>Source Files\SpecialTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,7 +236,7 @@
     <ClInclude Include="WorldGrid.h">
       <Filter>Header Files\Utility\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="World.h">
+    <ClInclude Include="Game.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
@@ -265,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="Dictionary.h">
       <Filter>Header Files\SpecialTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

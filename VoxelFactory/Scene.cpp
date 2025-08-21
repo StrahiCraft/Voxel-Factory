@@ -1,9 +1,6 @@
-#include "World.h"
+#include "Scene.h"
 
-std::vector<GameObject*> World::_objects;
-std::vector<GameObject*> World::_uiObjects;
-
-void World::update() {
+void Scene::update() {
 	for (int i = 0; i < _objects.size(); i++) {
 		_objects[i]->update();
 	}
@@ -13,13 +10,13 @@ void World::update() {
 	}
 }
 
-void World::render() {
+void Scene::render() {
 	render3D();
 
 	render2D();
 }
 
-void World::render3D() {
+void Scene::render3D() {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 
 	glMatrixMode(GL_MODELVIEW);
@@ -39,7 +36,7 @@ void World::render3D() {
 	glPopAttrib();
 }
 
-void World::render2D() {
+void Scene::render2D() {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 
 	glMatrixMode(GL_PROJECTION);
@@ -76,26 +73,18 @@ void World::render2D() {
 	glPopAttrib();
 }
 
-void World::addObject(GameObject* newObject) {
+void Scene::addObject(GameObject* newObject) {
 	_objects.push_back(newObject);
 }
 
-void World::removeObject(GameObject* objectToRemove) {
+void Scene::removeObject(GameObject* objectToRemove) {
 	_objects.erase(std::remove(_objects.begin(), _objects.end(), objectToRemove), _objects.end());
 }
 
-void World::addUIObject(GameObject* newObject) {
+void Scene::addUIObject(GameObject* newObject) {
 	_uiObjects.push_back(newObject);
 }
 
-void World::removeUIObject(GameObject* objectToRemove) {
+void Scene::removeUIObject(GameObject* objectToRemove) {
 	_uiObjects.erase(std::remove(_uiObjects.begin(), _uiObjects.end(), objectToRemove), _uiObjects.end());
 }
-
-void World::printWorld() {
-	for (int i = 0; i < _objects.size(); i++) {
-		_objects[i]->printChildren();
-		std::cout << std::endl;
-	}
-}
-

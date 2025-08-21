@@ -1,6 +1,6 @@
 #pragma once
 #include "Machine.h"
-#include "World.h"
+#include "Game.h"
 
 static class WorldGrid
 {

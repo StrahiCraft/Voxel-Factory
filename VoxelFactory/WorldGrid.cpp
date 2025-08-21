@@ -38,7 +38,7 @@ void WorldGrid::placeMachine(GameObject* machineObject) {
     glm::vec3 machinePosition = machine->getOwner()->getComponent<Transform>()->_position;
     setGridOccupancyAt(glm::vec2((int)machinePosition.x, (int)machinePosition.z), true);
 
-    World::addObject(machineObject);
+    Game::addObject(machineObject);
 }
 
 void WorldGrid::removeMachine(Machine* machine) {
@@ -46,7 +46,7 @@ void WorldGrid::removeMachine(Machine* machine) {
     _machines.erase(std::remove(_machines.begin(), _machines.end(), machine), _machines.end());
     setGridOccupancyAt(glm::vec2((int)machinePosition.x, (int)machinePosition.z), false);
 
-    World::removeObject(machine->getOwner());
+    Game::removeObject(machine->getOwner());
 }
 
 void WorldGrid::debugPrint() {

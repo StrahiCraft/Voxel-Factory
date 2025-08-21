@@ -1,4 +1,4 @@
-#include "World.h"
+#include "Game.h"
 #include "MeshRenderer.h"
 #include "CameraController.h"
 #include "Player.h"
@@ -20,13 +20,9 @@ void update() {
 		Input::_isCursorLocked = !Input::_isCursorLocked;
 	}
 
-	if (Input::getKeyDown(']')) {
-		World::printWorld();
-	}
-
 	Input::update();
 
-	World::update();
+	Game::update();
 }
 
 void render() {
@@ -42,7 +38,7 @@ void render() {
 
 	doLighting();
 	
-	World::render();
+	Game::render();
 
 	glDisable(GL_LIGHTING);
 
@@ -86,6 +82,10 @@ void initVariables() {
 	Prefabs::initPrefabs();
 	initAudio();
 
+	Game::addScene("Factory");
+	// TODO set to main menu instead
+	Game::setCurrentScene("Factory");
+
 	GameObject* player = new GameObject("Player");
 	player->addComponent<Player>();
 	player->addComponent<CameraController>();
@@ -94,14 +94,14 @@ void initVariables() {
 	player->getComponent<Player>()->setupMachines(placingMachine);
 	player->getComponent<Transform>()->_position = glm::vec3(16, 2, 16);
 
-	World::addObject(player);
-	World::addObject(placingMachine);
+	Game::addObject("Factory", player);
+	Game::addObject("Factory", placingMachine);
 
 	GameObject* ground = new GameObject("Ground");
 	ground->addComponent<MeshRenderer>("Models/Ground/Ground.obj");
 	ground->getComponent<Transform>()->_position = glm::vec3(15.5, 0, 15.5);
 	ground->getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
-	World::addObject(ground);
+	Game::addObject("Factory", ground);
 
 	GameObject* machinePlacementText = new GameObject("Machine placement text");
 	machinePlacementText->addComponent<TextRenderer>("Conveyor\nPrice=");
@@ -110,7 +110,7 @@ void initVariables() {
 
 	player->getComponent<Player>()->setupMachinePlacementText(machinePlacementText->getComponent<TextRenderer>());
 
-	World::addUIObject(machinePlacementText);
+	Game::addUIObject("Factory", machinePlacementText);
 
 	GameObject* moneyCounter = new GameObject("MoneyCounter");
 	moneyCounter->addComponent<TextRenderer>("100$");
@@ -119,7 +119,7 @@ void initVariables() {
 
 	CashManager::setupMoneyCounter(moneyCounter->getComponent<TextRenderer>());
 
-	World::addUIObject(moneyCounter);
+	Game::addUIObject("Factory", moneyCounter);
 }
 
 void doLighting() {
