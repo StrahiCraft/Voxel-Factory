@@ -81,6 +81,9 @@ void Player::handleBuildingInputs() {
 	else {
 		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(1, 0, 0));
 	}
+	if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
+		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(242.0 / 255.0, 89.0 / 255.0, 0));
+	}
 
 	if (Input::getLeftMouseDown()) {
 		if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
