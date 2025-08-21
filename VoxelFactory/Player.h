@@ -33,6 +33,11 @@ private:
     void handleBuildingInputs();
     void handleNonBuildingInputs();
 
+    void handleMachineChange();
+    void handleBuildColor();
+
+    void placeMachine();
+
     void changePlacingMachine(int indexUpdate);
 };
 

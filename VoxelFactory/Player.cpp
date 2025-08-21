@@ -66,46 +66,11 @@ void Player::handleBuildingInputs() {
 	Transform* placingMachineTransform = _placingMachine->getComponent<Transform>();
 	placingMachineTransform->_position = _currentTarget;
 
-	if (Input::getKeyDown('Z')) {
-		changePlacingMachine(-1);
-		AudioManager::playSound("ChangeMachine");
-	}
-	if (Input::getKeyDown('C')) {
-		changePlacingMachine(1);
-		AudioManager::playSound("ChangeMachine");
-	}
-
-	if (WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
-		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(0, 1, 0));
-	}
-	else {
-		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(1, 0, 0));
-	}
-	if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
-		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(242.0 / 255.0, 89.0 / 255.0, 0));
-	}
+	handleMachineChange();
+	handleBuildColor();
 
 	if (Input::getLeftMouseDown()) {
-		if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
-			AudioManager::playSound("InvalidPlacement");
-			return;
-		}
-
-		if (!WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
-			AudioManager::playSound("InvalidPlacement");
-			return;
-		}
-
-		GameObject* newMachine = new GameObject(_machinesToPlace[_placingMachineIndex]);
-		newMachine->getComponent<Transform>()->_position = _currentTarget;
-		newMachine->getComponent<Transform>()->_rotation = _placingMachine->getComponent<Transform>()->_rotation;
-
-		WorldGrid::placeMachine(newMachine);
-		WorldGrid::debugPrint();
-
-		CashManager::updateMoney(-_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice());
-
-		AudioManager::playSound("Place");
+		placeMachine();
 	}
 
 	if (Input::getKeyDown('B')) {
@@ -163,6 +128,52 @@ void Player::handleNonBuildingInputs() {
 		AudioManager::playSound("Rotate");
 		targetedMachine->getOwner()->getComponent<Transform>()->rotate(-90, glm::vec3(0, 1, 0));
 	}
+}
+
+void Player::handleMachineChange() {
+	if (Input::getKeyDown('Z')) {
+		changePlacingMachine(-1);
+		AudioManager::playSound("ChangeMachine");
+	}
+	if (Input::getKeyDown('C')) {
+		changePlacingMachine(1);
+		AudioManager::playSound("ChangeMachine");
+	}
+}
+
+void Player::handleBuildColor() {
+	if (WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
+		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(0, 1, 0));
+	}
+	else {
+		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(1, 0, 0));
+	}
+	if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
+		_placingMachine->getComponent<MeshRenderer>()->setSelectionColor(glm::vec3(242.0 / 255.0, 89.0 / 255.0, 0));
+	}
+}
+
+void Player::placeMachine() {
+	if (_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice() > CashManager::getCurrentCash()) {
+		AudioManager::playSound("InvalidPlacement");
+		return;
+	}
+
+	if (!WorldGrid::isGridFreeAt(_currentTarget.x, _currentTarget.z)) {
+		AudioManager::playSound("InvalidPlacement");
+		return;
+	}
+
+	GameObject* newMachine = new GameObject(_machinesToPlace[_placingMachineIndex]);
+	newMachine->getComponent<Transform>()->_position = _currentTarget;
+	newMachine->getComponent<Transform>()->_rotation = _placingMachine->getComponent<Transform>()->_rotation;
+
+	WorldGrid::placeMachine(newMachine);
+	WorldGrid::debugPrint();
+
+	CashManager::updateMoney(-_machinesToPlace[_placingMachineIndex]->getComponent<Machine>()->getPrice());
+
+	AudioManager::playSound("Place");
 }
 
 void Player::changePlacingMachine(int indexUpdate) {
