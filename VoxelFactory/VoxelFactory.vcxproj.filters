@@ -19,14 +19,8 @@
     <Filter Include="Header Files\Graphics">
       <UniqueIdentifier>{b57862c1-be8d-4ec4-bb50-5076628a4abd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Componets\Utility">
-      <UniqueIdentifier>{c4d70138-1322-4d16-98d0-fd414303d141}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Components">
       <UniqueIdentifier>{1841de50-a74a-42f7-bf46-baabdd618d40}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Components\Utility">
-      <UniqueIdentifier>{2ddc5d9b-1003-4de7-b1c5-f106c40494f4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Componets\Rendering">
       <UniqueIdentifier>{2d335ce0-7110-42cb-979a-808a4223a1bc}</UniqueIdentifier>
@@ -102,9 +96,6 @@
     <ClCompile Include="Component.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="Transform.cpp">
-      <Filter>Source Files\Components\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="CubeRenderer.cpp">
       <Filter>Source Files\Components\Rendering</Filter>
     </ClCompile>
@@ -131,9 +122,6 @@
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="CameraController.cpp">
-      <Filter>Source Files\Components\Utility</Filter>
     </ClCompile>
     <ClCompile Include="CameraMatrix.h">
       <Filter>Header Files\Utility\Camera</Filter>
@@ -204,6 +192,12 @@
     <ClCompile Include="QuitButton.cpp">
       <Filter>Source Files\Components\Buttons</Filter>
     </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraController.cpp">
+      <Filter>Source Files\Components\Gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -217,9 +211,6 @@
     </ClInclude>
     <ClInclude Include="Material.h">
       <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Transform.h">
-      <Filter>Header Files\Componets\Utility</Filter>
     </ClInclude>
     <ClInclude Include="CubeRenderer.h">
       <Filter>Header Files\Componets\Rendering</Filter>
@@ -241,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraController.h">
-      <Filter>Header Files\Componets\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Header Files\Utility\Camera</Filter>
@@ -319,6 +307,12 @@
     </ClInclude>
     <ClInclude Include="QuitButton.h">
       <Filter>Header Files\Componets\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraController.h">
+      <Filter>Header Files\Componets\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Header Files\Componets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
