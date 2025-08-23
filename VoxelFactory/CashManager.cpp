@@ -1,6 +1,6 @@
 #include "CashManager.h"
 
-int CashManager::_cash = 10000;
+int CashManager::_cash = 100;
 TextRenderer* CashManager::_moneyCounter;
 
 void CashManager::setupMoneyCounter(TextRenderer* moneyCounter) {
