@@ -66,7 +66,8 @@ void Prefabs::initMachines() {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
 		std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::IRON_ORE, ProductType::IRON_INGOT),
-			CraftingRecipe(ProductType::CUT_STONE, ProductType::STONE_BRICK)
+			CraftingRecipe(ProductType::CUT_STONE, ProductType::STONE_BRICK),
+			CraftingRecipe(ProductType::COPPER_ORE, ProductType::COPPER_INGOT)
 	}, 300);
 	furnace.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(furnace));
@@ -93,7 +94,10 @@ void Prefabs::initMachines() {
 	metalPress.addComponent<MeshRenderer>("Models/Machines/MetalPress/MetalPress.obj");
 	metalPress.addComponent<Machine>(2.5f, std::vector<Direction>{
 		Direction::BACK}, std::vector<Direction> {Direction::FORWARD},
-			std::vector<CraftingRecipe> {CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE)}, 700);
+			std::vector<CraftingRecipe> {
+			CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE),
+			CraftingRecipe(ProductType::COPPER_INGOT, ProductType::COPPER_PLATE)
+		}, 700);
 	metalPress.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 
 	metalPress.getChild(0)->getComponent<Transform>()->_position.y = 0.7f;
@@ -118,6 +122,18 @@ void Prefabs::initMachines() {
 		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::IRON_ORE)}, 500);
 	ironGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(ironGenerator));
+
+	GameObject copperGenerator = GameObject("Copper generator");
+	copperGenerator.addComponent<MeshRenderer>("Models/Machines/CopperGenerator/CopperGenerator.obj");
+	copperGenerator.getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	copperGenerator.addComponent<Machine>(10, std::vector<Direction>{}, std::vector<Direction>{
+		Direction::FORWARD,
+			Direction::BACK,
+			Direction::LEFT,
+			Direction::RIGHT},
+		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::COPPER_ORE)}, 230);
+	copperGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+	_prefabs.push_back(GameObject(copperGenerator));
 
 	GameObject woodGenerator = GameObject("Wood generator");
 	woodGenerator.addComponent<MeshRenderer>("Models/Machines/WoodGenerator/WoodGenerator.obj");
@@ -187,6 +203,21 @@ void Prefabs::initProducts() {
 	ironPlate.addComponent<MeshRenderer>("Models/Product/IronPlate/IronPlate.obj");
 	ironPlate.addComponent<Product>(60, ProductType::IRON_PLATE);
 	_products.push_back(ironPlate);
+
+	GameObject copperOre = GameObject("Copper ore");
+	copperOre.addComponent<MeshRenderer>("Models/Product/CopperOre/CopperOre.obj");
+	copperOre.addComponent<Product>(10, ProductType::COPPER_ORE);
+	_products.push_back(copperOre);
+
+	GameObject copperIngot = GameObject("Copper ingot");
+	copperIngot.addComponent<MeshRenderer>("Models/Product/CopperIngot/CopperIngot.obj");
+	copperIngot.addComponent<Product>(20, ProductType::COPPER_INGOT);
+	_products.push_back(copperIngot);
+
+	GameObject copperPlate = GameObject("Copper plate");
+	copperPlate.addComponent<MeshRenderer>("Models/Product/CopperPlate/CopperPlate.obj");
+	copperPlate.addComponent<Product>(35, ProductType::COPPER_PLATE);
+	_products.push_back(copperPlate);
 }
 
 GameObject* Prefabs::getPrefab(std::string name) {

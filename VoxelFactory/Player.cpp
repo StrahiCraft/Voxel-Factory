@@ -13,6 +13,7 @@ void Player::setupMachines(GameObject* placingMachine) {
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Conveyor")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Wood generator")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Stone generator")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Copper generator")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Iron generator")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Saw")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Furnace")));
