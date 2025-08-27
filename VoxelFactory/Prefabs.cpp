@@ -65,9 +65,11 @@ void Prefabs::initMachines() {
 	furnace.addComponent<Machine>(5, std::vector<Direction> {
 		Direction::BACK}, std::vector<Direction>{Direction::FORWARD},
 		std::vector<CraftingRecipe> {
-			CraftingRecipe(ProductType::IRON_ORE, ProductType::IRON_INGOT),
+			CraftingRecipe(ProductType::WOOD, ProductType::CHARCOAL),
 			CraftingRecipe(ProductType::CUT_STONE, ProductType::STONE_BRICK),
-			CraftingRecipe(ProductType::COPPER_ORE, ProductType::COPPER_INGOT)
+			CraftingRecipe(ProductType::COPPER_ORE, ProductType::COPPER_INGOT),
+			CraftingRecipe(ProductType::IRON_ORE, ProductType::IRON_INGOT),
+			CraftingRecipe(ProductType::GOLD_ORE, ProductType::GOLD_INGOT),
 	}, 300);
 	furnace.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(furnace));
@@ -79,7 +81,9 @@ void Prefabs::initMachines() {
 		std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::WOOD, ProductType::STRIPPED_LOG),
 			CraftingRecipe(ProductType::STRIPPED_LOG, ProductType::PLANK),
-			CraftingRecipe(ProductType::STONE, ProductType::CUT_STONE)
+			CraftingRecipe(ProductType::STONE, ProductType::CUT_STONE),
+			CraftingRecipe(ProductType::COPPER_INGOT, ProductType::CUT_COPPER),
+			CraftingRecipe(ProductType::GOLD_INGOT, ProductType::CUT_GOLD),
 	}, 50);
 	saw.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 
@@ -96,7 +100,9 @@ void Prefabs::initMachines() {
 		Direction::BACK}, std::vector<Direction> {Direction::FORWARD},
 			std::vector<CraftingRecipe> {
 			CraftingRecipe(ProductType::IRON_INGOT, ProductType::IRON_PLATE),
-			CraftingRecipe(ProductType::COPPER_INGOT, ProductType::COPPER_PLATE)
+			CraftingRecipe(ProductType::COPPER_INGOT, ProductType::COPPER_PLATE),
+			CraftingRecipe(ProductType::GOLD_INGOT, ProductType::GOLD_PLATE),
+			CraftingRecipe(ProductType::ROSE_GOLD_INGOT, ProductType::ROSE_GOLD_PLATE),
 		}, 700);
 	metalPress.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 
@@ -106,6 +112,19 @@ void Prefabs::initMachines() {
 	metalPress.getChild(0)->setActive(false);
 
 	_prefabs.push_back(GameObject(metalPress));
+
+	// ===============================================================================================================
+	// MULTI CRAFTERS
+	// ===============================================================================================================
+
+	GameObject mixer = GameObject("Mixer", std::vector<GameObject*> {new GameObject("ProductOnConveyor")});
+	saw.addComponent<MeshRenderer>("Models/Machines/Mixer/Mixer.obj");
+	saw.addComponent<Machine>(2, std::vector<Direction> { Direction::BACK, Direction::LEFT, Direction::RIGHT},
+		std::vector<Direction>{Direction::FORWARD},
+			std::vector<CraftingRecipe> {
+			CraftingRecipe(std::vector<ProductType> {ProductType::COPPER_INGOT, ProductType::GOLD_INGOT},
+				ProductType::ROSE_GOLD_INGOT),
+		}, 1000);
 
 	// ===============================================================================================================
 	// PRODUCT GENERATORS
@@ -135,6 +154,18 @@ void Prefabs::initMachines() {
 	copperGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
 	_prefabs.push_back(GameObject(copperGenerator));
 
+	GameObject goldGenerator = GameObject("Gold generator");
+	goldGenerator.addComponent<MeshRenderer>("Models/Machines/GoldGenerator/GoldGenerator.obj");
+	goldGenerator.getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	goldGenerator.addComponent<Machine>(10, std::vector<Direction>{}, std::vector<Direction>{
+		Direction::FORWARD,
+			Direction::BACK,
+			Direction::LEFT,
+			Direction::RIGHT},
+		std::vector<CraftingRecipe> {CraftingRecipe(ProductType::NOTHING, ProductType::GOLD_ORE)}, 1500);
+	goldGenerator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+	_prefabs.push_back(GameObject(goldGenerator));
+
 	GameObject woodGenerator = GameObject("Wood generator");
 	woodGenerator.addComponent<MeshRenderer>("Models/Machines/WoodGenerator/WoodGenerator.obj");
 	woodGenerator.addComponent<Machine>(4, std::vector<Direction>{}, std::vector<Direction>{
@@ -159,6 +190,10 @@ void Prefabs::initMachines() {
 }
 
 void Prefabs::initProducts() {
+	// ===============================================================================================================
+	// WOOD
+	// ===============================================================================================================
+
 	GameObject wood = GameObject("Wood");
 	wood.addComponent<MeshRenderer>("Models/Product/Wood/Wood.obj");
 	wood.addComponent<Product>(3, ProductType::WOOD);
@@ -173,6 +208,15 @@ void Prefabs::initProducts() {
 	plank.addComponent<MeshRenderer>("Models/Product/Plank/Plank.obj");
 	plank.addComponent<Product>(10, ProductType::PLANK);
 	_products.push_back(plank);
+
+	GameObject charcoal = GameObject("Charcoal");
+	charcoal.addComponent<MeshRenderer>("Models/Product/Charcoal/Charcoal.obj");
+	charcoal.addComponent<Product>(10, ProductType::CHARCOAL);
+	_products.push_back(charcoal);
+
+	// ===============================================================================================================
+	// STONE
+	// ===============================================================================================================
 
 	GameObject stone = GameObject("Stone");
 	stone.addComponent<MeshRenderer>("Models/Product/Stone/Stone.obj");
@@ -189,6 +233,10 @@ void Prefabs::initProducts() {
 	stoneBrick.addComponent<Product>(16, ProductType::STONE_BRICK);
 	_products.push_back(stoneBrick);
 
+	// ===============================================================================================================
+	// IRON
+	// ===============================================================================================================
+
 	GameObject ironOre = GameObject("Iron ore");
 	ironOre.addComponent<MeshRenderer>("Models/Product/IronOre/IronOre.obj");
 	ironOre.addComponent<Product>(20, ProductType::IRON_ORE);
@@ -204,6 +252,10 @@ void Prefabs::initProducts() {
 	ironPlate.addComponent<Product>(60, ProductType::IRON_PLATE);
 	_products.push_back(ironPlate);
 
+	// ===============================================================================================================
+	// COPPER
+	// ===============================================================================================================
+
 	GameObject copperOre = GameObject("Copper ore");
 	copperOre.addComponent<MeshRenderer>("Models/Product/CopperOre/CopperOre.obj");
 	copperOre.addComponent<Product>(10, ProductType::COPPER_ORE);
@@ -218,6 +270,59 @@ void Prefabs::initProducts() {
 	copperPlate.addComponent<MeshRenderer>("Models/Product/CopperPlate/CopperPlate.obj");
 	copperPlate.addComponent<Product>(35, ProductType::COPPER_PLATE);
 	_products.push_back(copperPlate);
+
+	GameObject cutCopper = GameObject("Cut copper");
+	cutCopper.addComponent<MeshRenderer>("Models/Product/CutCopper/CutCopper.obj");
+	cutCopper.addComponent<Product>(15, ProductType::CUT_COPPER);
+	_products.push_back(cutCopper);
+
+	GameObject copperWire = GameObject("Copper wire");
+	copperWire.addComponent<MeshRenderer>("Models/Product/CopperWire/CopperWire.obj");
+	copperWire.addComponent<Product>(100, ProductType::COPPER_WIRE);
+	_products.push_back(copperWire);
+
+	// ===============================================================================================================
+	// GOLD
+	// ===============================================================================================================
+
+	GameObject goldOre = GameObject("Gold ore");
+	goldOre.addComponent<MeshRenderer>("Models/Product/GoldOre/GoldOre.obj");
+	goldOre.addComponent<Product>(50, ProductType::GOLD_ORE);
+	_products.push_back(copperOre);
+
+	GameObject goldIngot = GameObject("Gold ingot");
+	goldIngot.addComponent<MeshRenderer>("Models/Product/GoldIngot/GoldIngot.obj");
+	goldIngot.addComponent<Product>(100, ProductType::GOLD_INGOT);
+	_products.push_back(goldIngot);
+
+	GameObject goldPlate = GameObject("Gold plate");
+	goldPlate.addComponent<MeshRenderer>("Models/Product/GoldPlate/GoldPlate.obj");
+	goldPlate.addComponent<Product>(125, ProductType::GOLD_PLATE);
+	_products.push_back(goldPlate);
+
+	GameObject cutGold = GameObject("Cut gold");
+	cutGold.addComponent<MeshRenderer>("Models/Product/CutGold/CutGold.obj");
+	cutGold.addComponent<Product>(80, ProductType::CUT_GOLD);
+	_products.push_back(cutGold);
+
+	GameObject goldWire = GameObject("Gold wire");
+	goldWire.addComponent<MeshRenderer>("Models/Product/GoldWire/GoldWire.obj");
+	goldWire.addComponent<Product>(225, ProductType::GOLD_WIRE);
+	_products.push_back(goldWire);
+
+	// ===============================================================================================================
+	// ROSE GOLD
+	// ===============================================================================================================
+
+	GameObject roseGoldIngot = GameObject("Rose gold ingot");
+	roseGoldIngot.addComponent<MeshRenderer>("Models/Product/RoseGoldIngot/RoseGoldIngot.obj");
+	roseGoldIngot.addComponent<Product>(150, ProductType::ROSE_GOLD_INGOT);
+	_products.push_back(roseGoldIngot);
+
+	GameObject roseGoldPlate = GameObject("Rose gold plate");
+	roseGoldPlate.addComponent<MeshRenderer>("Models/Product/RoseGoldPlate/RoseGoldPlate.obj");
+	roseGoldPlate.addComponent<Product>(200, ProductType::ROSE_GOLD_PLATE);
+	_products.push_back(roseGoldPlate);
 }
 
 GameObject* Prefabs::getPrefab(std::string name) {
