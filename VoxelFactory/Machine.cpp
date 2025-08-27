@@ -161,7 +161,7 @@ ProductType Machine::getRecipeOutput(ProductType input) {
 void Machine::craftNewProduct() {
     Transform* transform = getOwner()->getComponent<Transform>();
 
-    if (!anyCrafter() && !nothingCrafter()) {
+    if (!anyCrafter() && !nothingCrafter() && !_tryingToOutput) {
         GameObject* product = Prefabs::getProduct(getRecipeOutput(_productInside.getType()));
         _productInside = product->getComponent<Product>();
     }

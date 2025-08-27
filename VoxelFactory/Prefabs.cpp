@@ -288,7 +288,7 @@ void Prefabs::initProducts() {
 	GameObject goldOre = GameObject("Gold ore");
 	goldOre.addComponent<MeshRenderer>("Models/Product/GoldOre/GoldOre.obj");
 	goldOre.addComponent<Product>(50, ProductType::GOLD_ORE);
-	_products.push_back(copperOre);
+	_products.push_back(goldOre);
 
 	GameObject goldIngot = GameObject("Gold ingot");
 	goldIngot.addComponent<MeshRenderer>("Models/Product/GoldIngot/GoldIngot.obj");
