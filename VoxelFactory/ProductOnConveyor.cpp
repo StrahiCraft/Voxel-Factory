@@ -9,6 +9,11 @@ ProductOnConveyor::ProductOnConveyor(Machine* conveyor) {
 void ProductOnConveyor::update() {
 	_conveyor = getOwner()->getParent()->getComponent<Machine>();
 
+	if (_conveyor->getProductType() == ProductType::ANY || _conveyor->getProductType() == ProductType::NOTHING) {
+		getOwner()->setActive(false);
+		return;
+	}
+
 	if (_conveyor->getProductType() != _currentType) {
 		_currentType = _conveyor->getProductType();
 

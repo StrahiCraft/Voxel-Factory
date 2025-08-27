@@ -18,6 +18,11 @@ Machine::Machine(float delay, std::vector<Direction> inputDirections, std::vecto
 }
 
 void Machine::update() {
+    if (_tryingToOutput) {
+        craftNewProduct();
+        return;
+    }
+
     if (!_incrementTimer) {
         return;
     }
@@ -31,6 +36,10 @@ void Machine::update() {
             return;
         }
         _incrementTimer = false;
+
+        if (_tryingToOutput) {
+            return;
+        }
 
         GameObject* child = getOwner()->getChild(0);
 
@@ -48,18 +57,24 @@ ProductType Machine::getProductType() {
     return _productInside.getType();
 }
 
-void Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
+bool Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
     if (!productValidForCrafting(product) && !anyCrafter()) {
-        return;
+        return false;
     }
 
     if (!productFromValidDirection(insertPoint)) {
-        return;
+        return false;
+    }
+
+    if (_productInside.getType() != ProductType::NOTHING) {
+        return false;
     }
 
     _productInside = product;
 
     onProductEnter();
+
+    return true;
 }
 
 float Machine::getCraftingCompletionAmount() {
@@ -151,6 +166,8 @@ void Machine::craftNewProduct() {
         _productInside = product->getComponent<Product>();
     }
 
+    _tryingToOutput = true;
+
     for (auto& outputDirection : _outputDirections) {
         glm::vec3 outputPosition = pointFromDirection(outputDirection);
 
@@ -163,10 +180,14 @@ void Machine::craftNewProduct() {
         if (nothingCrafter()) {
             _productInside = Prefabs::getProduct(getRecipeOutput(ProductType::NOTHING))->getComponent<Product>();
         }
-        outputMachine->tryToInsertProduct(glm::ivec2(transform->_position.x, transform->_position.z), _productInside);
+        if (outputMachine->tryToInsertProduct(glm::ivec2(transform->_position.x, transform->_position.z), _productInside)) {
+            _tryingToOutput = false;
+        }
     }
 
-    _productInside = new Product();
+    if (!_tryingToOutput) {
+        _productInside = new Product();
+    }
 }
 
 bool Machine::anyCrafter() {
@@ -193,7 +214,6 @@ void Machine::onProductEnter() {
         _productInside = new Product();
         return;
     }
-
 
     _incrementTimer = true;
 

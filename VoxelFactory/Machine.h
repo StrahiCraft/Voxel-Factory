@@ -21,6 +21,8 @@ private:
     Product _productInside;
 
     int _price;
+
+    bool _tryingToOutput = false;
 public:
     Machine(float delay, std::vector<Direction> inputDirections, std::vector<Direction> outputDirections,
         std::vector<CraftingRecipe> craftingRecipes, int price);
@@ -30,7 +32,7 @@ public:
     int getPrice();
     ProductType getProductType();
 
-    void tryToInsertProduct(glm::vec2 insertPoint, Product product);
+    bool tryToInsertProduct(glm::vec2 insertPoint, Product product);
 
     float getCraftingCompletionAmount();
 
