@@ -118,13 +118,17 @@ void Prefabs::initMachines() {
 	// ===============================================================================================================
 
 	GameObject mixer = GameObject("Mixer", std::vector<GameObject*> {new GameObject("ProductOnConveyor")});
-	saw.addComponent<MeshRenderer>("Models/Machines/Mixer/Mixer.obj");
-	saw.addComponent<Machine>(2, std::vector<Direction> { Direction::BACK, Direction::LEFT, Direction::RIGHT},
+	mixer.addComponent<MeshRenderer>("Models/Machines/Mixer/Mixer.obj");
+	mixer.addComponent<Machine>(1.5f, std::vector<Direction> { Direction::BACK, Direction::LEFT, Direction::RIGHT},
 		std::vector<Direction>{Direction::FORWARD},
 			std::vector<CraftingRecipe> {
 			CraftingRecipe(std::vector<ProductType> {ProductType::COPPER_INGOT, ProductType::GOLD_INGOT},
 				ProductType::ROSE_GOLD_INGOT),
-		}, 1000);
+		}, 1000, 3);
+
+	mixer.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+
+	_prefabs.push_back(GameObject(mixer));
 
 	// ===============================================================================================================
 	// PRODUCT GENERATORS

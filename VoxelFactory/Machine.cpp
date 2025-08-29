@@ -66,7 +66,11 @@ ProductType Machine::getProductType() {
     return _productsInside.getKey(0);
 }
 
-bool Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) { 
+bool Machine::tryToInsertProduct(glm::vec2 insertPoint, Product product) {
+    if (product.getType() == ProductType::NOTHING) {
+        return false;
+    }
+
     if (!productValidForCrafting(product) && !anyCrafter()) {
         return false;
     }
@@ -130,9 +134,6 @@ float Machine::getCraftingCompletionAmount() {
     return _timer / _delay;
 }
 
-Component* Machine::copy() {
-    return new Machine(_delay, _inputDirections, _outputDirections, _craftingRecipes, _price);
-}
 
 bool Machine::productValidForCrafting(Product product) {
     for (int i = 0; i < _craftingRecipes.size(); i++) {
@@ -278,6 +279,11 @@ void Machine::outputNewProduct() {
 
     _tryingToOutput = true;
 
+    if (_output.getType() == ProductType::NOTHING) {
+        return;
+    }
+
+
     for (auto& outputDirection : _outputDirections) {
         glm::vec3 outputPosition = pointFromDirection(outputDirection);
 
@@ -330,4 +336,8 @@ void Machine::onProductEnter() {
     if (child != nullptr) {
         child->setActive(true);
     }
+}
+
+Component* Machine::copy() {
+    return new Machine(_delay, _inputDirections, _outputDirections, _craftingRecipes, _price, _maxProductTypes, _maxProductsPerType);
 }

@@ -21,6 +21,7 @@ void Player::setupMachines(GameObject* placingMachine) {
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Saw")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Furnace")));
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Metal press")));
+	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Mixer")));
 
 	_machinesToPlace.push_back(new GameObject(Prefabs::getPrefab("Seller")));
 }
