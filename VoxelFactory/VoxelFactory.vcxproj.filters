@@ -198,6 +198,9 @@
     <ClCompile Include="CameraController.cpp">
       <Filter>Source Files\Components\Gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteRenderer.cpp">
+      <Filter>Source Files\Components\Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -313,6 +316,9 @@
     </ClInclude>
     <ClInclude Include="Transform.h">
       <Filter>Header Files\Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderer.h">
+      <Filter>Header Files\Componets\Rendering</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

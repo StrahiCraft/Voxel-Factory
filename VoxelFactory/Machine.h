@@ -5,6 +5,7 @@
 #include "Direction.h"
 #include "Dictionary.h"
 #include "Prefabs.h"
+#include "UIObject.h"
 #include "CashManager.h"
 
 class Machine :
@@ -41,6 +42,8 @@ public:
 
     float getCraftingCompletionAmount();
 
+    UIObject* createCraftingRecipeUI();
+
     Component* copy();
 private:
     bool insertProduct(Product product);
@@ -62,6 +65,7 @@ private:
 
     bool anyCrafter();
     bool nothingCrafter();
+    bool seller();
 
     void onProductEnter();
 };

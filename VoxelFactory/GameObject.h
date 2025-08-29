@@ -18,7 +18,7 @@ protected:
     GameObject* _parent = nullptr;
     std::vector<GameObject*> _children;
 public:
-
+    ~GameObject() = default;
     GameObject(const std::string& name = "GameObject", std::vector<GameObject*> children = {});
     GameObject(GameObject* other);
 

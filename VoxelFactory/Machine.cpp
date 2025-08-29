@@ -134,6 +134,43 @@ float Machine::getCraftingCompletionAmount() {
     return _timer / _delay;
 }
 
+UIObject* Machine::createCraftingRecipeUI() {
+    UIObject* craftingRecipes = new UIObject("CraftingRecipes", ScreenAlignment::CENTER_LEFT);
+
+    if (anyCrafter() || nothingCrafter() || seller()) {
+        return craftingRecipes;
+    }
+
+    int verticalOffset = 0;
+    craftingRecipes->getComponent<Transform>()->_position = glm::vec3(84, 0, 0);
+
+    for (int i = 0; i < _craftingRecipes.size(); i++) {
+        craftingRecipes->addChild(new UIObject("Recipe " + std::to_string(i)));
+        craftingRecipes->getChild(i)->getComponent<Transform>()->_position.y = verticalOffset;
+        int horizotnalOffset = 0;
+        craftingRecipes->getChild(i)->addComponent<TextRenderer>("Recipe");
+
+        int j;
+
+        for (j = 0; j < _craftingRecipes[i].getInputProductTypes().size(); j++) {
+            craftingRecipes->getChild(i)->addChild(new UIObject("RecipeInput " + j));
+            craftingRecipes->getChild(i)->getChild(j)->addComponent<SpriteRenderer>(
+                Prefabs::getProduct(_craftingRecipes[i].getInputProductTypes()[j])->getComponent<SpriteRenderer>()->getSprite());
+            craftingRecipes->getChild(i)->getChild(j)->getComponent<Transform>()->_position.x = horizotnalOffset;
+
+            horizotnalOffset += 64;
+        }
+        craftingRecipes->getChild(i)->addChild(new UIObject("RecipeOutput "));
+        craftingRecipes->getChild(i)->getChild(j)->addComponent<SpriteRenderer>(
+            Prefabs::getProduct(_craftingRecipes[i].getOutputProductType())->getComponent<SpriteRenderer>()->getSprite());
+        craftingRecipes->getChild(i)->getChild(j)->getComponent<Transform>()->_position.x = horizotnalOffset;
+
+        verticalOffset -= 74;
+    }
+
+    return craftingRecipes;
+}
+
 
 bool Machine::productValidForCrafting(Product product) {
     for (int i = 0; i < _craftingRecipes.size(); i++) {
@@ -321,8 +358,12 @@ bool Machine::nothingCrafter() {
     return false;
 }
 
+bool Machine::seller() {
+    return getRecipeOutput(ProductType::ANY) == ProductType::NOTHING;
+}
+
 void Machine::onProductEnter() {
-    if (getRecipeOutput(ProductType::ANY) == ProductType::NOTHING) {
+    if (seller()) {
         CashManager::updateMoney(Prefabs::getProduct(_productsInside.getKey(0))->getComponent<Product>()->getPrice());
         _productsInside.removeItem(_productsInside.getKey(0));
         _output = new Product();

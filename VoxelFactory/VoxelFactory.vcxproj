@@ -168,6 +168,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SphereRenderer.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="StartButton.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="ScreenAlignment.h" />
     <ClInclude Include="SphereRenderer.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="StartButton.h" />
     <ClInclude Include="TextRenderer.h" />
     <ClInclude Include="Texture.h" />

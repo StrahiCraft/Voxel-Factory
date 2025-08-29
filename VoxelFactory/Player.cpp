@@ -38,6 +38,9 @@ void Player::setupHints(UIObject* buildHint, UIObject* rotationHint, UIObject* p
 	_placeHint = placeHint;
 	_destroyHint = destroyHint;
 	_scrollHint = scrollHint;
+
+	_craftingRecipes = new UIObject();
+	Game::addUIObject("Factory", _craftingRecipes);
 }
 
 void Player::raycast() {
@@ -96,6 +99,12 @@ void Player::handleBuildingInputs() {
 		_placeHint->setActive(false);
 		_scrollHint->setActive(false);
 
+		Machine* targetedMachine = WorldGrid::getMachineAt(glm::vec2(_currentTarget.x, _currentTarget.z));
+		if (targetedMachine != nullptr) {
+			_craftingRecipes = targetedMachine->createCraftingRecipeUI();
+			Game::addUIObject("Factory", _craftingRecipes);
+		}
+
 		_building = false;
 		_placingMachine->setActive(false);
 		_machinePlacementText->getOwner()->setActive(false);
@@ -119,6 +128,14 @@ void Player::handleNonBuildingInputs() {
 			_previousTargetedMachine->getOwner()->getComponent<MeshRenderer>()->setSelected(false);
 		}
 		_previousTargetedMachine = targetedMachine;
+		if (_craftingRecipes != nullptr) {
+			Game::removeUIObject("Factory", _craftingRecipes);
+			_craftingRecipes = nullptr;
+		}
+		if (targetedMachine != nullptr) {
+			_craftingRecipes = targetedMachine->createCraftingRecipeUI();
+			Game::addUIObject("Factory", _craftingRecipes);
+		}
 	}
 
 	if (Input::getKeyDown('B')) {
@@ -127,6 +144,11 @@ void Player::handleNonBuildingInputs() {
 		_scrollHint->setActive(true);
 		_placeHint->setActive(true);
 		_destroyHint->setActive(false);
+
+		if (_craftingRecipes != nullptr) {
+			Game::removeUIObject("Factory", _craftingRecipes);
+			_craftingRecipes = nullptr;
+		}
 
 		_building = true;
 		_placingMachine->setActive(true);
@@ -143,6 +165,7 @@ void Player::handleNonBuildingInputs() {
 	if (targetedMachine == nullptr) {
 		_rotationHint->setActive(false);
 		_destroyHint->setActive(false);
+		_craftingRecipes = new UIObject("CraftingRecipes", ScreenAlignment::CENTER_RIGHT);
 		return;
 	}
 

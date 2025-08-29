@@ -1,5 +1,10 @@
 #include "SpriteRenderer.h"
 
+SpriteRenderer::~SpriteRenderer() {
+	delete(_sprite);
+	delete(this);
+}
+
 SpriteRenderer::SpriteRenderer(Sprite* sprite, glm::vec3 color) {
 	_sprite = sprite;
 	_color = color;

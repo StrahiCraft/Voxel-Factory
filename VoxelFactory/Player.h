@@ -26,6 +26,8 @@ private:
     UIObject* _destroyHint;
     UIObject* _placeHint;
     UIObject* _scrollHint;
+
+    UIObject* _craftingRecipes;
 public:
     void update();
     void setupMachines(GameObject* placingMachine);

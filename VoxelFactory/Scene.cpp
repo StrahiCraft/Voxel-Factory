@@ -87,4 +87,6 @@ void Scene::addUIObject(UIObject* newObject) {
 
 void Scene::removeUIObject(UIObject* objectToRemove) {
 	_uiObjects.erase(std::remove(_uiObjects.begin(), _uiObjects.end(), objectToRemove), _uiObjects.end());
+	delete(objectToRemove);
+	objectToRemove = nullptr;
 }
