@@ -194,6 +194,14 @@ void initVariables() {
 	Game::addUIObject("Factory", scrollHint);
 
 	player->getComponent<Player>()->setupHints(buildHint, rotationHint, placeHint, destroyHint, scrollHint);
+
+	UIObject* crosshair = new UIObject("Crosshair", ScreenAlignment::CENTER);
+	crosshair->addComponent<TextRenderer>("+");
+	crosshair->getComponent<Transform>()->_position = glm::vec3(-16, -16, 0);
+	crosshair->getComponent<Transform>()->rotate(180, glm::vec3(0, 1, 0));
+	crosshair->getComponent<Transform>()->_scale = glm::vec3(0.5f);
+
+	Game::addUIObject("Factory", crosshair);
 }
 
 void doLighting() {
