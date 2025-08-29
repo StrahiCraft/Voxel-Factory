@@ -135,35 +135,48 @@ float Machine::getCraftingCompletionAmount() {
 }
 
 UIObject* Machine::createCraftingRecipeUI() {
-    UIObject* craftingRecipes = new UIObject("CraftingRecipes", ScreenAlignment::CENTER_LEFT);
+    UIObject* craftingRecipes = new UIObject("CraftingRecipes", ScreenAlignment::TOP_LEFT);
 
     if (anyCrafter() || nothingCrafter() || seller()) {
         return craftingRecipes;
     }
-
+    
     int verticalOffset = 0;
-    craftingRecipes->getComponent<Transform>()->_position = glm::vec3(84, 0, 0);
+    craftingRecipes->getComponent<Transform>()->_position = glm::vec3(84, -160, 0);
 
     for (int i = 0; i < _craftingRecipes.size(); i++) {
         craftingRecipes->addChild(new UIObject("Recipe " + std::to_string(i)));
         craftingRecipes->getChild(i)->getComponent<Transform>()->_position.y = verticalOffset;
         int horizotnalOffset = 0;
-        craftingRecipes->getChild(i)->addComponent<TextRenderer>("Recipe");
 
         int j;
-
         for (j = 0; j < _craftingRecipes[i].getInputProductTypes().size(); j++) {
-            craftingRecipes->getChild(i)->addChild(new UIObject("RecipeInput " + j));
-            craftingRecipes->getChild(i)->getChild(j)->addComponent<SpriteRenderer>(
+            craftingRecipes->getChild(i)->addChild(new UIObject("RecipeInput" + j));
+            craftingRecipes->getChild(i)->getChild(j * 2)->addComponent<SpriteRenderer>(
                 Prefabs::getProduct(_craftingRecipes[i].getInputProductTypes()[j])->getComponent<SpriteRenderer>()->getSprite());
-            craftingRecipes->getChild(i)->getChild(j)->getComponent<Transform>()->_position.x = horizotnalOffset;
+            craftingRecipes->getChild(i)->getChild(j * 2)->getComponent<Transform>()->_position.x = horizotnalOffset;
+
+            horizotnalOffset += 64;
+
+            craftingRecipes->getChild(i)->addChild(new UIObject("Sign"));
+            craftingRecipes->getChild(i)->getChild(j * 2 + 1)->addComponent<SpriteRenderer>(
+                new Sprite("Sprites/font.png", glm::vec2(64), 1, glm::vec2(15, 8), true));
+            if (_craftingRecipes[i].getInputProductTypes().size() - (j + 1) == 0) {
+                craftingRecipes->getChild(i)->getChild(j * 2 + 1)->getComponent<SpriteRenderer>()->getSprite()->setCurrentFrame('>' - 32);
+            }
+            else {
+                craftingRecipes->getChild(i)->getChild(j * 2 + 1)->getComponent<SpriteRenderer>()->getSprite()->setCurrentFrame('+' - 32);
+            }
+            craftingRecipes->getChild(i)->getChild(j * 2 + 1)->getComponent<SpriteRenderer>()->getSprite()->setSpriteFlip(glm::vec2(1, 0));
+            craftingRecipes->getChild(i)->getChild(j * 2 + 1)->getComponent<Transform>()->_position = glm::vec3(horizotnalOffset - 8, 8, 0);
+            craftingRecipes->getChild(i)->getChild(j * 2 + 1)->getComponent<Transform>()->_scale = glm::vec3(0.75f);
 
             horizotnalOffset += 64;
         }
-        craftingRecipes->getChild(i)->addChild(new UIObject("RecipeOutput "));
-        craftingRecipes->getChild(i)->getChild(j)->addComponent<SpriteRenderer>(
+        craftingRecipes->getChild(i)->addChild(new UIObject("RecipeOutput"));
+        craftingRecipes->getChild(i)->getChild(j * 2)->addComponent<SpriteRenderer>(
             Prefabs::getProduct(_craftingRecipes[i].getOutputProductType())->getComponent<SpriteRenderer>()->getSprite());
-        craftingRecipes->getChild(i)->getChild(j)->getComponent<Transform>()->_position.x = horizotnalOffset;
+        craftingRecipes->getChild(i)->getChild(j * 2)->getComponent<Transform>()->_position.x = horizotnalOffset;
 
         verticalOffset -= 74;
     }
