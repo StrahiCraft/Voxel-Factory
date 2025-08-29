@@ -270,19 +270,10 @@ void Machine::removeItemsFromRecipe(CraftingRecipe recipe) {
 }
 
 void Machine::outputNewProduct() {
-   /* if (_productsInside.getItemCount() == 0 && !nothingCrafter()) {
-        _tryingToOutput = false;
-        return;
-    }*/
-
     Transform* transform = getOwner()->getComponent<Transform>();
 
     if (_output.getType() == ProductType::NOTHING) {
         _output = craft();
-    }
-
-    if (_output.getType() == ProductType::NOTHING || _output.getType() == ProductType::INVALID) {
-        return;
     }
 
     _tryingToOutput = true;
