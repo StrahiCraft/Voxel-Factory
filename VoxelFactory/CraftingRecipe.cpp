@@ -1,19 +1,18 @@
 #include "CraftingRecipe.h"
 
 CraftingRecipe::CraftingRecipe(ProductType input, ProductType output, float successChance) {
-	_input = input;
-	//_input.push_back(input);
+	_input.push_back(input);
 	_output = output;
 	_successChance = successChance;
 }
 
 CraftingRecipe::CraftingRecipe(std::vector<ProductType> input, ProductType output, float successChance) {
-	//_input = input;
+	_input = input;
 	_output = output;
 	_successChance = successChance;
 }
 
-ProductType CraftingRecipe::getInputProductType() {
+std::vector<ProductType> CraftingRecipe::getInputProductTypes() {
 	return _input;
 }
 
