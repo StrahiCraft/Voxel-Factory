@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "MeshRenderer.h"
+#include "SpriteRenderer.h"
 #include "Machine.h"
 class ProductOnConveyor;
 

@@ -201,21 +201,25 @@ void Prefabs::initProducts() {
 	GameObject wood = GameObject("Wood");
 	wood.addComponent<MeshRenderer>("Models/Product/Wood/Wood.obj");
 	wood.addComponent<Product>(3, ProductType::WOOD);
+	wood.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/Wood.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(wood);
 
 	GameObject strippedLog = GameObject("Stripped log");
 	strippedLog.addComponent<MeshRenderer>("Models/Product/StrippedLog/StrippedLog.obj");
 	strippedLog.addComponent<Product>(6, ProductType::STRIPPED_LOG);
+	strippedLog.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/StrippedLog.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(strippedLog);
 
 	GameObject plank = GameObject("Plank");
 	plank.addComponent<MeshRenderer>("Models/Product/Plank/Plank.obj");
 	plank.addComponent<Product>(10, ProductType::PLANK);
+	plank.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/Plank.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(plank);
 
 	GameObject charcoal = GameObject("Charcoal");
 	charcoal.addComponent<MeshRenderer>("Models/Product/Charcoal/Charcoal.obj");
 	charcoal.addComponent<Product>(10, ProductType::CHARCOAL);
+	charcoal.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/Charcoal.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(charcoal);
 
 	// ===============================================================================================================
@@ -225,16 +229,19 @@ void Prefabs::initProducts() {
 	GameObject stone = GameObject("Stone");
 	stone.addComponent<MeshRenderer>("Models/Product/Stone/Stone.obj");
 	stone.addComponent<Product>(5, ProductType::STONE);
+	stone.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/Stone.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(stone);
 
 	GameObject cutStone = GameObject("Cut stone");
 	cutStone.addComponent<MeshRenderer>("Models/Product/CutStone/CutStone.obj");
 	cutStone.addComponent<Product>(10, ProductType::CUT_STONE);
+	cutStone.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CutStone.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(cutStone);
 
 	GameObject stoneBrick = GameObject("Stone bick");
 	stoneBrick.addComponent<MeshRenderer>("Models/Product/StoneBrick/StoneBrick.obj");
 	stoneBrick.addComponent<Product>(16, ProductType::STONE_BRICK);
+	stoneBrick.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/StoneBrick.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(stoneBrick);
 
 	// ===============================================================================================================
@@ -244,16 +251,19 @@ void Prefabs::initProducts() {
 	GameObject ironOre = GameObject("Iron ore");
 	ironOre.addComponent<MeshRenderer>("Models/Product/IronOre/IronOre.obj");
 	ironOre.addComponent<Product>(20, ProductType::IRON_ORE);
+	ironOre.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/IronOre.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(ironOre);
 
 	GameObject ironIngot = GameObject("Iron ingot");
 	ironIngot.addComponent<MeshRenderer>("Models/Product/IronIngot/IronIngot.obj");
 	ironIngot.addComponent<Product>(35, ProductType::IRON_INGOT);
+	ironIngot.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/IronIngot.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(ironIngot);
 
 	GameObject ironPlate = GameObject("Iron plate");
 	ironPlate.addComponent<MeshRenderer>("Models/Product/IronPlate/IronPlate.obj");
 	ironPlate.addComponent<Product>(60, ProductType::IRON_PLATE);
+	ironPlate.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/IronPlate.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(ironPlate);
 
 	// ===============================================================================================================
@@ -263,26 +273,31 @@ void Prefabs::initProducts() {
 	GameObject copperOre = GameObject("Copper ore");
 	copperOre.addComponent<MeshRenderer>("Models/Product/CopperOre/CopperOre.obj");
 	copperOre.addComponent<Product>(10, ProductType::COPPER_ORE);
+	copperOre.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CopperOre.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(copperOre);
 
 	GameObject copperIngot = GameObject("Copper ingot");
 	copperIngot.addComponent<MeshRenderer>("Models/Product/CopperIngot/CopperIngot.obj");
 	copperIngot.addComponent<Product>(20, ProductType::COPPER_INGOT);
+	copperIngot.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CopperIngot.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(copperIngot);
 
 	GameObject copperPlate = GameObject("Copper plate");
 	copperPlate.addComponent<MeshRenderer>("Models/Product/CopperPlate/CopperPlate.obj");
 	copperPlate.addComponent<Product>(35, ProductType::COPPER_PLATE);
+	copperPlate.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CopperPlate.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(copperPlate);
 
 	GameObject cutCopper = GameObject("Cut copper");
 	cutCopper.addComponent<MeshRenderer>("Models/Product/CutCopper/CutCopper.obj");
 	cutCopper.addComponent<Product>(15, ProductType::CUT_COPPER);
+	cutCopper.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CutCopper.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(cutCopper);
 
 	GameObject copperWire = GameObject("Copper wire");
 	copperWire.addComponent<MeshRenderer>("Models/Product/CopperWire/CopperWire.obj");
 	copperWire.addComponent<Product>(100, ProductType::COPPER_WIRE);
+	copperWire.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CopperWire.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(copperWire);
 
 	// ===============================================================================================================
@@ -292,26 +307,31 @@ void Prefabs::initProducts() {
 	GameObject goldOre = GameObject("Gold ore");
 	goldOre.addComponent<MeshRenderer>("Models/Product/GoldOre/GoldOre.obj");
 	goldOre.addComponent<Product>(50, ProductType::GOLD_ORE);
+	goldOre.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/GoldOre.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(goldOre);
 
 	GameObject goldIngot = GameObject("Gold ingot");
 	goldIngot.addComponent<MeshRenderer>("Models/Product/GoldIngot/GoldIngot.obj");
 	goldIngot.addComponent<Product>(100, ProductType::GOLD_INGOT);
+	goldIngot.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/GoldIngot.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(goldIngot);
 
 	GameObject goldPlate = GameObject("Gold plate");
 	goldPlate.addComponent<MeshRenderer>("Models/Product/GoldPlate/GoldPlate.obj");
 	goldPlate.addComponent<Product>(125, ProductType::GOLD_PLATE);
+	goldPlate.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/GoldPlate.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(goldPlate);
 
 	GameObject cutGold = GameObject("Cut gold");
 	cutGold.addComponent<MeshRenderer>("Models/Product/CutGold/CutGold.obj");
 	cutGold.addComponent<Product>(80, ProductType::CUT_GOLD);
+	cutGold.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CutGold.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(cutGold);
 
 	GameObject goldWire = GameObject("Gold wire");
 	goldWire.addComponent<MeshRenderer>("Models/Product/GoldWire/GoldWire.obj");
 	goldWire.addComponent<Product>(225, ProductType::GOLD_WIRE);
+	goldWire.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/GoldWire.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(goldWire);
 
 	// ===============================================================================================================
@@ -321,11 +341,13 @@ void Prefabs::initProducts() {
 	GameObject roseGoldIngot = GameObject("Rose gold ingot");
 	roseGoldIngot.addComponent<MeshRenderer>("Models/Product/RoseGoldIngot/RoseGoldIngot.obj");
 	roseGoldIngot.addComponent<Product>(150, ProductType::ROSE_GOLD_INGOT);
+	roseGoldIngot.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/RoseGoldIngot.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(roseGoldIngot);
 
 	GameObject roseGoldPlate = GameObject("Rose gold plate");
 	roseGoldPlate.addComponent<MeshRenderer>("Models/Product/RoseGoldPlate/RoseGoldPlate.obj");
 	roseGoldPlate.addComponent<Product>(200, ProductType::ROSE_GOLD_PLATE);
+	roseGoldPlate.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/RoseGoldPlate.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(roseGoldPlate);
 }
 
