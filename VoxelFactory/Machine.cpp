@@ -95,7 +95,7 @@ bool Machine::insertProduct(Product product) {
 
     if (_productsInside.containsKey(product.getType())) {
         if (_productsInside.getValue(product.getType()) < _maxProductsPerType) {
-            _productsInside.setValue(product.getType(), _productsInside.getValue(product.getType() + 1));
+            _productsInside.setValue(product.getType(), _productsInside.getValue(product.getType()) + 1);
             onProductEnter();
             return true;
         }

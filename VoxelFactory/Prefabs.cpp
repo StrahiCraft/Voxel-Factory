@@ -130,6 +130,21 @@ void Prefabs::initMachines() {
 
 	_prefabs.push_back(GameObject(mixer));
 
+	GameObject wireFabricator = GameObject("Wire fabricator", std::vector<GameObject*> {new GameObject("ProductOnConveyor")});
+	wireFabricator.addComponent<MeshRenderer>("Models/Machines/WireFabricator/WireFabricator.obj");
+	wireFabricator.addComponent<Machine>(1.5f, std::vector<Direction> { Direction::BACK, Direction::LEFT, Direction::RIGHT},
+		std::vector<Direction>{Direction::FORWARD},
+		std::vector<CraftingRecipe> {
+		CraftingRecipe(std::vector<ProductType> {ProductType::IRON_PLATE, ProductType::CUT_COPPER, ProductType::IRON_PLATE},
+			ProductType::COPPER_WIRE),
+		CraftingRecipe(std::vector<ProductType> {ProductType::IRON_PLATE, ProductType::CUT_GOLD, ProductType::IRON_PLATE},
+			ProductType::GOLD_WIRE),
+	}, 750, 3, 2);
+
+	wireFabricator.getComponent<Transform>()->_scale = glm::vec3(1 / 1.6f);
+
+	_prefabs.push_back(GameObject(wireFabricator));
+
 	// ===============================================================================================================
 	// PRODUCT GENERATORS
 	// ===============================================================================================================
@@ -296,7 +311,7 @@ void Prefabs::initProducts() {
 
 	GameObject copperWire = GameObject("Copper wire");
 	copperWire.addComponent<MeshRenderer>("Models/Product/CopperWire/CopperWire.obj");
-	copperWire.addComponent<Product>(100, ProductType::COPPER_WIRE);
+	copperWire.addComponent<Product>(175, ProductType::COPPER_WIRE);
 	copperWire.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/CopperWire.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(copperWire);
 
@@ -330,7 +345,7 @@ void Prefabs::initProducts() {
 
 	GameObject goldWire = GameObject("Gold wire");
 	goldWire.addComponent<MeshRenderer>("Models/Product/GoldWire/GoldWire.obj");
-	goldWire.addComponent<Product>(225, ProductType::GOLD_WIRE);
+	goldWire.addComponent<Product>(300, ProductType::GOLD_WIRE);
 	goldWire.addComponent<SpriteRenderer>(new Sprite("Sprites/Products/GoldWire.png", glm::vec2(64), 1, glm::vec2(1), true));
 	_products.push_back(goldWire);
 
